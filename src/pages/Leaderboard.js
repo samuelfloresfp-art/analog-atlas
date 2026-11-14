@@ -56,10 +56,10 @@ export async function Leaderboard(root, { query }, data) {
   root.querySelector("main").innerHTML = `
     <h1>${esc(S.lbHeading)}</h1>
     <p class="notice">${esc(S.lbNotice)}</p>
-    <nav class="tabs" aria-label="Leaderboard scope">${TABS.map((t) => `<a class="tab ${t === tab ? "on" : ""}" ${t === tab ? 'aria-current="page"' : ""} href="#/leaderboard?tab=${t}">${esc(S.lbTabs[t])}</a>`).join("")}</nav>
+    <nav class="tabs" aria-label="${esc(S.lbHeading)}">${TABS.map((t) => `<a class="tab ${t === tab ? "on" : ""}" ${t === tab ? 'aria-current="page"' : ""} href="#/leaderboard?tab=${t}">${esc(S.lbTabs[t])}</a>`).join("")}</nav>
     ${table}
-    <p class="small muted">Order: validated sites (Auto-checked or Team-confirmed), then total score, then first arrival. · ${esc(S.lbStorage(store))}</p>
-    <div class="m-actions"><a class="btn btn-primary" style="--accent:#9cc0ff" href="#/contribute">${esc(S.navValidate)}</a></div>
+    <p class="small muted">${esc(S.lbOrder)} · ${esc(S.lbStorage(store))}</p>
+    <div class="m-actions"><a class="btn btn-cta" href="#/explore">${esc(S.explorerCta)}</a></div>
     ${adminHtml}`;
 
   root.querySelectorAll("[data-confirm]").forEach((b) =>

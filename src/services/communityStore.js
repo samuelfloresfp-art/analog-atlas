@@ -1,3 +1,5 @@
+import { LANG } from "../i18n.js";
+const T = (en, pt) => (LANG === "pt" ? pt : en);
 // Community submissions store. The ONLY module that knows where submissions live.
 // Prototype: src/data/community.json (team examples) + this browser's localStorage.
 // Interface: list(), add(sub), remove(id), report(id) — plus export/import and
@@ -42,8 +44,8 @@ function withExampleResult(s) {
   const data = getData();
   const criteria = criteriaChecks(s.form, data);
   const dataChecks = [
-    { id: "climate", label: "Climate vs NASA POWER climatology", origin: "NASA data", status: "not-checked", note: "Example submission — not run" },
-    { id: "slope", label: "Slope vs elevation tiles (SRTM-based)", origin: "open data", status: "not-checked", note: "Example submission — not run" },
+    { id: "climate", label: T("Climate vs NASA POWER climatology", "Clima x climatologia NASA POWER"), origin: "NASA data", status: "not-checked", note: T("Team suggestion — not run", "Sugestão da equipe — não executado") },
+    { id: "slope", label: T("Slope vs elevation tiles (SRTM-based)", "Declividade x modelo de elevação (base SRTM)"), origin: "open data", status: "not-checked", note: T("Team suggestion — not run", "Sugestão da equipe — não executado") },
   ];
   return {
     ...s,
@@ -53,7 +55,7 @@ function withExampleResult(s) {
       formChecks: [],
       criteria: criteria.map((r) => ({ ruleId: r.rule.id, value: r.value, result: r.result })),
       dataChecks,
-      novelty: { id: "novelty", origin: "rule", status: "new", message: "Example submission — not checked." },
+      novelty: { id: "novelty", origin: "rule", status: "new", message: T("Team suggestion — not checked.", "Sugestão da equipe — não conferido.") },
       improvements: [],
       checkedAt: s.createdAt,
     },

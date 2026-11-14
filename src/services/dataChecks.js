@@ -1,3 +1,5 @@
+import { LANG } from "../i18n.js";
+const T = (en, pt) => (LANG === "pt" ? pt : en);
 // Layer C — optional, asynchronous open-data cross-checks.
 // Every check returns status: "consistent" | "mismatch-light" | "mismatch-strong" | "not-checked".
 // On any network/CORS/timeout error the result is "not-checked" so the site works offline.
@@ -28,7 +30,7 @@ const PRECIP_CLASSES = [
 const classIndex = (id) => PRECIP_CLASSES.findIndex((c) => c.id === id);
 
 export async function checkClimate(lat, lon, declared) {
-  const base = { id: "climate", label: "Climate vs NASA POWER climatology", origin: "NASA data", source: "NASA POWER" };
+  const base = { id: "climate", label: T("Climate vs NASA POWER climatology", "Clima x climatologia NASA POWER"), origin: "NASA data", source: "NASA POWER" };
   if (forceOffline()) return notChecked(base, "Offline mode");
   try {
     const url =
@@ -54,17 +56,17 @@ export async function checkClimate(lat, lon, declared) {
     if (classIndex(c) >= 0) {
       const d = Math.abs(classIndex(c) - classIndex(observedClass));
       status = d === 0 ? "consistent" : d === 1 ? "mismatch-light" : "mismatch-strong";
-      note = `Declared ${c}; annual precipitation suggests ${observedClass}.`;
+      note = T(`Declared ${c}; annual precipitation suggests ${observedClass}.`, `Declarado: ${c}; a chuva anual indica ${observedClass}.`);
     } else if (c === "polar-cold") {
       status = tMean < 0 ? "consistent" : tMean < 8 ? "mismatch-light" : "mismatch-strong";
-      note = `Declared polar/cold; mean annual air temperature is ${tMean.toFixed(1)} °C.`;
+      note = T(`Declared polar/cold; mean annual air temperature is ${tMean.toFixed(1)} °C.`, `Declarado polar/frio; a temperatura média anual do ar é ${tMean.toFixed(1)} °C.`);
     } else if (c === "high-altitude") {
       if (typeof elev === "number") {
         status = elev >= 2500 ? "consistent" : elev >= 1500 ? "mismatch-light" : "mismatch-strong";
-        note = `Declared high altitude; POWER grid-cell elevation is ${Math.round(elev)} m.`;
+        note = T(`Declared high altitude; POWER grid-cell elevation is ${Math.round(elev)} m.`, `Declarado grande altitude; a altitude da célula POWER é ${Math.round(elev)} m.`);
       } else {
         status = "consistent";
-        note = "Elevation not returned; altitude not checked.";
+        note = T("Elevation not returned; altitude not checked.", "Altitude não retornada; não conferida.");
       }
     }
 
@@ -86,7 +88,7 @@ export async function checkClimate(lat, lon, declared) {
       note: note.trim(),
     };
   } catch (e) {
-    return notChecked(base, `Request failed (${e.name === "AbortError" ? "timeout" : e.message})`);
+    return notChecked(base, T(`Request failed (${e.name === "AbortError" ? "timeout" : e.message})`, `Falha na consulta (${e.name === "AbortError" ? "tempo esgotado" : e.message})`));
   }
 }
 
@@ -113,7 +115,7 @@ function loadTileImage(url, signal) {
 }
 
 export async function checkSlope(lat, lon, declaredClass, radiusKm = 1) {
-  const base = { id: "slope", label: "Slope vs elevation tiles (SRTM-based)", origin: "open data", source: "AWS Terrain Tiles (Terrarium)" };
+  const base = { id: "slope", label: T("Slope vs elevation tiles (SRTM-based)", "Declividade x modelo de elevação (base SRTM)"), origin: "open data", source: "AWS Terrain Tiles (Terrarium)" };
   if (forceOffline()) return notChecked(base, "Offline mode");
   try {
     const z = 12;
@@ -161,7 +163,7 @@ export async function checkSlope(lat, lon, declaredClass, radiusKm = 1) {
         count++;
         max = Math.max(max, deg);
       }
-    if (!count) return notChecked(base, "No elevation samples");
+    if (!count) return notChecked(base, T("No elevation samples", "Sem amostras de elevação"));
     const mean = sum / count;
     const observedClass = SLOPE_CLASSES.find((c) => mean < c.max).id;
     const d = Math.abs(slopeIdx(declaredClass) - slopeIdx(observedClass));
@@ -170,10 +172,10 @@ export async function checkSlope(lat, lon, declaredClass, radiusKm = 1) {
       status: d === 0 ? "consistent" : d === 1 ? "mismatch-light" : "mismatch-strong",
       declared: `${declaredClass}°`,
       observed: `mean ${mean.toFixed(1)}° (max ${max.toFixed(0)}°) within ${radiusKm} km, ~${Math.round(mPerPx)} m/px`,
-      note: `DEM suggests ${observedClass}°. Coarse resolution tends to underestimate local slopes.`,
+      note: T(`DEM suggests ${observedClass}°. Coarse resolution tends to underestimate local slopes.`, `O modelo de elevação indica ${observedClass}°. A resolução grosseira tende a subestimar declives locais.`),
     };
   } catch (e) {
-    return notChecked(base, `Request failed (${e.name === "AbortError" ? "timeout" : e.message})`);
+    return notChecked(base, T(`Request failed (${e.name === "AbortError" ? "timeout" : e.message})`, `Falha na consulta (${e.name === "AbortError" ? "tempo esgotado" : e.message})`));
   }
 }
 

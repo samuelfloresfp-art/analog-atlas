@@ -1,10 +1,13 @@
-// All user-facing text (English, per challenge rules).
-// Functions are used where a value is inserted into the text.
+// All user-facing text. EN is the base; PT (src/strings-pt.js) overrides it when the
+// visitor picks Portuguese. Functions are used where a value is inserted into the text.
 
-export const S = {
+import { LANG } from "./i18n.js";
+import { PT } from "./strings-pt.js";
+
+export const EN = {
   appName: "Analog Atlas",
   tagline: "Learn where Moon and Mars missions are rehearsed on Earth — then propose a new place yourself.",
-  footer: "Prototype — content is placeholder and must be validated",
+  footer: "Built for the NASA Space Apps Challenge 2026. Not affiliated with or endorsed by NASA.",
   imageryNasa: "Imagery: NASA GIBS",
   imageryCarto: "&copy; OpenStreetMap contributors &copy; CARTO (fallback basemap)",
   imageryLocal: "Offline fallback: Natural Earth 110m land (public domain)",
@@ -289,4 +292,64 @@ export const S = {
   lbConfirm: "Mark Team-confirmed",
   lbUnconfirm: "Undo Team-confirmed",
   lbRecent: "Recent contributions",
+  lbOrder: "Order: validated sites, then total score, then first arrival.",
+
+  // v3 — language, home, map, site card (2026-11-14 evening)
+  langTitle: "Choose your language",
+  langSub: "You can change it any time in the top bar.",
+  langPT: "Português",
+  langEN: "English",
+  langToggleLabel: "Language",
+  navMenu: "Menu",
+  heroEyebrow: "NASA Space Apps 2026 · Earth analogs",
+  heroTitle: "Rehearse the Moon and Mars here on Earth",
+  heroSub: "Find the places on Earth where space missions are tested — and where they could be tested next.",
+  stepPlanet: "01 · Choose your destination",
+  stepMission: "02 · Choose your mission",
+  planetPrev: "Previous destination",
+  planetNext: "Next destination",
+  planetHint: "Click the other planet to switch",
+  planetHintMobile: "Use the arrows to switch",
+  planetStats: { moon: "1/6 g · no atmosphere · −173 to 127 °C", mars: "3/8 g · thin CO₂ air · −125 to 20 °C" },
+  missionOpen: "Open the map",
+  missionPhoto: {
+    landing: "Perseverance being lowered to the surface of Mars by the sky crane, 18 Feb 2021",
+    rover: "Space Exploration Vehicle driving at Black Point Lava Flow, Arizona (Desert RATS 2010)",
+    base: "Habitat Demonstration Unit at Black Point Lava Flow, Arizona (Desert RATS 2010)",
+  },
+  credit: (c) => `Credit: ${c}`,
+  statValidated: "already used",
+  statPossible: "untapped analogs",
+  legendRocket: "Already used for simulations of this mission",
+  legendTarget: "Analog with no known test yet",
+  legendSearched: (d) => `Search for previous tests: ${d}`,
+  coords: "Coordinates",
+  whyWorksTitle: (mission, planet) => `Why this site works for ${mission} on the ${planet}`,
+  dimsTitle: "Analog dimensions",
+  dimsHint: "Hover over (or tap) a level to see why.",
+  dimNeed: "What the mission needs",
+  dimHere: "At this site",
+  dimData: "Measured by NASA",
+  dimNoData: "No NASA measurement for this dimension at this point.",
+  levelMeaning: {
+    strong: "Strong — this site reproduces this aspect of the target well.",
+    partial: "Partial — useful, but with clear differences from the target.",
+    weak: "Weak — this aspect is very different from the target.",
+    nodata: "No data — this aspect has not been measured here.",
+  },
+  historyTitle: "Simulations already done here",
+  limitsTitle: "Limits of the analogy",
+  sourcesTitle: "Sources and data",
+  siteSources: "References",
+  nasaMeasures: "NASA measurements at this point",
+  satCaption: "High-resolution satellite view — zoom in to see the ground",
+  satCredit: "Imagery: Esri, Maxar, Earthstar Geographics",
+  satLoading: "Loading satellite view…",
+  imageryHd: "Imagery: Esri, Maxar, Earthstar Geographics",
+  communityExamplesNote: "Team-curated suggestions to evaluate; not yet tested.",
+  explorerCta: "Propose a new site",
+  colDataLbl: "Data",
+  texCredit: "Moon: NASA SVS CGI Moon Kit (LRO) · Mars: Solar System Scope (CC BY 4.0), from NASA data",
 };
+
+export const S = LANG === "pt" ? { ...EN, ...PT } : EN;

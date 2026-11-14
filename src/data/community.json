@@ -1,44 +1,434 @@
 [
-  {
-    "id": "example-riachao",
-    "example": true,
-    "createdAt": "2026-11-14T12:00:00Z",
-    "nickname": "Analog Atlas team",
-    "form": {
-      "planet": "moon",
-      "mission": "rover",
-      "name": "Riachão crater (example)",
-      "lat": -7.72,
-      "lon": -46.64,
-      "country": "Brazil",
-      "attrs": { "topography": "impact-crater", "slopeClass": "5-15", "surface": "gravel-regolith", "vegetation": "sparse", "climate": "semi-arid", "waterIce": "none", "subsurface": "none", "access": "track", "isolation": "remote" },
-      "tempMin": "",
-      "tempMax": "",
-      "usedBefore": "dont-know",
-      "why": "Example only: a small confirmed impact structure in Maranhão listed by the team as worth evaluating. Crater rim and ejecta could host rover navigation tests.",
-      "lacks": "Example only: attributes are team guesses, vegetation and climate are not lunar, no data verified.",
-      "evidenceUrl": ""
-    }
+ {
+  "id": "example-riachao",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "moon",
+   "mission": "rover",
+   "name": "Riachão crater",
+   "lat": -7.72,
+   "lon": -46.64,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "impact-crater",
+    "slopeClass": "5-15",
+    "surface": "gravel-regolith",
+    "vegetation": "sparse",
+    "climate": "semi-arid",
+    "waterIce": "none",
+    "subsurface": "none",
+    "access": "track",
+    "isolation": "remote"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Small confirmed impact structure in Maranhão. Crater rim and ejecta could host rover navigation tests.",
+   "lacks": "Cerrado vegetation and seasonal rain; not lunar regolith.",
+   "evidenceUrl": ""
   },
-  {
-    "id": "example-vale-da-lua",
-    "example": true,
-    "createdAt": "2026-11-14T12:00:00Z",
-    "nickname": "Analog Atlas team",
-    "form": {
-      "planet": "mars",
-      "mission": "rover",
-      "name": "Vale da Lua, Chapada dos Veadeiros (example)",
-      "lat": -14.21,
-      "lon": -47.78,
-      "country": "Brazil",
-      "attrs": { "topography": "canyon-valley", "slopeClass": "5-15", "surface": "gravel-regolith", "vegetation": "sparse", "climate": "semi-arid", "waterIce": "seasonal", "subsurface": "none", "access": "road", "isolation": "rural" },
-      "tempMin": "",
-      "tempMax": "",
-      "usedBefore": "dont-know",
-      "why": "Example only: eroded rock surfaces listed by the team as a place to evaluate for rover mobility on sculpted bedrock.",
-      "lacks": "Example only: river water, vegetation around the valley, tourism; attributes are team guesses.",
-      "evidenceUrl": ""
-    }
+  "pt": {
+   "name": "Cratera de Riachão",
+   "why": "Pequena estrutura de impacto confirmada no Maranhão. A borda e o material ejetado podem receber testes de navegação de rovers.",
+   "lacks": "Vegetação de cerrado e chuvas sazonais; não é regolito lunar."
   }
+ },
+ {
+  "id": "example-vale-da-lua",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "mars",
+   "mission": "rover",
+   "name": "Vale da Lua, Chapada dos Veadeiros",
+   "lat": -14.21,
+   "lon": -47.78,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "canyon-valley",
+    "slopeClass": "5-15",
+    "surface": "gravel-regolith",
+    "vegetation": "sparse",
+    "climate": "semi-arid",
+    "waterIce": "seasonal",
+    "subsurface": "none",
+    "access": "road",
+    "isolation": "rural"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Eroded, sculpted bedrock surfaces to evaluate rover mobility on hard rock.",
+   "lacks": "River water, vegetation around the valley and tourism.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Vale da Lua, Chapada dos Veadeiros",
+   "why": "Rocha esculpida pela erosão, boa para avaliar a mobilidade de rovers sobre rocha dura.",
+   "lacks": "Água do rio, vegetação ao redor do vale e turismo."
+  }
+ },
+ {
+  "id": "example-santa-marta",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "moon",
+   "mission": "rover",
+   "name": "Santa Marta crater",
+   "lat": -10.17,
+   "lon": -45.23,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "impact-crater",
+    "slopeClass": "5-15",
+    "surface": "gravel-regolith",
+    "vegetation": "sparse",
+    "climate": "semi-arid",
+    "waterIce": "none",
+    "subsurface": "none",
+    "access": "track",
+    "isolation": "remote"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Confirmed ~10 km impact crater in Piauí with a clear rim, in a remote area.",
+   "lacks": "Cerrado vegetation; eroded rim.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Cratera de Santa Marta",
+   "why": "Cratera de impacto confirmada de ~10 km no Piauí, com borda nítida, em área remota.",
+   "lacks": "Vegetação de cerrado; borda erodida."
+  }
+ },
+ {
+  "id": "example-sao-miguel-tapuio",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "mars",
+   "mission": "rover",
+   "name": "São Miguel do Tapuio structure",
+   "lat": -5.63,
+   "lon": -41.39,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "impact-crater",
+    "slopeClass": "2-5",
+    "surface": "gravel-regolith",
+    "vegetation": "sparse",
+    "climate": "semi-arid",
+    "waterIce": "none",
+    "subsurface": "none",
+    "access": "track",
+    "isolation": "rural"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Large (~20 km) impact structure in sedimentary rock in the semi-arid Piauí.",
+   "lacks": "Caatinga vegetation; strongly eroded.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Estrutura de São Miguel do Tapuio",
+   "why": "Grande estrutura de impacto (~20 km) em rocha sedimentar no semiárido do Piauí.",
+   "lacks": "Vegetação de caatinga; muito erodida."
+  }
+ },
+ {
+  "id": "example-serra-capivara",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "mars",
+   "mission": "rover",
+   "name": "Serra da Capivara canyons",
+   "lat": -8.83,
+   "lon": -42.55,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "canyon-valley",
+    "slopeClass": "15-30",
+    "surface": "gravel-regolith",
+    "vegetation": "sparse",
+    "climate": "semi-arid",
+    "waterIce": "none",
+    "subsurface": "caves",
+    "access": "road",
+    "isolation": "rural"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Sandstone canyons and cliffs to test rover navigation near steep walls.",
+   "lacks": "Caatinga vegetation; protected heritage area.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Cânions da Serra da Capivara",
+   "why": "Cânions e paredões de arenito para testar navegação de rovers perto de encostas íngremes.",
+   "lacks": "Vegetação de caatinga; área protegida de patrimônio."
+  }
+ },
+ {
+  "id": "example-catimbau",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "moon",
+   "mission": "base",
+   "name": "Vale do Catimbau",
+   "lat": -8.55,
+   "lon": -37.25,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "canyon-valley",
+    "slopeClass": "5-15",
+    "surface": "loose-sand",
+    "vegetation": "sparse",
+    "climate": "semi-arid",
+    "waterIce": "none",
+    "subsurface": "caves",
+    "access": "track",
+    "isolation": "remote"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Sandstone shelters and caves in a dry, remote area — natural shelter for a habitat study.",
+   "lacks": "Caatinga vegetation; hot climate.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Vale do Catimbau",
+   "why": "Abrigos de arenito e cavernas numa área seca e remota — abrigo natural para estudo de habitat.",
+   "lacks": "Vegetação de caatinga; clima quente."
+  }
+ },
+ {
+  "id": "example-serido",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "mars",
+   "mission": "landing",
+   "name": "Seridó rocky plains",
+   "lat": -6.45,
+   "lon": -36.6,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "rocky-plain",
+    "slopeClass": "0-2",
+    "surface": "gravel-regolith",
+    "vegetation": "sparse",
+    "climate": "semi-arid",
+    "waterIce": "none",
+    "subsurface": "none",
+    "access": "road",
+    "isolation": "rural"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Flat, rocky semi-arid plains with sparse vegetation for landing-zone hazard tests.",
+   "lacks": "Caatinga shrubs; seasonal rain.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Planícies rochosas do Seridó",
+   "why": "Planícies semiáridas planas e rochosas, com pouca vegetação, para testes de obstáculos em zona de pouso.",
+   "lacks": "Arbustos de caatinga; chuva sazonal."
+  }
+ },
+ {
+  "id": "example-valle-luna-chile",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "moon",
+   "mission": "rover",
+   "name": "Valle de la Luna, San Pedro de Atacama",
+   "lat": -22.92,
+   "lon": -68.3,
+   "country": "Chile",
+   "attrs": {
+    "topography": "canyon-valley",
+    "slopeClass": "5-15",
+    "surface": "loose-sand",
+    "vegetation": "none",
+    "climate": "hyper-arid",
+    "waterIce": "none",
+    "subsurface": "caves",
+    "access": "road",
+    "isolation": "rural"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Hyper-arid salt and clay ridges with no vegetation; rough terrain for rover driving.",
+   "lacks": "Tourism; salt and clay, not regolith.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Valle de la Luna, San Pedro de Atacama",
+   "why": "Cristas de sal e argila hiperáridas, sem vegetação; terreno acidentado para dirigir rovers.",
+   "lacks": "Turismo; sal e argila, não regolito."
+  }
+ },
+ {
+  "id": "example-payunia",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "moon",
+   "mission": "rover",
+   "name": "La Payunia volcanic field",
+   "lat": -36.4,
+   "lon": -69.2,
+   "country": "Argentina",
+   "attrs": {
+    "topography": "lava-field",
+    "slopeClass": "5-15",
+    "surface": "basalt-rock",
+    "vegetation": "sparse",
+    "climate": "arid",
+    "waterIce": "none",
+    "subsurface": "lava-tubes",
+    "access": "track",
+    "isolation": "remote"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Huge basaltic volcanic field with hundreds of cones and lava flows.",
+   "lacks": "Steppe shrubs; Earth atmosphere.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Campo vulcânico La Payunia",
+   "why": "Enorme campo vulcânico basáltico com centenas de cones e derrames de lava.",
+   "lacks": "Arbustos de estepe; atmosfera da Terra."
+  }
+ },
+ {
+  "id": "example-ischigualasto",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "mars",
+   "mission": "rover",
+   "name": "Ischigualasto",
+   "lat": -30.0,
+   "lon": -67.9,
+   "country": "Argentina",
+   "attrs": {
+    "topography": "canyon-valley",
+    "slopeClass": "5-15",
+    "surface": "clay",
+    "vegetation": "none",
+    "climate": "arid",
+    "waterIce": "none",
+    "subsurface": "none",
+    "access": "road",
+    "isolation": "remote"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Layered, colourful sedimentary badlands like the layered rocks rovers study on Mars.",
+   "lacks": "Protected park; Earth gravity.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Ischigualasto",
+   "why": "Terrenos sedimentares em camadas coloridas, como as rochas estudadas por rovers em Marte.",
+   "lacks": "Parque protegido; gravidade da Terra."
+  }
+ },
+ {
+  "id": "example-salar-atacama",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "mars",
+   "mission": "landing",
+   "name": "Salar de Atacama margin",
+   "lat": -23.5,
+   "lon": -68.25,
+   "country": "Chile",
+   "attrs": {
+    "topography": "flat-plain",
+    "slopeClass": "0-2",
+    "surface": "salt-crust",
+    "vegetation": "none",
+    "climate": "hyper-arid",
+    "waterIce": "hydrated-minerals",
+    "subsurface": "none",
+    "access": "road",
+    "isolation": "remote"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Very flat, hard salt crust in a hyper-arid basin: firm ground for landing tests.",
+   "lacks": "Lithium mining nearby; salt instead of dust.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Borda do Salar de Atacama",
+   "why": "Crosta de sal muito plana e dura numa bacia hiperárida: chão firme para testes de pouso.",
+   "lacks": "Mineração de lítio por perto; sal em vez de poeira."
+  }
+ },
+ {
+  "id": "example-pratinha",
+  "example": true,
+  "createdAt": "2026-11-14T12:00:00Z",
+  "nickname": "Analog Atlas team",
+  "form": {
+   "planet": "moon",
+   "mission": "base",
+   "name": "Chapada Diamantina caves",
+   "lat": -12.45,
+   "lon": -41.44,
+   "country": "Brazil",
+   "attrs": {
+    "topography": "mountain-plateau",
+    "slopeClass": "15-30",
+    "surface": "basalt-rock",
+    "vegetation": "moderate",
+    "climate": "semi-arid",
+    "waterIce": "seasonal",
+    "subsurface": "caves",
+    "access": "road",
+    "isolation": "rural"
+   },
+   "tempMin": "",
+   "tempMax": "",
+   "usedBefore": "dont-know",
+   "why": "Large cave systems that could be studied as natural shelters for a base.",
+   "lacks": "Vegetation and water; limestone, not lava tubes.",
+   "evidenceUrl": ""
+  },
+  "pt": {
+   "name": "Cavernas da Chapada Diamantina",
+   "why": "Grandes sistemas de cavernas que podem ser estudados como abrigos naturais para uma base.",
+   "lacks": "Vegetação e água; calcário, não tubo de lava."
+  }
+ }
 ]

@@ -36,7 +36,7 @@ export function CheckTable(result, criteria, data) {
       )
     );
   for (const d of result.dataChecks)
-    rows.push(row(d.label, d.declared, d.status, S.dataStatus[d.status], d.origin, [d.observed && `Data: ${d.observed}`, d.note, d.source && `Source: ${d.source}`].filter(Boolean).join(" · ")));
+    rows.push(row(d.label, d.declared, d.status, S.dataStatus[d.status], d.origin, [d.observed && `${S.colDataLbl}: ${d.observed}`, d.note, d.source && `${S.sources}: ${d.source}`].filter(Boolean).join(" · ")));
   rows.push(row(S.noveltyTitle, null, result.novelty.status === "new" ? "pass" : "partial", S.novelty[result.novelty.status], "rule", result.novelty.message));
 
   return `<div class="table-wrap"><table class="check-table">

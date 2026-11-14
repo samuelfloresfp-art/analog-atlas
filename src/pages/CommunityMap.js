@@ -4,7 +4,7 @@ import { S } from "../strings.js";
 import { esc } from "../util.js";
 import { NavBar, StatusBadge } from "../components/small.js";
 import { createWorldMap, createClusterLayer, fitToMarkers } from "../components/WorldMap.js";
-import { SubmissionMarker, SiteMarker } from "../components/SiteMarker.js";
+import { SubmissionMarker, SiteMarker, markerHtml } from "../components/SiteMarker.js";
 import { openModal, closeModal, imageHtml } from "../components/Modal.js";
 import { CheckTable } from "../components/CheckTable.js";
 import { hydrateCriteria } from "../services/validate.js";
@@ -33,7 +33,7 @@ function submissionBody(sub, data) {
     <p class="small">${esc(sub.nickname || S.anonymous)} · ${esc(S.submittedOn)} ${esc((sub.publishedAt || sub.createdAt || "").slice(0, 10))}</p>
     <section class="m-block"><h3>${esc(S.declaredData)}</h3>
       <table class="dim-table"><tbody>${attrs}
-        ${form.tempMin !== "" ? `<tr><th scope="row">Temperature</th><td>${esc(form.tempMin)} … ${esc(form.tempMax)} °C</td></tr>` : ""}
+        ${form.tempMin !== "" ? `<tr><th scope="row">${esc(S.dimensionLabels.temperature)}</th><td>${esc(form.tempMin)} … ${esc(form.tempMax)} °C</td></tr>` : ""}
         <tr><th scope="row">${esc(S.fUsedBefore)}</th><td>${esc(S.usedBefore[form.usedBefore] || "—")}</td></tr>
       </tbody></table>
       <p><strong>${esc(S.fWhy)}</strong> ${esc(form.why)}</p>
@@ -69,13 +69,13 @@ export async function CommunityMap(root, { query }, data) {
       </div>
     </header>
     <div id="msg" class="toast" role="status"></div>
-    <div id="map" class="map" aria-label="Community map of proposed analog sites"></div>
+    <div id="map" class="map" aria-label="${esc(S.communityHeading)}"></div>
     <aside class="legend" aria-label="${esc(S.legendTitle)}">
       <strong>${esc(S.legendTitle)}</strong>
       <div><span class="dot sub-plausible" style="--c:${COMMUNITY_COLORS.plausible}"></span> ${esc(S.legendPlausible)}</div>
       <div><span class="dot sub-needs" style="--c:${COMMUNITY_COLORS.needs}"></span> ${esc(S.legendNeeds)}</div>
-      <div><span class="sub-icon sub-example" style="--c:${COMMUNITY_COLORS.example}">E</span> ${esc(S.legendExample)}</div>
-      <div class="faded-legend"><span class="dot dot-validated" style="--c:${VALIDATED_COLOR}"></span><span class="dot dot-candidate" style="--c:${CANDIDATE_COLOR}"></span> ${esc(S.legendReference)}</div>
+      <div><span class="sub-icon sub-example" style="--c:${COMMUNITY_COLORS.example}">★</span> ${esc(S.legendExample)}</div>
+      <div class="faded-legend lg-row">${markerHtml("validated", VALIDATED_COLOR)}${markerHtml("candidate", CANDIDATE_COLOR)} <span>${esc(S.legendReference)}</span></div>
     </aside>
     <footer class="map-footer">${esc(S.communityFooter)}</footer>
   </div>`;

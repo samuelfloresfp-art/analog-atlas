@@ -2,7 +2,7 @@
 // with fallbacks (CARTO → local Natural Earth land polygons when offline).
 
 import { S } from "../strings.js";
-import { TILES, forceOffline } from "../config.js";
+import { TILES, HD_MIN_ZOOM, forceOffline } from "../config.js";
 import { loadLandMask } from "../services/data.js";
 
 const WORLD = [
@@ -10,14 +10,14 @@ const WORLD = [
   [85, 180],
 ];
 
-export function createWorldMap(el, { minZoom = 2 } = {}) {
+export function createWorldMap(el, { minZoom = 2, maxZoom = 17 } = {}) {
   const L = window.L;
   // With noWrap, make sure the world fills the container width (no empty side bands).
   minZoom = Math.max(minZoom, Math.ceil(Math.log2(Math.max(el.clientWidth, 256) / 256)));
   const map = L.map(el, {
     worldCopyJump: false,
     minZoom,
-    maxZoom: 12,
+    maxZoom,
     maxBounds: WORLD,
     maxBoundsViscosity: 1,
   }).setView([10, -20], minZoom);
@@ -52,10 +52,12 @@ export function createWorldMap(el, { minZoom = 2 } = {}) {
   if (forceOffline()) {
     addLocal();
   } else {
-    addTiles(TILES.gibs, { maxNativeZoom: 8, maxZoom: 12, attribution: S.imageryNasa }, () => {
+    // NASA Blue Marble for the globe view, then high-resolution imagery when the user zooms in.
+    addTiles(TILES.gibs, { maxNativeZoom: 8, maxZoom, attribution: S.imageryNasa }, () => {
       stage = 1;
       addTiles(TILES.carto, { subdomains: "abcd", maxZoom: 19, attribution: S.imageryCarto }, addLocal);
     });
+    L.tileLayer(TILES.hd, { noWrap: true, bounds: WORLD, minZoom: HD_MIN_ZOOM, maxNativeZoom: 18, maxZoom, attribution: S.imageryHd, className: "hd-tiles" }).addTo(map);
   }
   map.getBasemapStage = () => ["gibs", "carto", "local"][stage];
   window.__analogMap = map; // debug handle for manual testing
