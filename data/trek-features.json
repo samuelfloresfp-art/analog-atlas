@@ -1,0 +1,53 @@
+{
+  "note": "REPRESENTATIVE planetary locations used to show a real Mars/Moon Trek tile next to each Earth site. Each one is a well-known, published landing site or named feature of the TYPE the site mirrors (site.mirrors). It is NOT a claim that the Earth site is a twin of that exact spot. Coordinates are approximate planetocentric lat/lon (east-positive, -180..180). confidence: deduction — team to review.",
+  "confidence": "deduction",
+  "features": {
+    "mars": {
+      "gale": { "name": "Gale crater (Curiosity rover)", "lat": -5.4, "lon": 137.8, "type": "crater with layered sedimentary rock" },
+      "jezero": { "name": "Jezero crater (Perseverance rover)", "lat": 18.38, "lon": 77.58, "type": "crater with ancient delta; active rover operations" },
+      "gusev": { "name": "Gusev crater (Spirit rover)", "lat": -14.57, "lon": 175.47, "type": "impact crater floored by basaltic plains" },
+      "meridiani": { "name": "Meridiani Planum (Opportunity rover)", "lat": -1.95, "lon": -5.53, "type": "dry plains, evaporites and acidic-water minerals" },
+      "elysium": { "name": "Elysium Planitia (InSight lander)", "lat": 4.5, "lon": 135.62, "type": "volcanic plains" },
+      "utopia": { "name": "Utopia Planitia (Viking 2 lander)", "lat": 48.27, "lon": 134.01, "type": "cold plains with ground ice" },
+      "bagnold": { "name": "Bagnold dune field (Gale crater)", "lat": -4.7, "lon": 137.4, "type": "active dunes" },
+      "valles": { "name": "Valles Marineris", "lat": -13.9, "lon": -59.2, "type": "canyons, eroded mesas" }
+    },
+    "moon": {
+      "apollo11": { "name": "Mare Tranquillitatis (Apollo 11 site)", "lat": 0.674, "lon": 23.473, "type": "mare basalt landing plain" },
+      "apollo15": { "name": "Hadley Rille (Apollo 15 site)", "lat": 26.13, "lon": 3.63, "type": "volcanic plains and rille" },
+      "apollo17": { "name": "Taurus-Littrow valley (Apollo 17 site)", "lat": 20.19, "lon": 30.77, "type": "landing zone with boulders and craters" },
+      "copernicus": { "name": "Copernicus crater", "lat": 9.62, "lon": -20.08, "type": "complex impact crater in basaltic plains" },
+      "tycho": { "name": "Tycho crater", "lat": -43.31, "lon": -11.36, "type": "well-preserved complex crater with central peak" },
+      "marius": { "name": "Marius Hills pit (possible lava-tube skylight)", "lat": 14.1, "lon": -56.8, "type": "lava tubes and basalt" },
+      "shackleton": { "name": "Shackleton crater (lunar south pole)", "lat": -89.67, "lon": 129.78, "type": "polar cold trap; Artemis region (equirectangular tile is distorted near the pole)" }
+    }
+  },
+  "sites": {
+    "atacama": { "mars": "meridiani", "moon": "apollo11" },
+    "haughton": { "mars": "utopia", "moon": "copernicus" },
+    "mdrs": { "mars": "gale" },
+    "hiseas": { "mars": "gusev", "moon": "apollo11" },
+    "black-point": { "moon": "apollo11", "mars": "elysium" },
+    "lanzarote": { "mars": "elysium", "moon": "marius" },
+    "rio-tinto": { "mars": "meridiani" },
+    "habitat-marte": { "mars": "jezero" },
+    "iceland": { "mars": "elysium", "moon": "marius" },
+    "concordia": { "moon": "shackleton", "mars": "utopia" },
+    "cinder-lake": { "moon": "apollo11" },
+    "florida-hazard-field": { "moon": "apollo17" },
+    "vargeao": { "mars": "gusev", "moon": "copernicus" },
+    "vista-alegre": { "mars": "gusev", "moon": "copernicus" },
+    "cerro-do-jarau": { "mars": "gale" },
+    "araguainha": { "moon": "tycho", "mars": "gale" },
+    "serra-da-cangalha": { "moon": "tycho", "mars": "gale" },
+    "lencois": { "mars": "bagnold" },
+    "raso-da-catarina": { "mars": "meridiani" },
+    "uyuni": { "mars": "meridiani", "moon": "apollo11" },
+    "puna": { "mars": "elysium", "moon": "apollo15" },
+    "jalapao": { "mars": "valles" }
+  },
+  "layers": {
+    "mars": { "body": "Mars", "layer": "Mars_MGS_MOLA_ClrShade_merge_global_463m", "label": "MOLA colour hillshade (Mars Trek)", "z": 6 },
+    "moon": { "body": "Moon", "layer": "LRO_WAC_Mosaic_Global_303ppd_v02", "label": "LROC WAC mosaic (Moon Trek)", "z": 6 }
+  }
+}

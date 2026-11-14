@@ -1,0 +1,1223 @@
+[
+  {
+    "id": "atacama",
+    "name": "Atacama Desert",
+    "country": "Chile",
+    "continent": "South America",
+    "lat": -24.1,
+    "lon": -69.9,
+    "environment": [
+      "desert",
+      "high altitude"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – hyper-arid plains and soils",
+    "summary": "One of the driest places on Earth, with very little life in the soil and wide rocky plains. Often compared to Martian surface conditions.",
+    "suitability": {
+      "landing": {
+        "ok": true,
+        "why": "Wide flat plains, firm ground and very clear skies suit landing and optical navigation tests."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Rocky, dusty, almost vegetation-free terrain with slopes and obstacles."
+      },
+      "base": {
+        "ok": true,
+        "why": "Remote, dry and with strong day–night temperature swings; road access exists for logistics."
+      }
+    },
+    "history": [
+      {
+        "mission": "rover",
+        "what": "Rover and life-detection field tests by several research teams (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Extreme dryness similar to the Martian surface",
+      "Soils with very low organic content",
+      "Rocky, dusty plains with little vegetation"
+    ],
+    "whatItLacks": [
+      "Earth atmosphere and pressure",
+      "No Martian radiation environment",
+      "Occasional fog and rare rain events"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "strong",
+      "atmosphere": "partial",
+      "temperature": "partial",
+      "water": "strong",
+      "biology": "strong",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "haughton",
+    "name": "Haughton Crater, Devon Island",
+    "country": "Canada",
+    "continent": "North America",
+    "lat": 75.38,
+    "lon": -89.68,
+    "environment": [
+      "impact crater",
+      "polar"
+    ],
+    "target": "both",
+    "mirrors": "Mars – polar impact crater; Moon – crater terrain",
+    "summary": "An impact crater in the Canadian High Arctic, cold, dry and unvegetated. A long-running site for Mars field research.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Rough crater terrain and difficult, weather-dependent access make repeated landing tests impractical."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Polar desert with impact breccias, valleys and slopes."
+      },
+      "base": {
+        "ok": true,
+        "why": "Remote and cold, with seasonal logistic access by air."
+      }
+    },
+    "history": [
+      {
+        "mission": "rover",
+        "what": "Rover and vehicle traverse field research (to verify)."
+      },
+      {
+        "mission": "base",
+        "what": "Field station and simulated habitat operations (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Impact crater geology in a cold, dry setting",
+      "Little vegetation and permafrost ground",
+      "Isolation comparable to an early outpost"
+    ],
+    "whatItLacks": [
+      "Summer temperatures much warmer than Mars",
+      "Earth atmosphere and gravity",
+      "Seasonal snow and meltwater"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "partial",
+      "operational": "weak"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "mdrs",
+    "name": "Mars Desert Research Station, Utah",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 38.41,
+    "lon": -110.79,
+    "environment": [
+      "desert"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – layered sedimentary terrain",
+    "summary": "A habitat in the Utah desert where crews run simulated Mars missions, surrounded by red, layered sedimentary rock.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Badland terrain with gullies and soft clays; few large flat, firm areas."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Varied sedimentary terrain, slopes and almost no vegetation."
+      },
+      "base": {
+        "ok": true,
+        "why": "Isolated desert setting with road access and an existing habitat."
+      }
+    },
+    "history": [
+      {
+        "mission": "base",
+        "what": "Simulated Mars habitat crews (MDRS)."
+      },
+      {
+        "mission": "rover",
+        "what": "Student rover competitions held near the station (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Red layered sediments that look like Martian outcrops",
+      "Dry climate and sparse vegetation",
+      "Existing habitat infrastructure"
+    ],
+    "whatItLacks": [
+      "Much higher pressure and oxygen",
+      "Not as cold as Mars",
+      "Close to towns, so isolation is partly simulated"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "hiseas",
+    "name": "HI-SEAS, Mauna Loa, Hawaii",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 19.6,
+    "lon": -155.49,
+    "environment": [
+      "volcanic",
+      "high altitude"
+    ],
+    "target": "both",
+    "mirrors": "Moon / Mars – basaltic lava plains",
+    "summary": "A habitat on the slopes of a large volcano, surrounded by bare basaltic lava flows. Used for long-duration isolation studies.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Steep volcanic slopes and sharp lava; no safe flat landing zone."
+      },
+      "rover": {
+        "ok": false,
+        "why": "The site is set up for habitat studies; access and permits for vehicle traverses are not assumed here."
+      },
+      "base": {
+        "ok": true,
+        "why": "Isolated, high altitude, bare basalt and an existing dome habitat."
+      }
+    },
+    "history": [
+      {
+        "mission": "base",
+        "what": "Long-duration isolation habitat missions (HI-SEAS)."
+      }
+    ],
+    "whyAnalog": [
+      "Basaltic lava similar to lunar maria and Martian plains",
+      "High altitude and almost no vegetation",
+      "Isolation for crew studies"
+    ],
+    "whatItLacks": [
+      "Earth atmosphere and gravity",
+      "Mild temperatures compared with Moon or Mars",
+      "No impact-crater geology"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "strong",
+      "subsurface": "partial",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "black-point",
+    "name": "Black Point Lava Flow, Arizona",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 35.67,
+    "lon": -111.45,
+    "environment": [
+      "volcanic",
+      "desert"
+    ],
+    "target": "moon",
+    "mirrors": "Moon – mare basalt",
+    "summary": "A basaltic lava flow in the Arizona desert used for testing exploration vehicles and procedures (Desert RATS).",
+    "suitability": {
+      "landing": {
+        "ok": true,
+        "why": "Firm basalt surfaces next to cinder fields give natural hazards for hazard-detection tests."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Lava, cinders and slopes in a dry, accessible area."
+      },
+      "base": {
+        "ok": false,
+        "why": "Short-duration field site; not isolated enough for long habitat stays."
+      }
+    },
+    "history": [
+      {
+        "mission": "rover",
+        "what": "Desert RATS field tests of rovers and exploration procedures."
+      }
+    ],
+    "whyAnalog": [
+      "Basaltic surface similar to lunar mare",
+      "Dry, sparse vegetation",
+      "Easy logistics for repeated tests"
+    ],
+    "whatItLacks": [
+      "No fine lunar regolith layer",
+      "Earth gravity and atmosphere",
+      "Vegetation patches"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "lanzarote",
+    "name": "Lanzarote",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 29.0,
+    "lon": -13.75,
+    "environment": [
+      "volcanic",
+      "cave"
+    ],
+    "target": "both",
+    "mirrors": "Mars / Moon – volcanic plains and lava tubes",
+    "summary": "A volcanic island with young lava fields, cinder cones and lava tubes, used for astronaut geology training and rover tests.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Protected park areas and rough lava limit landing test zones."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Varied volcanic terrain and lava tubes for mobility and cave tests."
+      },
+      "base": {
+        "ok": false,
+        "why": "Touristic island, not isolated enough for habitat simulation."
+      }
+    },
+    "history": [
+      {
+        "mission": "rover",
+        "what": "Rover tests and astronaut geology training (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Young basaltic lava fields",
+      "Lava tubes similar to those seen on the Moon and Mars",
+      "Little vegetation in the lava fields"
+    ],
+    "whatItLacks": [
+      "Oceanic humidity and wind",
+      "Tourism and protected areas",
+      "No impact craters"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "partial",
+      "subsurface": "strong",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "rio-tinto",
+    "name": "Río Tinto",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 37.7,
+    "lon": -6.6,
+    "environment": [
+      "acidic river"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – acidic, iron-rich ancient waters",
+    "summary": "A red, highly acidic, iron-rich river system. Studied as an analog for ancient Martian water chemistry and tested for drilling.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Mining area with valleys and infrastructure; not a landing zone."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Mineralogy and subsurface relevant for drilling and sampling rovers."
+      },
+      "base": {
+        "ok": false,
+        "why": "Close to towns and mines; not isolated."
+      }
+    },
+    "history": [
+      {
+        "mission": "rover",
+        "what": "Drilling and sampling technology tests (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Acidic, iron-rich water chemistry",
+      "Minerals that may relate to Martian deposits",
+      "Subsurface life studies"
+    ],
+    "whatItLacks": [
+      "Liquid water at the surface (unlike present Mars)",
+      "Mining activity and vegetation",
+      "Earth atmosphere"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "weak",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "strong",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "habitat-marte",
+    "name": "Habitat Marte, Rio Grande do Norte",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -5.76,
+    "lon": -35.99,
+    "environment": [
+      "semi-arid"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – habitat operations",
+    "summary": "An analog habitat run by a Brazilian university in the semi-arid northeast (Caiçara do Rio do Vento, RN), used for simulated Mars missions and education.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Shrubby caatinga vegetation and small terrain; no landing zone."
+      },
+      "rover": {
+        "ok": false,
+        "why": "Vegetation and soils limit rover analog value."
+      },
+      "base": {
+        "ok": true,
+        "why": "Existing habitat with simulation programme."
+      }
+    },
+    "history": [
+      {
+        "mission": "base",
+        "what": "Simulated Mars habitat missions."
+      }
+    ],
+    "whyAnalog": [
+      "Existing habitat and simulation programme",
+      "Hot, dry climate",
+      "Accessible for Brazilian teams"
+    ],
+    "whatItLacks": [
+      "Vegetation around the habitat",
+      "Geology not very Mars-like",
+      "Hot, not cold, extremes"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "weak",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": [
+      {
+        "label": "Olhar Digital (2021) — news article on Habitat Marte (team-provided, secondary source)",
+        "url": "https://olhardigital.com.br/2021/08/23/ciencia-e-espaco/habitat-marte-brasil-tem-estacao-espacial-analoga-ao-planeta-vermelho/"
+      }
+    ]
+  },
+  {
+    "id": "iceland",
+    "name": "Iceland lava fields",
+    "country": "Iceland",
+    "continent": "Europe",
+    "lat": 65.03,
+    "lon": -16.75,
+    "environment": [
+      "volcanic",
+      "cave",
+      "polar"
+    ],
+    "target": "both",
+    "mirrors": "Mars – volcanic plains; Moon – basalt",
+    "summary": "Young basaltic lava fields and black sand plains, used for rover tests and astronaut geology training.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Frequent cloud and rain limit optical navigation; lava is very rough."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Fresh basalt, black sand plains and lava tubes."
+      },
+      "base": {
+        "ok": false,
+        "why": "Not isolated enough; visitors and roads nearby."
+      }
+    },
+    "history": [
+      {
+        "mission": "rover",
+        "what": "Rover field tests and astronaut geology training (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Fresh basaltic volcanism",
+      "Unvegetated black sand plains",
+      "Lava tubes"
+    ],
+    "whatItLacks": [
+      "Wet climate",
+      "Glacial processes that differ from Mars today",
+      "Earth atmosphere"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "weak",
+      "biology": "partial",
+      "subsurface": "strong",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "concordia",
+    "name": "Concordia Station",
+    "country": "Antarctica",
+    "continent": "Antarctica",
+    "lat": -75.1,
+    "lon": 123.33,
+    "environment": [
+      "polar"
+    ],
+    "target": "both",
+    "mirrors": "Moon / Mars – isolation and extreme cold",
+    "summary": "A research station on the Antarctic plateau, isolated for months during winter. Used to study crews in extreme isolation.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Snow and ice surface is not representative of regolith."
+      },
+      "rover": {
+        "ok": false,
+        "why": "Ice plateau without rocks or regolith."
+      },
+      "base": {
+        "ok": true,
+        "why": "Extreme cold, darkness and months of total isolation."
+      }
+    },
+    "history": [
+      {
+        "mission": "base",
+        "what": "Winter-over isolation and crew health studies."
+      }
+    ],
+    "whyAnalog": [
+      "Total isolation for months",
+      "Extreme cold and long darkness",
+      "Thin air at high altitude"
+    ],
+    "whatItLacks": [
+      "No rock or regolith surface",
+      "Earth gravity",
+      "Very different geology"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "weak",
+      "atmosphere": "partial",
+      "temperature": "strong",
+      "water": "strong",
+      "biology": "strong",
+      "subsurface": "weak",
+      "operational": "weak"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "cinder-lake",
+    "name": "Cinder Lake Crater Field, Arizona",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 35.3,
+    "lon": -111.5,
+    "environment": [
+      "volcanic",
+      "impact crater",
+      "engineered test site"
+    ],
+    "target": "moon",
+    "mirrors": "Moon – cratered landing site",
+    "summary": "A field of artificial craters blasted into volcanic cinders to rehearse lunar landing-site work and test rovers.",
+    "suitability": {
+      "landing": {
+        "ok": true,
+        "why": "Craters were built to mimic a lunar landing site."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Cinders and craters for rover driving tests."
+      },
+      "base": {
+        "ok": false,
+        "why": "Small field near a city; no isolation."
+      }
+    },
+    "history": [
+      {
+        "mission": "landing",
+        "what": "Landing-site familiarisation for astronauts (to verify)."
+      },
+      {
+        "mission": "rover",
+        "what": "Rover driving tests (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Crater pattern copied from a lunar site",
+      "Dark volcanic cinders",
+      "Easy access"
+    ],
+    "whatItLacks": [
+      "Artificial, small area",
+      "Earth atmosphere and gravity",
+      "Vegetation around the field"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "florida-hazard-field",
+    "name": "Florida lander hazard field",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 28.62,
+    "lon": -80.69,
+    "environment": [
+      "engineered test site",
+      "coastal"
+    ],
+    "target": "moon",
+    "mirrors": "Moon – rocks and craters in a landing zone",
+    "summary": "An engineered hazard field with built rocks and craters used to test autonomous lander hazard detection.",
+    "suitability": {
+      "landing": {
+        "ok": true,
+        "why": "Purpose-built field to test hazard detection during landing."
+      },
+      "rover": {
+        "ok": false,
+        "why": "Small engineered field inside a launch site; not natural terrain."
+      },
+      "base": {
+        "ok": false,
+        "why": "Inside an active launch site; no isolation."
+      }
+    },
+    "history": [
+      {
+        "mission": "landing",
+        "what": "Autonomous landing and hazard-avoidance flight tests (to verify)."
+      }
+    ],
+    "whyAnalog": [
+      "Rocks and craters sized for lunar landing tests",
+      "Controlled, repeatable layout",
+      "Infrastructure for flight tests"
+    ],
+    "whatItLacks": [
+      "Not a natural analog",
+      "Humid, vegetated coastal setting",
+      "No real regolith"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "vargeao",
+    "name": "Vargeão crater",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -26.82,
+    "lon": -52.17,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – impact crater in basalt",
+    "summary": "An impact structure about 12 km wide formed in basaltic lava flows, in Santa Catarina. Rare example of an impact into basalt, as on many Martian plains. Literature cited by the team points to it as an analog for impact-driven hydrothermal activity on Mars.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Crater rim and valleys, farms and a town inside the structure."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Impact breccias in basalt, slopes and rim terrain for geology traverses."
+      },
+      "base": {
+        "ok": false,
+        "why": "A town sits inside the crater; no isolation."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Impact into basalt, like many Martian craters",
+      "Shocked rocks and breccias for sampling practice",
+      "Clear crater shape for navigation"
+    ],
+    "whatItLacks": [
+      "Dense vegetation and farmland",
+      "Humid subtropical climate",
+      "Eroded, old structure"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "confidence": "assumption",
+    "sources": [
+      {
+        "label": "Icarus 252 (2015) 347–365 — Vargeão as Mars impact-hydrothermal analog (team-provided, verify)",
+        "url": "https://doi.org/10.1016/j.icarus.2015.02.001"
+      }
+    ]
+  },
+  {
+    "id": "vista-alegre",
+    "name": "Vista Alegre crater",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -25.95,
+    "lon": -52.69,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – impact crater in basalt",
+    "summary": "An impact structure about 9.5 km wide in basalt, in Paraná, similar in setting to Vargeão.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Farmland and rolling terrain; no open landing zone."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Impact rocks in basalt for sampling and navigation exercises."
+      },
+      "base": {
+        "ok": false,
+        "why": "Agricultural area, not isolated."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Impact crater formed in basalt",
+      "Breccias for geology training",
+      "Close to Vargeão for comparison"
+    ],
+    "whatItLacks": [
+      "Heavy farming and vegetation",
+      "Humid climate",
+      "Few exposed outcrops"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "cerro-do-jarau",
+    "name": "Cerro do Jarau",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -30.2,
+    "lon": -56.54,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – crater with sedimentary and volcanic layers",
+    "summary": "A circular structure in Rio Grande do Sul, in basalt and sandstone, studied as an impact crater in the Pampa.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Grassland is fine for vehicles but the crater hills make the zone uneven."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Mixed sandstone and basalt with hills for geology traverses."
+      },
+      "base": {
+        "ok": false,
+        "why": "Ranch land with roads; low isolation and mild climate."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Impact into layered sandstone and basalt",
+      "Open terrain with few trees",
+      "Ring-shaped hills useful for navigation tests"
+    ],
+    "whatItLacks": [
+      "Grass cover",
+      "Humid climate",
+      "Limited studies available"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "araguainha",
+    "name": "Araguainha crater",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -16.78,
+    "lon": -52.99,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "both",
+    "mirrors": "Moon / Mars – complex crater with central uplift",
+    "summary": "The largest known impact structure in South America (about 40 km), on the Goiás–Mato Grosso border, with a central uplift.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Cerrado vegetation and complex relief."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Central uplift, rings and varied rocks for long geology traverses."
+      },
+      "base": {
+        "ok": false,
+        "why": "Not extreme enough: mild temperatures and nearby towns."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Complex crater with central uplift, like many lunar and Martian craters",
+      "Large area for long traverses",
+      "Varied rock types"
+    ],
+    "whatItLacks": [
+      "Cerrado vegetation",
+      "Strong erosion over time",
+      "Wet season rains"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "partial",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "serra-da-cangalha",
+    "name": "Serra da Cangalha",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -8.08,
+    "lon": -46.86,
+    "environment": [
+      "impact crater",
+      "semi-arid"
+    ],
+    "target": "both",
+    "mirrors": "Moon / Mars – well-preserved complex crater",
+    "summary": "A well-defined impact crater about 13 km wide in Tocantins, with a clear ring of hills.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Ring hills and vegetation; landing zone not flat."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Clear crater rim and central area for traverses."
+      },
+      "base": {
+        "ok": true,
+        "why": "Remote area with hot dry season and limited access."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Very clear crater shape",
+      "Remote location",
+      "Dry season with exposed rocks"
+    ],
+    "whatItLacks": [
+      "Cerrado vegetation",
+      "Hot, not cold",
+      "Few infrastructure"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "weak"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "lencois",
+    "name": "Lençóis Maranhenses",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -2.53,
+    "lon": -43.12,
+    "environment": [
+      "dunes",
+      "coastal"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – dune fields",
+    "summary": "A large field of white sand dunes with seasonal freshwater lagoons between them, in Maranhão.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Moving dunes and lagoons; soft surface."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Large dune field for testing mobility in loose sand (dry season)."
+      },
+      "base": {
+        "ok": false,
+        "why": "National park with protected status and tourism."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Large active dune field",
+      "Wind-shaped forms similar to Martian dunes",
+      "Loose sand for mobility tests"
+    ],
+    "whatItLacks": [
+      "Seasonal lagoons of liquid water",
+      "Quartz sand, not basaltic",
+      "Protected area: permits needed"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "strong",
+      "atmosphere": "partial",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "raso-da-catarina",
+    "name": "Raso da Catarina",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -9.65,
+    "lon": -38.5,
+    "environment": [
+      "semi-arid",
+      "desert"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – dry sandy plateaus",
+    "summary": "A dry sandstone plateau in Bahia with sandy soils and canyons, one of the driest parts of the Brazilian caatinga.",
+    "suitability": {
+      "landing": {
+        "ok": true,
+        "why": "Flat sandy plateau with low slopes."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Sand, canyons and slopes for mobility tests."
+      },
+      "base": {
+        "ok": false,
+        "why": "Protected ecological area; habitat permits uncertain."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Dry sandy plateau",
+      "Canyons and erosion features",
+      "Low population"
+    ],
+    "whatItLacks": [
+      "Caatinga vegetation",
+      "Hot climate",
+      "Sedimentary, not volcanic, rocks"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "uyuni",
+    "name": "Salar de Uyuni",
+    "country": "Bolivia",
+    "continent": "South America",
+    "lat": -20.13,
+    "lon": -67.49,
+    "environment": [
+      "salt flat",
+      "high altitude"
+    ],
+    "target": "both",
+    "mirrors": "Mars – evaporite basins; Moon – flat landing plains",
+    "summary": "The largest salt flat on Earth, extremely flat and high (about 3,600 m), with cold nights and strong sunlight.",
+    "suitability": {
+      "landing": {
+        "ok": true,
+        "why": "Extremely flat and firm surface for landing and navigation tests."
+      },
+      "rover": {
+        "ok": false,
+        "why": "Too flat and uniform: few rocks or slopes to challenge a rover."
+      },
+      "base": {
+        "ok": true,
+        "why": "High altitude, cold nights, isolation and salts for ISRU experiments."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Very flat, firm surface",
+      "Evaporite salts like some Martian basins",
+      "High altitude, strong UV and cold nights"
+    ],
+    "whatItLacks": [
+      "Seasonal flooding",
+      "Salt instead of regolith",
+      "Tourist traffic"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "partial",
+      "atmosphere": "partial",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "strong",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "puna",
+    "name": "Puna de Atacama",
+    "country": "Argentina",
+    "continent": "South America",
+    "lat": -26.0,
+    "lon": -67.4,
+    "environment": [
+      "desert",
+      "volcanic",
+      "high altitude"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – high, cold volcanic desert",
+    "summary": "A very high, dry volcanic plateau with salt flats, lava and strong winds. Thin air and big temperature swings.",
+    "suitability": {
+      "landing": {
+        "ok": true,
+        "why": "Wide flat areas, clear skies and thin air."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Volcanic rocks, sand and slopes with almost no vegetation."
+      },
+      "base": {
+        "ok": true,
+        "why": "Isolation, cold, thin air and local resources for ISRU tests."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Very high altitude and thin air",
+      "Volcanic landscape with little life",
+      "Large day–night temperature swings"
+    ],
+    "whatItLacks": [
+      "Earth gravity",
+      "Atmosphere still much thicker than Mars",
+      "Difficult access"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "partial",
+      "temperature": "strong",
+      "water": "strong",
+      "biology": "strong",
+      "subsurface": "nodata",
+      "operational": "weak"
+    },
+    "confidence": "assumption",
+    "sources": []
+  },
+  {
+    "id": "jalapao",
+    "name": "Jalapão",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -10.5,
+    "lon": -46.5,
+    "environment": [
+      "dunes",
+      "semi-arid"
+    ],
+    "target": "mars",
+    "mirrors": "Mars – eroded mesas and dunes",
+    "summary": "A remote region in Tocantins with orange dunes, sandstone mesas and sparse vegetation.",
+    "suitability": {
+      "landing": {
+        "ok": false,
+        "why": "Soft sand and mesas; no firm landing zone."
+      },
+      "rover": {
+        "ok": true,
+        "why": "Dunes and sandstone slopes for mobility tests."
+      },
+      "base": {
+        "ok": true,
+        "why": "Remote, with limited access and a long dry season."
+      }
+    },
+    "history": [],
+    "whyAnalog": [
+      "Orange dunes and mesas",
+      "Remote and sparsely populated",
+      "Long dry season"
+    ],
+    "whatItLacks": [
+      "Rivers and springs",
+      "Cerrado vegetation",
+      "Hot climate"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "weak"
+    },
+    "confidence": "assumption",
+    "sources": []
+  }
+]

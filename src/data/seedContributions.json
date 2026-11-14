@@ -1,0 +1,2492 @@
+[
+  {
+    "id": "seed-09",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Caldera",
+    "createdAt": "2026-10-02T05:00:00Z",
+    "planet": "moon",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "partial",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Vegetation in parts of the area",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "araguainha",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 63,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 63,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-15",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Basalt",
+    "createdAt": "2026-10-02T08:00:00Z",
+    "planet": "mars",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Earth gravity and atmosphere"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "habitat-marte",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 78,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 78,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-29",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Caldera",
+    "createdAt": "2026-10-03T02:00:00Z",
+    "planet": "moon",
+    "mission": "rover",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "partial",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "No Martian radiation environment",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "lanzarote",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 69,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 69,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-12",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Regolith",
+    "createdAt": "2026-10-04T01:00:00Z",
+    "planet": "mars",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "strong",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "No Martian radiation environment",
+      "Vegetation in parts of the area"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "cerro-do-jarau",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 62,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 62,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-02",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Crater7",
+    "createdAt": "2026-10-04T15:00:00Z",
+    "planet": "mars",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "partial",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "weak",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Vegetation in parts of the area"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "iceland",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 89,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 89,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-01",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Regolith",
+    "createdAt": "2026-10-06T10:00:00Z",
+    "planet": "moon",
+    "mission": "rover",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Vegetation in parts of the area",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "serra-da-cangalha",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 75,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 75,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-10",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Tharsis",
+    "createdAt": "2026-10-06T11:00:00Z",
+    "planet": "mars",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "strong",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "partial",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "No Martian radiation environment",
+      "Vegetation in parts of the area"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "concordia",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 71,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 71,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-20",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Caldera",
+    "createdAt": "2026-10-06T12:00:00Z",
+    "planet": "moon",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "lanzarote",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 47,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 47,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-27",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Caldera",
+    "createdAt": "2026-10-06T18:00:00Z",
+    "planet": "moon",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "nodata",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "partial",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Earth gravity and atmosphere",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "concordia",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 87,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 87,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-28",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Dune",
+    "createdAt": "2026-10-07T07:00:00Z",
+    "planet": "mars",
+    "mission": "rover",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "strong",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "nodata",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "No Martian radiation environment",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "black-point",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 80,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 80,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-11",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Mare",
+    "createdAt": "2026-10-12T19:00:00Z",
+    "planet": "moon",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "nodata",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "No Martian radiation environment",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "proposal",
+    "siteId": "",
+    "site": {
+      "lat": -26.6,
+      "lon": -66.9,
+      "name": "Sample proposal — Catamarca salt flat",
+      "country": "Argentina",
+      "environment": "sample"
+    },
+    "score": 51,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 51,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-22",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Mare",
+    "createdAt": "2026-10-12T19:00:00Z",
+    "planet": "mars",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "nodata",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "weak",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Earth gravity and atmosphere",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "lanzarote",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 35,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 35,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-25",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Lander",
+    "createdAt": "2026-10-16T04:00:00Z",
+    "planet": "mars",
+    "mission": "rover",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "weak",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Earth gravity and atmosphere"
+    ],
+    "requirements": {},
+    "mode": "proposal",
+    "siteId": "",
+    "site": {
+      "lat": -21.9,
+      "lon": -68.6,
+      "name": "Sample proposal — Atacama north rim",
+      "country": "Chile",
+      "environment": "sample"
+    },
+    "score": 81,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 81,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-18",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Rille",
+    "createdAt": "2026-10-17T23:00:00Z",
+    "planet": "mars",
+    "mission": "rover",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "nodata",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Earth gravity and atmosphere",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "proposal",
+    "siteId": "",
+    "site": {
+      "lat": -10.7,
+      "lon": -42.9,
+      "name": "Sample proposal — Bahia dunes",
+      "country": "Brazil",
+      "environment": "sample"
+    },
+    "score": 55,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 55,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-03",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Dune",
+    "createdAt": "2026-10-19T07:00:00Z",
+    "planet": "mars",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Vegetation in parts of the area"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "concordia",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 70,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 70,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-08",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Mesa",
+    "createdAt": "2026-10-21T06:00:00Z",
+    "planet": "moon",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "partial",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Vegetation in parts of the area"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "jalapao",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 91,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 91,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-16",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Orbiter",
+    "createdAt": "2026-10-23T01:00:00Z",
+    "planet": "mars",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "partial",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "No Martian radiation environment",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "atacama",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 57,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 57,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-24",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Basalt",
+    "createdAt": "2026-10-24T08:00:00Z",
+    "planet": "moon",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Vegetation in parts of the area"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "jalapao",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 56,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 56,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-19",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Mesa",
+    "createdAt": "2026-10-24T09:00:00Z",
+    "planet": "moon",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "strong",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "partial",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Earth gravity and atmosphere",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "araguainha",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 66,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 66,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-06",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Lander",
+    "createdAt": "2026-10-24T16:00:00Z",
+    "planet": "moon",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "strong",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "weak",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Earth gravity and atmosphere",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "jalapao",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 45,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 45,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-23",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Orbiter",
+    "createdAt": "2026-10-25T05:00:00Z",
+    "planet": "mars",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "nodata",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Vegetation in parts of the area",
+      "Earth gravity and atmosphere"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "lencois",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 79,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 79,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-26",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Mare",
+    "createdAt": "2026-10-29T14:00:00Z",
+    "planet": "mars",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "No Martian radiation environment",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "serra-da-cangalha",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 89,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 89,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-13",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Crater7",
+    "createdAt": "2026-10-30T05:00:00Z",
+    "planet": "mars",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Vegetation in parts of the area",
+      "Earth gravity and atmosphere"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "lencois",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 38,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 38,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-14",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Dune",
+    "createdAt": "2026-11-01T03:00:00Z",
+    "planet": "moon",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "partial",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "nodata",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "black-point",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 49,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 49,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-30",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Rille",
+    "createdAt": "2026-11-01T03:00:00Z",
+    "planet": "mars",
+    "mission": "rover",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "partial",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Earth gravity and atmosphere"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "vista-alegre",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 36,
+    "status": "needs-review",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 36,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-04",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Basalt",
+    "createdAt": "2026-11-04T11:00:00Z",
+    "planet": "mars",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "nodata",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "partial",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "Vegetation in parts of the area"
+    ],
+    "requirements": {},
+    "mode": "proposal",
+    "siteId": "",
+    "site": {
+      "lat": -8.9,
+      "lon": -42.6,
+      "name": "Sample proposal — Piauí sandstone plateau",
+      "country": "Brazil",
+      "environment": "sample"
+    },
+    "score": 77,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 77,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-21",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Tharsis",
+    "createdAt": "2026-11-04T18:00:00Z",
+    "planet": "moon",
+    "mission": "rover",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "nodata",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "MODIS NDVI (ORNL DAAC)",
+        "url": "doi:10.3334/ORNLDAAC/1600",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Vegetation in parts of the area",
+      "Earth gravity and atmosphere"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "lencois",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 75,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 75,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-17",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Lander",
+    "createdAt": "2026-11-05T02:00:00Z",
+    "planet": "mars",
+    "mission": "base",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Earth gravity and atmosphere",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "black-point",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 81,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 81,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-05",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Orbiter",
+    "createdAt": "2026-11-09T02:00:00Z",
+    "planet": "mars",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "strong",
+        "dataset": "EMIT L2B minerals",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2408034484-LPCLOUD.html",
+        "note": ""
+      },
+      "terrain": {
+        "level": "weak",
+        "dataset": "SRTMGL1",
+        "url": "https://cmr.earthdata.nasa.gov/search/concepts/C2763266360-LPCLOUD.html",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "water": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Earth gravity and atmosphere",
+      "Seasonal rain"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "cerro-do-jarau",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 72,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 72,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  },
+  {
+    "id": "seed-07",
+    "seed": true,
+    "label": "Sample data (prototype)",
+    "nickname": "Sample_Rille",
+    "createdAt": "2026-11-10T06:00:00Z",
+    "planet": "mars",
+    "mission": "landing",
+    "mirrorFeature": "",
+    "dimensions": {
+      "geology": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "terrain": {
+        "level": "partial",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "atmosphere": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "temperature": {
+        "level": "strong",
+        "dataset": "NASA POWER",
+        "url": "https://power.larc.nasa.gov/",
+        "note": ""
+      },
+      "water": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "biology": {
+        "level": "strong",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "subsurface": {
+        "level": "nodata",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      },
+      "operational": {
+        "level": "weak",
+        "dataset": "",
+        "url": "",
+        "note": ""
+      }
+    },
+    "lacks": [
+      "Seasonal rain",
+      "No Martian radiation environment"
+    ],
+    "requirements": {},
+    "mode": "existing",
+    "siteId": "hiseas",
+    "site": {
+      "lat": null,
+      "lon": null,
+      "name": "",
+      "country": "",
+      "environment": ""
+    },
+    "score": 66,
+    "status": "auto-checked",
+    "scoreLines": [
+      {
+        "label": "Sample data (prototype)",
+        "points": 66,
+        "note": "Illustrative score, not computed."
+      }
+    ]
+  }
+]

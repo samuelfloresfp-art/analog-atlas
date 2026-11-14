@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-11-14T19:01:39+00:00",
+  "terms": {
+    "partial gravity": 10,
+    "regolith": 4,
+    "radiation": 232,
+    "analog": 8
+  },
+  "byPlanet": {
+    "moon": [
+      {
+        "id": "OSD-251",
+        "title": "RNAseq analysis of the response of Arabidopsis thaliana to fractional gravity under blue-light stimulation during spaceflight",
+        "type": "Spaceflight Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-251",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-476",
+        "title": "Plants grown in Apollo lunar regolith present stress-associated transcriptomes that inform prospects for lunar exploration",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-476",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-73",
+        "title": "Transcriptome Profiles in Normal Human Bronchial Epithelial Cells after Exposure to gamma-rays and different HZE particles",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-73",
+        "searchTerm": null
+      }
+    ],
+    "mars": [
+      {
+        "id": "OSD-251",
+        "title": "RNAseq analysis of the response of Arabidopsis thaliana to fractional gravity under blue-light stimulation during spaceflight",
+        "type": "Spaceflight Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-251",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-581",
+        "title": "A molecular study of Italian ryegrass grown on Martian regolith simulant",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-581",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-73",
+        "title": "Transcriptome Profiles in Normal Human Bronchial Epithelial Cells after Exposure to gamma-rays and different HZE particles",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-73",
+        "searchTerm": null
+      }
+    ]
+  },
+  "source": {
+    "name": "NASA Open Science Data Repository (OSDR) — search API",
+    "agency": "NASA",
+    "url": "https://osdr.nasa.gov/osdr/data/search"
+  }
+}

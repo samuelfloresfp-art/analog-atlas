@@ -1,0 +1,313 @@
+{
+  "checkedAt": "2026-11-14",
+  "groups": [
+    {
+      "id": "context-list",
+      "title": "Challenge Resources tab (official 2026 challenge page)",
+      "official": true,
+      "note": "Checked on 2026-11-14 against the Resources tab of the official challenge page. The team brief listed these as 'team notes'; they ARE the official list.",
+      "items": [
+        {
+          "name": "NASA Earthdata Search",
+          "agency": "NASA",
+          "url": "https://search.earthdata.nasa.gov/",
+          "what": "Search, discover, visualize, refine and access NASA Earth observation data in the browser.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'Earthdata Search'; meta description matches. Listed on the challenge Resources tab under NASA Data & Resources > Earth.",
+          "usedIn": "Its catalogue (CMR) proves data coverage: indicator data_coverage"
+        },
+        {
+          "name": "NASA Worldview",
+          "agency": "NASA",
+          "url": "https://worldview.earthdata.nasa.gov/",
+          "what": "An interactive interface for browsing full-resolution, global, daily satellite images, generally available within three hours of observation.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'NASA Worldview'. The challenge page links to /index.html, which also returns HTTP 200 'NASA Worldview'. Listed on the Resources tab under Earth.",
+          "usedIn": "Same imagery service (GIBS) as the basemap and card images"
+        },
+        {
+          "name": "NASA Planetary Data System (PDS)",
+          "agency": "NASA",
+          "url": "https://pds.nasa.gov/",
+          "what": "NASA's long-term archive of planetary science data from orbital, lander and rover missions.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'Welcome to the Planetary Data System', H1 'Welcome to the PDS'. Listed on the Resources tab under Moon and Mars.",
+          "usedIn": "Cited (planetary data); not called by the app"
+        },
+        {
+          "name": "NASA Lunar Reconnaissance Orbiter (LRO) - PDS Geosciences Node",
+          "agency": "NASA (PDS Geosciences Node, Washington University in St. Louis)",
+          "url": "https://pds-geosciences.wustl.edu/missions/lro/",
+          "what": "A PDS Geosciences Node page linking to LRO planetary science data, tools and documentation.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'PDS Geosciences Node Data and Services: Lunar Reconnaissance Orbiter (LRO) Mission'. This is the URL the challenge page links for 'NASA Lunar Reconnaissance Orbiter (LRO)'.",
+          "usedIn": "Cited; the Moon tile shows the LRO LROC WAC mosaic via Moon Trek"
+        },
+        {
+          "name": "NASA LRO Diviner Lunar Data - PDS Geosciences Node",
+          "agency": "NASA (PDS Geosciences Node)",
+          "url": "https://pds-geosciences.wustl.edu/missions/lro/diviner.htm",
+          "what": "Describes the LRO Diviner data sets at the PDS Geosciences Node, tools for accessing them, and the latest Diviner data release.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'PDS Geosciences Node Data and Services: LRO DIVINER'. This is the URL the challenge page links for 'NASA LRO Diviner Lunar Data'. The Diviner team site https://www.diviner.ucla.edu/ also opens (HTTP 200, H1 'LRO DIVINER Lunar Radiometer Experiment') but is not the link on the challenge page.",
+          "usedIn": "Cited (lunar temperatures); not integrated"
+        },
+        {
+          "name": "RADARSAT Constellation Mission (RCM) Data",
+          "agency": "CSA",
+          "url": "https://donnees-data.asc-csa.gc.ca/en/dataset/rcm",
+          "what": "The RADARSAT Constellation Mission is Canada's new generation of Earth observation satellites: three satellites that can scan Earth day or night in any weather.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, CSA 'Open data and information Portal', H1 'RADARSAT Constellation Mission (RCM) Data'. The challenge page links this URL. A search-result URL https://data.asc-csa.gc.ca/en/dataset/64927856-8o0t-5u1o-987izna480aa45 returns 404.",
+          "usedIn": "Cited only"
+        },
+        {
+          "name": "RADARSAT-1 Archive",
+          "agency": "CSA",
+          "url": "https://donnees-data.asc-csa.gc.ca/en/dataset/radarsat1",
+          "what": "Open archive from RADARSAT-1 (launched November 1995), whose synthetic aperture radar imaged Earth day or night in all weather.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, CSA 'Open data and information Portal', H1 'RADARSAT-1 Archive'. The challenge page links this URL.",
+          "usedIn": "Cited only"
+        },
+        {
+          "name": "Synthetic Aperture Radar (SAR) Python Tutorial",
+          "agency": "CSA",
+          "url": "https://github.com/asc-csa/Synthetic_Aperture_Radar_Tutorial",
+          "what": "A tutorial script with samples for using RADARSAT mission images in Python and QGIS, to help users work with CSA data.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, GitHub repository asc-csa/Synthetic_Aperture_Radar_Tutorial (CSA's GitHub organization), README H1 'Radar à synthèse d'ouverture (RSO) - Un tutoriel'. The challenge page links this URL; it is on GitHub, not on asc-csa.gc.ca or NRCan.",
+          "usedIn": "Cited only"
+        },
+        {
+          "name": "Copernicus Data Space Ecosystem",
+          "agency": "ESA / European Commission",
+          "url": "https://dataspace.copernicus.eu/",
+          "what": "An open ecosystem with free, instant access to data and services from the Copernicus Sentinel missions and more, covering land, oceans and atmosphere.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'Copernicus Data Space Ecosystem | Europe's eyes on Earth'. Listed on the Resources tab under ESA. (https://www.copernicus.eu also opens, HTTP 200 'Homepage | Copernicus', but is not the link on the challenge page.)",
+          "usedIn": "Cited only (candidate)"
+        },
+        {
+          "name": "ESA Open Science Catalog",
+          "agency": "ESA",
+          "url": "https://opensciencedata.esa.int/",
+          "what": "A catalog of publicly available geoscience datasets, products, experiments and workflows (description taken from the challenge page; this site is a JavaScript app with no readable text).",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'Open Science Catalogue' (JavaScript app, no server-rendered text). Listed on the Resources tab under ESA.",
+          "usedIn": "Cited only"
+        },
+        {
+          "name": "JAXA G-Portal",
+          "agency": "JAXA",
+          "url": "https://www.gportal.jaxa.jp/?lang=en",
+          "what": "A portal to search and download products from JAXA's Earth observation satellites, by spacecraft or sensor or by physical quantity.",
+          "verification": "verified",
+          "checkedNote": "https://gportal.jaxa.jp redirects to https://www.gportal.jaxa.jp/?lang=en (HTTP 200), title 'G-PortalTop'; meta description matches. The challenge page links https://gportal.jaxa.jp/gpr/index/index.",
+          "usedIn": "Cited only"
+        }
+      ]
+    },
+    {
+      "id": "rules",
+      "title": "Challenge rules and guides",
+      "official": true,
+      "items": [
+        {
+          "name": "Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars (2026 challenge page)",
+          "agency": "NASA Space Apps Challenge",
+          "url": "https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/",
+          "what": "The official 2026 challenge page, with Objectives, Potential Considerations and a Resources tab (NASA Data & Resources, and Space Agency Partner Resources from CSA, ESA and JAXA).",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, H1 'Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars'; page metadata firstPublishedAt 2026-09-17, lastPublishedAt 2026-11-13. Resources tab lists Earthdata Search, Worldview, PDS, LRO, LRO Diviner, CSA RCM, RADARSAT-1, SAR Python Tutorial, Copernicus Data Space Ecosystem, ESA Open Science Catalog and JAXA G-Portal. It does not list api.nasa.gov, DONKI, OSDR, RadLab, Trek or the two CSA youth/food pages.",
+          "usedIn": ""
+        },
+        {
+          "name": "Judging & Awards Guide",
+          "agency": "NASA Space Apps Challenge",
+          "url": "https://www.spaceappschallenge.org/resources/judging-awards-guide/",
+          "what": "Explains eligibility for Global Judging, the judging criteria (Impact, Creativity, Validity, Relevance, Presentation, each scored 1 to 5) and the three judging phases.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, H1 'Judging & Awards Guide'; sections include 'Eligibility for Global Judging', 'Judging Criteria' and Phases 1-3.",
+          "usedIn": ""
+        },
+        {
+          "name": "Project Submission Guide",
+          "agency": "NASA Space Apps Challenge",
+          "url": "https://www.spaceappschallenge.org/resources/project-submission-guide/",
+          "what": "Explains how to edit and submit the project page, with field instructions, demo tips, start and end times, and how to get the participant certificate.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, H1 'Project Submission Guide'; sections include 'Project Submission Start & End Times', 'Project Page Form Field Instructions', 'Tips for Creating a Project Demo' and 'Submitting Your Project'.",
+          "usedIn": ""
+        },
+        {
+          "name": "Participant FAQs (use of AI, called 'Super Intelligence (SI)')",
+          "agency": "NASA Space Apps Challenge",
+          "url": "https://www.spaceappschallenge.org/resources/participant-faqs/",
+          "what": "Participants may use SI (AI) tools such as LLMs, code generators and image tools, but each team's submission must describe how SI tools were used to build the project.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200. The FAQ entry 'What is Super Intelligence? Can teams utilize it during the hackathon?' says that, per a 2026-09-29 U.S. Executive Order, the terms 'Super Intelligence'/'SI' replace 'Artificial Intelligence'/'AI'. No separate AI-policy page was found; the Judging and Submission guides contain no 'AI' text.",
+          "usedIn": ""
+        }
+      ]
+    },
+    {
+      "id": "nasa",
+      "title": "NASA resources from the team brief (not on the challenge Resources tab)",
+      "official": false,
+      "items": [
+        {
+          "name": "NASA Open APIs",
+          "agency": "NASA",
+          "url": "https://api.nasa.gov/",
+          "what": "NASA's API portal, where developers generate an api.data.gov API key to call NASA open APIs.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, page title 'NASA Open APIs' with a 'Generate API Key' signup form. NOTE: not listed on the 2026 challenge page Resources tab (page last published 2026-11-13).",
+          "usedIn": "DONKI first try (src/services/nasa/openApi.js, donki.js)"
+        },
+        {
+          "name": "DONKI (Space Weather Database Of Notifications, Knowledge, Information)",
+          "agency": "NASA CCMC",
+          "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI/",
+          "what": "CCMC's Space Weather Database Of Notifications, Knowledge, Information (DONKI).",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'CCMC DONKI System | NASA CCMC', H1 'CCMC DONKI System'. NOTE: not listed on the 2026 challenge page Resources tab.",
+          "usedIn": "Site card \"Space weather on the target\" (Landing/Base), indicator space_weather, getSpaceWeather()"
+        },
+        {
+          "name": "NASA Open Science Data Repository (OSDR)",
+          "agency": "NASA",
+          "url": "https://science.nasa.gov/biological-physical/data/",
+          "what": "The NASA Open Science Data Repository (OSDR) and Physical Sciences Informatics (PSI) provide open access to biological and physical science datasets from spaceflight.",
+          "verification": "verified",
+          "checkedNote": "https://osdr.nasa.gov redirects (HTTP 200) to https://science.nasa.gov/biological-physical/data/, title 'BPS Data - NASA Science', H1 'Biological and Physical Sciences Data'; the page text names OSDR. NOTE: not listed on the 2026 challenge page Resources tab.",
+          "usedIn": "Site card \"What Earth can't reproduce\" — OSD studies (pre-computed)"
+        },
+        {
+          "name": "NASA OSDR Biological Data API (OpenAPI spec)",
+          "agency": "NASA",
+          "url": "https://visualization.osdr.nasa.gov/biodata/api/",
+          "what": "Machine-readable interface for discovering biological metadata fields and values, then querying or counting datasets, assays and samples with exact metadata filters.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, returns an OpenAPI 3.1.0 JSON document titled 'NASA OSDR Biological Data API', version 2.0.0. The suggested https://www.nasa.gov/reference/osdr-api/ returns HTTP 404 ('Page Not Found - NASA'), so it is not used.",
+          "usedIn": "Reference for the OSDR search API used by scripts/fetch_nasa_cache.py"
+        },
+        {
+          "name": "OSDR RadLab data API GUI",
+          "agency": "NASA",
+          "url": "https://visualization.osdr.nasa.gov/radlab/gui/data-api",
+          "what": "Could not be read: the server returned an internal error.",
+          "verification": "unverified",
+          "checkedNote": "HTTP 500 'Internal Server Error' (Apache) on 2026-11-14, the same as earlier today. The content could not be checked.",
+          "usedIn": "Indicator radiation_gap + ISS dose in \"What Earth can't reproduce\" (Data API, pre-computed)"
+        },
+        {
+          "name": "Mars Trek",
+          "agency": "NASA",
+          "url": "https://trek.nasa.gov/mars/",
+          "what": "A NASA web portal for exploring Mars that shows NASA data from landing sites, with a browsing tool for layering and viewing high-resolution data.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title and H1 'Mars Trek'; meta description matches. NOTE: not listed on the 2026 challenge page Resources tab.",
+          "usedIn": "Mars tile next to the Earth image in the NASA data panel"
+        },
+        {
+          "name": "Moon Trek",
+          "agency": "NASA",
+          "url": "https://trek.nasa.gov/moon/",
+          "what": "A NASA web portal for exploring the Moon that shows NASA data from landing sites, with a browsing tool for layering and viewing high-resolution data.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title and H1 'Moon Trek'; meta description matches. NOTE: not listed on the 2026 challenge page Resources tab.",
+          "usedIn": "Moon tile next to the Earth image in the NASA data panel"
+        }
+      ],
+      "note": "The team brief called these 'official challenge resources', but the 2026 challenge page's Resources tab does not list them (checked 2026-11-14). They are official NASA services, used here as extra NASA data."
+    },
+    {
+      "id": "team-tools",
+      "title": "Tools gathered by the team",
+      "official": false,
+      "items": [
+        {
+          "name": "NASA POWER API",
+          "agency": "NASA LaRC",
+          "url": "https://power.larc.nasa.gov/docs/services/api/",
+          "what": "RESTful APIs that retrieve, subset and convert NASA POWER data into analysis-ready data (ARD) formats for different user communities.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'NASA POWER | Docs | Data Services | API Overview', H1 'APIs'.",
+          "usedIn": "Indicators temp_range, aridity, elevation, solar, wind"
+        },
+        {
+          "name": "Solar System Treks API (WMTS Layer Services)",
+          "agency": "NASA",
+          "url": "https://trek.nasa.gov/tiles/apidoc/index.html",
+          "what": "API documentation for the WMTS layer services behind Moon, Mars, Titan, Vesta, Ceres, Mercury and Icy Moons Trek.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'Trek API', H1 'WMTS Layer Services'.",
+          "usedIn": "WMTS tiles for the Moon/Mars tile"
+        },
+        {
+          "name": "Global Imagery Browse Services (GIBS) APIs",
+          "agency": "NASA Earthdata",
+          "url": "https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api",
+          "what": "GIBS APIs give fast access to global, full-resolution satellite imagery for interactive exploration of the Earth.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'Global Imagery Browse Services APIs | NASA Earthdata'; H1 matches.",
+          "usedIn": "Basemap and site-card Earth image"
+        },
+        {
+          "name": "AppEEARS",
+          "agency": "NASA Earthdata (LP DAAC)",
+          "url": "https://appeears.earthdatacloud.nasa.gov/",
+          "what": "The Application for Extracting and Exploring Analysis Ready Samples (AppEEARS) is a simple, efficient way to access and transform geospatial data from several federal data archives.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'AppEEARS'; meta description matches (JavaScript app).",
+          "usedIn": "Not used (needs Earthdata Login; status failed)"
+        },
+        {
+          "name": "Harmony",
+          "agency": "NASA Earthdata",
+          "url": "https://harmony.earthdata.nasa.gov/",
+          "what": "Harmony lets you analyze Earth observation data from different NASA data centers, with data reduction services and consistent access patterns.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'Harmony', H1 'Harmony allows you to seamlessly analyze Earth observation data from different NASA data centers'.",
+          "usedIn": "Not used (needs Earthdata Login; status failed)"
+        },
+        {
+          "name": "CCMC Public Web Services & APIs",
+          "agency": "NASA CCMC",
+          "url": "https://ccmc.gsfc.nasa.gov/tools/API/",
+          "what": "Public RESTful web services and APIs (OpenAPI-compliant) from the Community Coordinated Modeling Center, built to follow FAIR principles.",
+          "verification": "verified",
+          "checkedNote": "HTTP 200, title 'CCMC Public Web Services & APIs | NASA CCMC'; H1 matches.",
+          "usedIn": "DONKI-API host used for space weather"
+        }
+      ]
+    },
+    {
+      "id": "csa",
+      "title": "Canadian Space Agency (CSA) resources from the team brief",
+      "official": false,
+      "items": [
+        {
+          "name": "Space resources for STEM and youth organizations",
+          "agency": "CSA",
+          "url": "https://www.asc-csa.gc.ca/eng/youth-educators/resources-stem-and-youth-organizations.asp",
+          "what": "Not confirmed. The page could not be opened; the URL and title come only from a web-search result.",
+          "verification": "unverified",
+          "checkedNote": "asc-csa.gc.ca and canada.ca could not be reached from this machine (curl timed out with code 000; WebFetch got ECONNREFUSED). The 'Space resources for STEM and youth organizations' title is from a search-result listing only. NOTE: this page is NOT linked from the 2026 challenge page Resources tab (page last published 2026-11-13).",
+          "usedIn": ""
+        },
+        {
+          "name": "Toolkit for educators and youth - Food production on the Moon & remote areas",
+          "agency": "CSA",
+          "url": "https://www.asc-csa.gc.ca/eng/youth-educators/toolkits/food-production/",
+          "what": "Not confirmed. The page could not be opened; the URL and title come only from a web-search result.",
+          "verification": "unverified",
+          "checkedNote": "asc-csa.gc.ca could not be reached (curl timed out with code 000; WebFetch got ECONNREFUSED). The title 'Toolkit for educators and youth – Food production on the Moon & remote areas' is from a search-result listing only. NOTE: this page is NOT linked from the 2026 challenge page Resources tab.",
+          "usedIn": ""
+        }
+      ],
+      "note": "Not listed on the challenge Resources tab; asc-csa.gc.ca could not be opened from the build machine, so these are unverified."
+    }
+  ]
+}

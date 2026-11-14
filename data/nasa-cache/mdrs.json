@@ -1,0 +1,453 @@
+{
+  "siteId": "mdrs",
+  "generatedAt": "2026-11-14T18:21:04+00:00",
+  "report": {
+    "lat": 38.41,
+    "lon": -110.79,
+    "checkedAt": "2026-11-14T18:21:04+00:00",
+    "basic": {
+      "inRange": true,
+      "onLand": true,
+      "nearestKnownSiteKm": 310.3,
+      "nearestKnownSiteId": "black-point"
+    },
+    "indicators": [
+      {
+        "key": "temp_range",
+        "dimension": "temperature",
+        "value": 61.1,
+        "unit": "°C",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live",
+        "details": {
+          "tMaxMonthC": 41.1,
+          "tMinMonthC": -20.0,
+          "t2mAnnC": 11.8,
+          "lstDayMeanC": 30.9,
+          "lstPeriod": "2024 Jan–Mar + Jul–Sep (MOD11A2 8-day)",
+          "lstSource": {
+            "name": "MODIS MOD11A2 LST via ORNL DAAC TESViS",
+            "agency": "NASA (ORNL DAAC)",
+            "url": "https://modis.ornl.gov/rst/api/v1/{product}/subset",
+            "doi": "10.3334/ORNLDAAC/1600",
+            "status": "live"
+          }
+        }
+      },
+      {
+        "key": "aridity",
+        "dimension": "water",
+        "value": 241.0,
+        "unit": "mm/yr",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live",
+        "details": {
+          "rh2mPct": 43.1
+        }
+      },
+      {
+        "key": "elevation",
+        "dimension": "atmosphere",
+        "value": 1660.0,
+        "unit": "m (grid-cell mean)",
+        "suggestedLevel": "partial",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live"
+      },
+      {
+        "key": "solar",
+        "dimension": "operational",
+        "value": 5.29,
+        "unit": "kWh/m²/day",
+        "suggestedLevel": "partial",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live"
+      },
+      {
+        "key": "wind",
+        "dimension": "atmosphere",
+        "value": 3.56,
+        "unit": "m/s",
+        "suggestedLevel": "partial",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live"
+      },
+      {
+        "key": "vegetation",
+        "dimension": "biology",
+        "value": 0.094,
+        "unit": "NDVI",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "MODIS MOD13Q1 NDVI via ORNL DAAC TESViS",
+          "agency": "NASA (ORNL DAAC)",
+          "url": "https://modis.ornl.gov/rst/api/v1/{product}/subset",
+          "doi": "10.3334/ORNLDAAC/1600"
+        },
+        "status": "live",
+        "details": {
+          "inferredClass": "none",
+          "n": 20,
+          "period": "2024 (MOD13Q1 16-day composites)"
+        }
+      },
+      {
+        "key": "land_cover",
+        "dimension": "terrain",
+        "value": "Barren",
+        "unit": "IGBP class",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "MODIS MCD12Q1 land cover via ORNL DAAC TESViS",
+          "agency": "NASA (ORNL DAAC)",
+          "url": "https://modis.ornl.gov/rst/api/v1/{product}/subset",
+          "doi": "10.3334/ORNLDAAC/1600"
+        },
+        "status": "live",
+        "details": {
+          "class": 16,
+          "year": 2022
+        }
+      },
+      {
+        "key": "data_coverage",
+        "dimension": "operational",
+        "value": 4,
+        "unit": "of 4 collections",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "NASA Common Metadata Repository (CMR) search",
+          "agency": "NASA (EOSDIS)",
+          "url": "https://cmr.earthdata.nasa.gov/search/granules.json"
+        },
+        "status": "live",
+        "details": {
+          "granules": {
+            "EMITL2BMIN": 55,
+            "SRTMGL1": 1,
+            "ASTGTM": 1,
+            "HLSL30": 413
+          }
+        }
+      },
+      {
+        "key": "radiation_gap",
+        "dimension": "atmosphere",
+        "value": 5.35,
+        "unit": "µGy/h on the ISS (DosTel2)",
+        "suggestedLevel": "weak",
+        "source": {
+          "name": "RadLab — OSDR Radiation Dosimetry Database (Data API)",
+          "agency": "NASA (OSDR) with ASI / Bulgarian Academy of Sciences detectors",
+          "url": "https://visualization.osdr.nasa.gov/radlab/api/"
+        },
+        "status": "live",
+        "details": {
+          "iss": {
+            "instrument": "DosTel2 (DOSTEL, ISS Columbus — DORELI project)",
+            "period": "2020-01-01 to 2020-01-04 (UTC)",
+            "n": 2739,
+            "meanUGyPerH": 33.41,
+            "medianUGyPerH": 5.35
+          },
+          "valueIs": "median of DosTel2 readings (the mean is pulled up by South Atlantic Anomaly passes)",
+          "earthBackground": {
+            "value": 2.4,
+            "unit": "mSv/yr (≈ 0.27 µSv/h)",
+            "what": "Worldwide average annual effective dose from natural sources",
+            "citation": "UNSCEAR 2008 Report, Vol. I, Annex B",
+            "url": "https://www.unscear.org/unscear/en/publications/2008_1.html",
+            "status": "manual",
+            "caveat": "Effective dose (Sv) and absorbed dose (Gy) are different quantities; shown side by side only to give the order of magnitude."
+          },
+          "note": "No place on Earth's surface reproduces this radiation environment."
+        }
+      },
+      {
+        "key": "space_weather",
+        "dimension": "operational",
+        "value": 103,
+        "unit": "DONKI events, last 30 days",
+        "suggestedLevel": "nodata",
+        "source": {
+          "name": "DONKI — Space Weather Database Of Notifications, Knowledge, Information (CCMC)",
+          "agency": "NASA (CCMC / GSFC)",
+          "url": "https://ccmc.gsfc.nasa.gov/DONKI-API/get/{FLR|CME|SEP|GST}"
+        },
+        "status": "live",
+        "details": {
+          "counts30d": {
+            "FLR": 13,
+            "CME": 89,
+            "SEP": 0,
+            "GST": 1
+          },
+          "counts365d": {
+            "FLR": 406,
+            "CME": 1654,
+            "SEP": 42,
+            "GST": 20
+          },
+          "window30d": [
+            "2026-10-15",
+            "2026-11-14"
+          ]
+        }
+      }
+    ],
+    "errors": [],
+    "inferred": {
+      "vegetation": "none",
+      "climate": "arid"
+    },
+    "context": {
+      "eonet": [
+        {
+          "id": "EONET_25234",
+          "title": "Prescribed Fire Bridger Trail Unit - KPERP Rx NKRD CY26, Coconino, Arizona",
+          "category": "Wildfires",
+          "date": "2026-10-09T11:49:00Z",
+          "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_25234"
+        },
+        {
+          "id": "EONET_25235",
+          "title": "Prescribed Fire COOPER UNIT - KPERP RX NKRD  CY26, Coconino, Arizona",
+          "category": "Wildfires",
+          "date": "2026-10-08T12:16:00Z",
+          "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_25235"
+        },
+        {
+          "id": "EONET_23459",
+          "title": "Wildfire Tom Creek, Tooele, Utah",
+          "category": "Wildfires",
+          "date": "2026-08-24T15:20:00Z",
+          "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_23459"
+        },
+        {
+          "id": "EONET_23221",
+          "title": "Wildfire Slough Canyon, Grand, Utah",
+          "category": "Wildfires",
+          "date": "2026-08-15T13:51:00Z",
+          "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_23221"
+        },
+        {
+          "id": "EONET_22046",
+          "title": "Wildfire in United States 1030029",
+          "category": "Wildfires",
+          "date": "2026-08-01T19:00:00Z",
+          "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_22046"
+        }
+      ]
+    },
+    "missionFitBy": {
+      "moon.landing": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "No or sparse vegetation",
+            "field": "vegetation",
+            "inferred": "none",
+            "result": "pass"
+          }
+        ],
+        "planet": "moon"
+      },
+      "moon.rover": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "No or sparse vegetation",
+            "field": "vegetation",
+            "inferred": "none",
+            "result": "pass"
+          }
+        ],
+        "planet": "moon"
+      },
+      "moon.base": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "Extreme climate",
+            "field": "climate",
+            "inferred": "arid",
+            "result": "pass"
+          }
+        ],
+        "planet": "moon"
+      },
+      "mars.landing": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "No or sparse vegetation",
+            "field": "vegetation",
+            "inferred": "none",
+            "result": "pass"
+          }
+        ],
+        "planet": "mars"
+      },
+      "mars.rover": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "No or sparse vegetation",
+            "field": "vegetation",
+            "inferred": "none",
+            "result": "pass"
+          }
+        ],
+        "planet": "mars"
+      },
+      "mars.base": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "Extreme climate",
+            "field": "climate",
+            "inferred": "arid",
+            "result": "pass"
+          }
+        ],
+        "planet": "mars"
+      }
+    }
+  },
+  "raw": {
+    "power": {
+      "t2mAnn": 11.75,
+      "tempRange": 61.08,
+      "tMaxMonth": 41.12,
+      "tMinMonth": -19.96,
+      "precipMmYr": 240.9,
+      "solar": 5.2874,
+      "wind": 3.56,
+      "rh": 43.14,
+      "elevation": 1659.66
+    },
+    "ndvi": {
+      "mean": 0.09381500000000001,
+      "min": 0.0762,
+      "max": 0.1189,
+      "n": 20,
+      "period": "2024 (MOD13Q1 16-day composites)"
+    },
+    "lst": {
+      "meanC": 30.88000000000003,
+      "minC": 5.170000000000016,
+      "maxC": 51.93000000000001,
+      "n": 20,
+      "period": "2024 Jan–Mar + Jul–Sep (MOD11A2 8-day)"
+    },
+    "landCover": {
+      "class": 16,
+      "label": "Barren",
+      "year": 2022
+    },
+    "cmr": {
+      "EMITL2BMIN": 55,
+      "SRTMGL1": 1,
+      "ASTGTM": 1,
+      "HLSL30": 413
+    }
+  },
+  "media": {
+    "gibs": {
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual/default/2000-12-01/GoogleMapsCompatible_Level12/11/787/393.jpeg",
+      "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+      "time": "2000-12-01",
+      "status": "verified",
+      "credit": "NASA GIBS — Landsat WELD annual true colour"
+    },
+    "trek": {
+      "mars": {
+        "url": "https://trek.nasa.gov/tiles/Mars/EQ/Mars_MGS_MOLA_ClrShade_merge_global_463m/1.0.0/default/default028mm/6/33/112.jpg",
+        "feature": "Gale crater (Curiosity rover)",
+        "featureKey": "gale",
+        "lat": -5.4,
+        "lon": 137.8,
+        "layer": "MOLA colour hillshade (Mars Trek)",
+        "status": "verified",
+        "confidence": "deduction"
+      }
+    }
+  },
+  "osdr": {
+    "moon": [
+      {
+        "id": "OSD-251",
+        "title": "RNAseq analysis of the response of Arabidopsis thaliana to fractional gravity under blue-light stimulation during spaceflight",
+        "type": "Spaceflight Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-251",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-476",
+        "title": "Plants grown in Apollo lunar regolith present stress-associated transcriptomes that inform prospects for lunar exploration",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-476",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-73",
+        "title": "Transcriptome Profiles in Normal Human Bronchial Epithelial Cells after Exposure to gamma-rays and different HZE particles",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-73",
+        "searchTerm": null
+      }
+    ],
+    "mars": [
+      {
+        "id": "OSD-251",
+        "title": "RNAseq analysis of the response of Arabidopsis thaliana to fractional gravity under blue-light stimulation during spaceflight",
+        "type": "Spaceflight Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-251",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-581",
+        "title": "A molecular study of Italian ryegrass grown on Martian regolith simulant",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-581",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-73",
+        "title": "Transcriptome Profiles in Normal Human Bronchial Epithelial Cells after Exposure to gamma-rays and different HZE particles",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-73",
+        "searchTerm": null
+      }
+    ]
+  },
+  "conflicts": []
+}

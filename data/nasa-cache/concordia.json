@@ -1,0 +1,388 @@
+{
+  "siteId": "concordia",
+  "generatedAt": "2026-11-14T19:01:47+00:00",
+  "report": {
+    "lat": -75.1,
+    "lon": 123.33,
+    "checkedAt": "2026-11-14T19:01:47+00:00",
+    "basic": {
+      "inRange": true,
+      "onLand": true,
+      "nearestKnownSiteKm": 8306.3,
+      "nearestKnownSiteId": "cerro-do-jarau"
+    },
+    "indicators": [
+      {
+        "key": "temp_range",
+        "dimension": "temperature",
+        "value": 64.5,
+        "unit": "°C",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live",
+        "details": {
+          "tMaxMonthC": -14.5,
+          "tMinMonthC": -79.0,
+          "t2mAnnC": -51.2,
+          "lstDayMeanC": null,
+          "lstPeriod": null,
+          "lstSource": {
+            "name": "MODIS MOD11A2 LST via ORNL DAAC TESViS",
+            "agency": "NASA (ORNL DAAC)",
+            "url": "https://modis.ornl.gov/rst/api/v1/{product}/subset",
+            "doi": "10.3334/ORNLDAAC/1600",
+            "status": "failed"
+          }
+        }
+      },
+      {
+        "key": "aridity",
+        "dimension": "water",
+        "value": 29.0,
+        "unit": "mm/yr",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live",
+        "details": {
+          "rh2mPct": 89.8
+        }
+      },
+      {
+        "key": "elevation",
+        "dimension": "atmosphere",
+        "value": 3222.0,
+        "unit": "m (grid-cell mean)",
+        "suggestedLevel": "strong",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live"
+      },
+      {
+        "key": "solar",
+        "dimension": "operational",
+        "value": 3.49,
+        "unit": "kWh/m²/day",
+        "suggestedLevel": "weak",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live"
+      },
+      {
+        "key": "wind",
+        "dimension": "atmosphere",
+        "value": 4.75,
+        "unit": "m/s",
+        "suggestedLevel": "partial",
+        "source": {
+          "name": "NASA POWER — climatology point API",
+          "agency": "NASA (LaRC)",
+          "url": "https://power.larc.nasa.gov/api/temporal/climatology/point"
+        },
+        "status": "live"
+      },
+      {
+        "key": "vegetation",
+        "dimension": "biology",
+        "value": null,
+        "unit": "NDVI",
+        "suggestedLevel": "nodata",
+        "source": {
+          "name": "MODIS MOD13Q1 NDVI via ORNL DAAC TESViS",
+          "agency": "NASA (ORNL DAAC)",
+          "url": "https://modis.ornl.gov/rst/api/v1/{product}/subset",
+          "doi": "10.3334/ORNLDAAC/1600"
+        },
+        "status": "failed",
+        "details": {
+          "inferredClass": null,
+          "n": null,
+          "period": null
+        }
+      },
+      {
+        "key": "land_cover",
+        "dimension": "terrain",
+        "value": "Permanent snow and ice",
+        "unit": "IGBP class",
+        "suggestedLevel": "partial",
+        "source": {
+          "name": "MODIS MCD12Q1 land cover via ORNL DAAC TESViS",
+          "agency": "NASA (ORNL DAAC)",
+          "url": "https://modis.ornl.gov/rst/api/v1/{product}/subset",
+          "doi": "10.3334/ORNLDAAC/1600"
+        },
+        "status": "cached",
+        "details": {
+          "class": 15,
+          "year": 2022
+        },
+        "cachedFrom": "2026-11-14T18:46:19+00:00"
+      },
+      {
+        "key": "data_coverage",
+        "dimension": "operational",
+        "value": 1,
+        "unit": "of 4 collections",
+        "suggestedLevel": "weak",
+        "source": {
+          "name": "NASA Common Metadata Repository (CMR) search",
+          "agency": "NASA (EOSDIS)",
+          "url": "https://cmr.earthdata.nasa.gov/search/granules.json"
+        },
+        "status": "live",
+        "details": {
+          "granules": {
+            "EMITL2BMIN": 0,
+            "SRTMGL1": 0,
+            "ASTGTM": 1,
+            "HLSL30": 0
+          }
+        }
+      },
+      {
+        "key": "radiation_gap",
+        "dimension": "atmosphere",
+        "value": 5.35,
+        "unit": "µGy/h on the ISS (DosTel2)",
+        "suggestedLevel": "weak",
+        "source": {
+          "name": "RadLab — OSDR Radiation Dosimetry Database (Data API)",
+          "agency": "NASA (OSDR) with ASI / Bulgarian Academy of Sciences detectors",
+          "url": "https://visualization.osdr.nasa.gov/radlab/api/"
+        },
+        "status": "live",
+        "details": {
+          "iss": {
+            "instrument": "DosTel2 (DOSTEL, ISS Columbus — DORELI project)",
+            "period": "2020-01-01 to 2020-01-04 (UTC)",
+            "n": 2739,
+            "meanUGyPerH": 33.41,
+            "medianUGyPerH": 5.35
+          },
+          "valueIs": "median of DosTel2 readings (the mean is pulled up by South Atlantic Anomaly passes)",
+          "earthBackground": {
+            "value": 2.4,
+            "unit": "mSv/yr (≈ 0.27 µSv/h)",
+            "what": "Worldwide average annual effective dose from natural sources",
+            "citation": "UNSCEAR 2008 Report, Vol. I, Annex B",
+            "url": "https://www.unscear.org/unscear/en/publications/2008_1.html",
+            "status": "manual",
+            "caveat": "Effective dose (Sv) and absorbed dose (Gy) are different quantities; shown side by side only to give the order of magnitude."
+          },
+          "note": "No place on Earth's surface reproduces this radiation environment."
+        }
+      },
+      {
+        "key": "space_weather",
+        "dimension": "operational",
+        "value": 103,
+        "unit": "DONKI events, last 30 days",
+        "suggestedLevel": "nodata",
+        "source": {
+          "name": "DONKI — Space Weather Database Of Notifications, Knowledge, Information (CCMC)",
+          "agency": "NASA (CCMC / GSFC)",
+          "url": "https://ccmc.gsfc.nasa.gov/DONKI-API/get/{FLR|CME|SEP|GST}"
+        },
+        "status": "live",
+        "details": {
+          "counts30d": {
+            "FLR": 13,
+            "CME": 89,
+            "SEP": 0,
+            "GST": 1
+          },
+          "counts365d": {
+            "FLR": 406,
+            "CME": 1654,
+            "SEP": 42,
+            "GST": 20
+          },
+          "window30d": [
+            "2026-10-15",
+            "2026-11-14"
+          ]
+        }
+      }
+    ],
+    "errors": [
+      "TESViS LST failed (HTTPError: HTTP Error 502: Proxy Error)",
+      "TESViS NDVI failed (HTTPError: HTTP Error 503: Service Unavailable)",
+      "TESViS land cover failed (HTTPError: HTTP Error 503: Service Unavailable)"
+    ],
+    "inferred": {
+      "vegetation": null,
+      "climate": "polar-cold"
+    },
+    "context": {
+      "eonet": []
+    },
+    "missionFitBy": {
+      "moon.landing": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [],
+        "planet": "moon"
+      },
+      "moon.rover": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [],
+        "planet": "moon"
+      },
+      "moon.base": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "Extreme climate",
+            "field": "climate",
+            "inferred": "polar-cold",
+            "result": "pass"
+          }
+        ],
+        "planet": "moon"
+      },
+      "mars.landing": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [],
+        "planet": "mars"
+      },
+      "mars.rover": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [],
+        "planet": "mars"
+      },
+      "mars.base": {
+        "ok": true,
+        "failingRequirements": [],
+        "checked": [
+          {
+            "rule": "Extreme climate",
+            "field": "climate",
+            "inferred": "polar-cold",
+            "result": "pass"
+          }
+        ],
+        "planet": "mars"
+      }
+    }
+  },
+  "raw": {
+    "power": {
+      "t2mAnn": -51.18,
+      "tempRange": 64.54,
+      "tMaxMonth": -14.49,
+      "tMinMonth": -79.03,
+      "precipMmYr": 29.2,
+      "solar": 3.4879,
+      "wind": 4.75,
+      "rh": 89.76,
+      "elevation": 3221.5
+    },
+    "ndvi": null,
+    "lst": null,
+    "landCover": null,
+    "cmr": {
+      "EMITL2BMIN": 0,
+      "SRTMGL1": 0,
+      "ASTGTM": 1,
+      "HLSL30": 0
+    }
+  },
+  "media": {
+    "gibs": {
+      "url": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual/default/2000-12-01/GoogleMapsCompatible_Level12/11/1687/1725.jpeg",
+      "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+      "time": "2000-12-01",
+      "status": "failed",
+      "credit": "NASA GIBS — Landsat WELD annual true colour"
+    },
+    "trek": {
+      "moon": {
+        "url": "https://trek.nasa.gov/tiles/Moon/EQ/LRO_WAC_Mosaic_Global_303ppd_v02/1.0.0/default/default028mm/6/63/110.jpg",
+        "feature": "Shackleton crater (lunar south pole)",
+        "featureKey": "shackleton",
+        "lat": -89.67,
+        "lon": 129.78,
+        "layer": "LROC WAC mosaic (Moon Trek)",
+        "status": "verified",
+        "confidence": "deduction"
+      },
+      "mars": {
+        "url": "https://trek.nasa.gov/tiles/Mars/EQ/Mars_MGS_MOLA_ClrShade_merge_global_463m/1.0.0/default/default028mm/6/14/111.jpg",
+        "feature": "Utopia Planitia (Viking 2 lander)",
+        "featureKey": "utopia",
+        "lat": 48.27,
+        "lon": 134.01,
+        "layer": "MOLA colour hillshade (Mars Trek)",
+        "status": "verified",
+        "confidence": "deduction"
+      }
+    }
+  },
+  "osdr": {
+    "moon": [
+      {
+        "id": "OSD-251",
+        "title": "RNAseq analysis of the response of Arabidopsis thaliana to fractional gravity under blue-light stimulation during spaceflight",
+        "type": "Spaceflight Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-251",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-476",
+        "title": "Plants grown in Apollo lunar regolith present stress-associated transcriptomes that inform prospects for lunar exploration",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-476",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-73",
+        "title": "Transcriptome Profiles in Normal Human Bronchial Epithelial Cells after Exposure to gamma-rays and different HZE particles",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-73",
+        "searchTerm": null
+      }
+    ],
+    "mars": [
+      {
+        "id": "OSD-251",
+        "title": "RNAseq analysis of the response of Arabidopsis thaliana to fractional gravity under blue-light stimulation during spaceflight",
+        "type": "Spaceflight Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-251",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-581",
+        "title": "A molecular study of Italian ryegrass grown on Martian regolith simulant",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-581",
+        "searchTerm": null
+      },
+      {
+        "id": "OSD-73",
+        "title": "Transcriptome Profiles in Normal Human Bronchial Epithelial Cells after Exposure to gamma-rays and different HZE particles",
+        "type": "Ground Study",
+        "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-73",
+        "searchTerm": null
+      }
+    ]
+  },
+  "conflicts": []
+}

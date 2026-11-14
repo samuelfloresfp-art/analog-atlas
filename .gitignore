@@ -1,0 +1,12 @@
+# Local secrets — never commit
+src/config.local.js
+config.local.*
+!src/config.local.example.js
+.env
+.env.*
+.netrc
+_netrc
+# Local logs
+data/nasa-cache/_run.log
+__pycache__/
+data/nasa-cache/_rerun.log

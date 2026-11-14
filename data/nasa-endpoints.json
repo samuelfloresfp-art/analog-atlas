@@ -1,0 +1,432 @@
+{
+  "version": "fase3-prompt1",
+  "testedAt": "2026-11-14",
+  "note": "Every source below was called for real on 2026-11-14 from the build machine (curl, Origin: http://localhost:8765). 'cors' = Access-Control-Allow-Origin seen for a browser origin. Status: verified | failed | candidate | manual. Thresholds are PROJECT RULES chosen by the team for the prototype, NOT scientific consensus.",
+  "sources": {
+    "nasa_open_apis": {
+      "name": "NASA Open APIs (api.nasa.gov)",
+      "agency": "NASA",
+      "baseUrl": "https://api.nasa.gov",
+      "params": {
+        "api_key": "from src/config.local.js (LOCAL.NASA_API_KEY) or env NASA_API_KEY; fallback DEMO_KEY"
+      },
+      "auth": "api_key (free). DEMO_KEY = 30 req/h and 50 req/day per IP",
+      "cors": true,
+      "status": "verified",
+      "statusNote": "Reachable, CORS *. On 2026-11-14 DEMO_KEY from the build IP already returned 429 OVER_RATE_LIMIT, so space weather falls back to the CCMC DONKI host (same data). Set a personal key in src/config.local.js for the demo.",
+      "citation": "NASA Open APIs, https://api.nasa.gov",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "src/services/nasa/openApi.js (helper)",
+        "src/services/nasa/donki.js (first try: /DONKI/{FLR,CME,SEP,GST})"
+      ],
+      "inTeamBrief": true
+    },
+    "donki": {
+      "name": "DONKI — Space Weather Database Of Notifications, Knowledge, Information (CCMC)",
+      "agency": "NASA (CCMC / GSFC)",
+      "baseUrl": "https://ccmc.gsfc.nasa.gov/DONKI-API/get/{FLR|CME|SEP|GST}",
+      "params": {
+        "startDate": "YYYY-MM-DD",
+        "endDate": "YYYY-MM-DD"
+      },
+      "auth": "none on the CCMC host; api_key on api.nasa.gov/DONKI/*",
+      "cors": true,
+      "status": "verified",
+      "statusNote": "Divergence from the brief: the old host kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/* timed out (21 s, no response). The CCMC API page (https://ccmc.gsfc.nasa.gov/tools/API/) points to the OpenAPI at https://ccmc.gsfc.nasa.gov/DONKI-API/swagger-ui/index.html, whose server is https://ccmc.gsfc.nasa.gov/DONKI-API — that one works (200, CORS *).",
+      "citation": "CCMC DONKI, https://ccmc.gsfc.nasa.gov/tools/DONKI/",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "Site card → 'Space weather on the target (real data)' (Landing and Base maps)",
+        "indicator space_weather",
+        "export getSpaceWeather() in src/services/nasa/donki.js (for the simulation)"
+      ],
+      "thresholds": {
+        "space_weather": {
+          "fixedLevel": "nodata",
+          "basis": "context only: the same value for every Earth site; never used for pass/fail"
+        }
+      },
+      "inTeamBrief": true
+    },
+    "osdr": {
+      "name": "NASA Open Science Data Repository (OSDR) — search API",
+      "agency": "NASA",
+      "baseUrl": "https://osdr.nasa.gov/osdr/data/search",
+      "params": {
+        "term": "radiation | partial gravity | regolith | analog",
+        "type": "cgene",
+        "size": 3
+      },
+      "auth": "none",
+      "cors": false,
+      "status": "verified",
+      "statusNote": "Works from scripts. The browser is blocked: Access-Control-Allow-Origin is 'osdr.nasa.gov'. Studies are pre-computed by scripts/fetch_nasa_cache.py and read from data/nasa-cache/.",
+      "citation": "NASA OSDR, https://osdr.nasa.gov",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "Site card → 'What Earth can't reproduce' (1–3 OSD studies with link)"
+      ],
+      "inTeamBrief": true
+    },
+    "radlab": {
+      "name": "RadLab — OSDR Radiation Dosimetry Database (Data API)",
+      "agency": "NASA (OSDR) with ASI / Bulgarian Academy of Sciences detectors",
+      "baseUrl": "https://visualization.osdr.nasa.gov/radlab/api/",
+      "params": {
+        "query": "instrument_id==DosTel2 AND timestamp>=<day> AND timestamp<<day+1>",
+        "columns+": "absorbed_dose_rate",
+        "format": "tsv"
+      },
+      "auth": "none",
+      "cors": false,
+      "status": "verified",
+      "statusNote": "API works from scripts (the GUI /radlab/gui/overview/ returned HTTP 500 on 2026-11-14). No CORS header → pre-computed. Unit µGy/h is taken from the RadLab Data API documentation example (absorbed dose rate in µGy/hour); the API TSV has no unit column.",
+      "citation": "NASA OSDR RadLab, https://visualization.osdr.nasa.gov/radlab/gui/data-api",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "indicator radiation_gap",
+        "Site card → 'What Earth can't reproduce'"
+      ],
+      "thresholds": {
+        "radiation_gap": {
+          "fixedLevel": "weak",
+          "basis": "no place on Earth's surface reproduces the ISS / Moon / Mars radiation environment"
+        }
+      },
+      "earthBackgroundReference": {
+        "value": 2.4,
+        "unit": "mSv/yr (≈ 0.27 µSv/h)",
+        "what": "Worldwide average annual effective dose from natural sources",
+        "citation": "UNSCEAR 2008 Report, Vol. I, Annex B",
+        "url": "https://www.unscear.org/unscear/en/publications/2008_1.html",
+        "status": "manual",
+        "caveat": "Effective dose (Sv) and absorbed dose (Gy) are different quantities; shown side by side only to give the order of magnitude."
+      },
+      "inTeamBrief": true
+    },
+    "trek": {
+      "name": "Solar System Treks — WMTS tiles (Mars Trek, Moon Trek)",
+      "agency": "NASA (JPL)",
+      "baseUrl": "https://trek.nasa.gov/tiles/{Mars|Moon}/EQ/{layer}/1.0.0/default/default028mm/{z}/{row}/{col}.jpg",
+      "params": {
+        "mars_layer": "Mars_MGS_MOLA_ClrShade_merge_global_463m (MOLA colour hillshade)",
+        "moon_layer": "LRO_WAC_Mosaic_Global_303ppd_v02 (LROC WAC mosaic)",
+        "z": 6,
+        "tiling": "equirectangular, level z has 2^z rows × 2^(z+1) cols of 180/2^z degrees"
+      },
+      "auth": "none",
+      "cors": true,
+      "status": "verified",
+      "statusNote": "Tiles at z=6 are non-empty (Gale, Jezero, Apollo 11 checked visually). MOLA level 8 returns 404, so z=6 is used. The planetary location shown is a well-known REPRESENTATIVE feature of the mirrored type (data/trek-features.json), not a matched twin of the Earth site.",
+      "citation": "NASA Solar System Treks, https://trek.nasa.gov/tiles/apidoc/index.html",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "Site card → NASA data panel, Moon/Mars tile next to the Earth image"
+      ],
+      "inTeamBrief": true
+    },
+    "power": {
+      "name": "NASA POWER — climatology point API",
+      "agency": "NASA (LaRC)",
+      "baseUrl": "https://power.larc.nasa.gov/api/temporal/climatology/point",
+      "params": {
+        "parameters": "T2M,T2M_MAX,T2M_MIN,T2M_RANGE,PRECTOTCORR,ALLSKY_SFC_SW_DWN,WS10M,RH2M",
+        "community": "RE",
+        "latitude": "lat",
+        "longitude": "lon",
+        "format": "JSON"
+      },
+      "auth": "none",
+      "cors": true,
+      "status": "verified",
+      "statusNote": "Elevation IS returned: geometry.coordinates[2] (m, grid-cell mean, ~0.5°). PRECTOTCORR is mm/day (×365 → mm/yr).",
+      "citation": "NASA POWER Project, https://power.larc.nasa.gov/docs/services/api/",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "indicators temp_range, aridity, elevation, solar, wind"
+      ],
+      "thresholds": {
+        "temp_range": {
+          "unit": "°C",
+          "measure": "max monthly T2M_MAX − min monthly T2M_MIN",
+          "direction": "higher",
+          "strong": 35,
+          "partial": 20,
+          "basis": "project rule (team assumption), not scientific consensus"
+        },
+        "aridity": {
+          "unit": "mm/yr",
+          "measure": "PRECTOTCORR annual × 365",
+          "direction": "lower",
+          "strong": 250,
+          "partial": 600,
+          "basis": "project rule (team assumption), not scientific consensus"
+        },
+        "elevation": {
+          "unit": "m",
+          "measure": "POWER grid-cell mean elevation",
+          "direction": "higher",
+          "strong": 2500,
+          "partial": 1500,
+          "basis": "project rule (team assumption), not scientific consensus; higher = thinner air"
+        },
+        "solar": {
+          "unit": "kWh/m²/day",
+          "measure": "ALLSKY_SFC_SW_DWN annual",
+          "direction": "higher",
+          "strong": 6,
+          "partial": 4.5,
+          "basis": "project rule (team assumption), not scientific consensus"
+        },
+        "wind": {
+          "unit": "m/s",
+          "measure": "WS10M annual",
+          "direction": "higher",
+          "strong": 5,
+          "partial": 3,
+          "basis": "project rule (team assumption), not scientific consensus; more wind = more aeolian activity"
+        },
+        "climateClass": {
+          "basis": "project rule (team assumption), not scientific consensus",
+          "order": [
+            "polar-cold",
+            "high-altitude",
+            "hyper-arid",
+            "arid",
+            "semi-arid",
+            "humid"
+          ],
+          "polarColdMaxT2M": 0,
+          "highAltitudeMinElevation": 2500,
+          "hyperAridMaxMm": 100,
+          "aridMaxMm": 250,
+          "semiAridMaxMm": 600
+        }
+      }
+    },
+    "tesvis": {
+      "name": "ORNL DAAC MODIS/VIIRS Land Products Global Subsetting and Visualization Tool (TESViS) REST API",
+      "agency": "NASA (ORNL DAAC)",
+      "baseUrl": "https://modis.ornl.gov/rst/api/v1/{product}/subset",
+      "params": {
+        "MOD13Q1": "band=250m_16_days_NDVI (scale 0.0001), 2 calls × 10 composites in 2024",
+        "MOD11A2": "band=LST_Day_1km (scale 0.02 K), 2 calls × 10 composites in 2024 (Jan–Mar, Jul–Sep)",
+        "MCD12Q1": "band=LC_Type1 (IGBP; 17 = water bodies), 2022",
+        "kmAboveBelow": 0,
+        "kmLeftRight": 0
+      },
+      "auth": "none",
+      "cors": true,
+      "status": "verified",
+      "statusNote": "CORS OK, but each call takes 30–55 s and some return 502, and a subset is limited to 10 time steps. Too slow for the browser's 8 s timeout, so the front only uses pre-computed values. Live calls in the browser will almost always show 'failed'.",
+      "citation": "ORNL DAAC. 2018. MODIS and VIIRS Land Products Global Subsetting and Visualization Tool. ORNL DAAC, Oak Ridge, Tennessee, USA.",
+      "doi": "10.3334/ORNLDAAC/1600",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "indicators vegetation (NDVI), land_cover, basic.onLand",
+        "temp_range.details.lstDayMeanC"
+      ],
+      "thresholds": {
+        "vegetation": {
+          "unit": "NDVI",
+          "measure": "mean of MOD13Q1 2024 composites",
+          "direction": "lower",
+          "strong": 0.2,
+          "partial": 0.4,
+          "basis": "project rule (team assumption), not scientific consensus"
+        },
+        "vegetationClass": {
+          "basis": "project rule (team assumption), not scientific consensus",
+          "noneMax": 0.15,
+          "sparseMax": 0.3,
+          "moderateMax": 0.5
+        },
+        "land_cover": {
+          "unit": "IGBP class",
+          "measure": "MCD12Q1 LC_Type1 (2022)",
+          "strongClasses": [
+            16
+          ],
+          "partialClasses": [
+            7,
+            10,
+            15
+          ],
+          "waterClass": 17,
+          "basis": "project rule (team assumption), not scientific consensus; 16 barren, 7 open shrubland, 10 grassland, 15 snow/ice"
+        }
+      }
+    },
+    "cmr": {
+      "name": "NASA Common Metadata Repository (CMR) search",
+      "agency": "NASA (EOSDIS)",
+      "baseUrl": "https://cmr.earthdata.nasa.gov/search/granules.json",
+      "params": {
+        "short_name": "EMITL2BMIN | SRTMGL1 | ASTGTM | HLSL30",
+        "point": "lon,lat",
+        "page_size": 1
+      },
+      "auth": "none (search only)",
+      "cors": true,
+      "status": "verified",
+      "statusNote": "Short names confirmed via /search/collections.json: EMITL2BMIN (v001, v002), SRTMGL1 v003, ASTGTM v003, HLSL30 v2.0 — all LPCLOUD. Hit count read from the CMR-Hits header.",
+      "citation": "NASA CMR, https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "indicator data_coverage"
+      ],
+      "thresholds": {
+        "data_coverage": {
+          "unit": "collections (of 4)",
+          "measure": "EMITL2BMIN, SRTMGL1, ASTGTM, HLSL30 with ≥ 1 granule at the point",
+          "direction": "higher",
+          "strong": 4,
+          "partial": 2,
+          "basis": "project rule (team assumption), not scientific consensus"
+        }
+      }
+    },
+    "gibs": {
+      "name": "NASA GIBS WMTS",
+      "agency": "NASA (EOSDIS)",
+      "baseUrl": "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/{layer}/default/{time}/{TileMatrixSet}/{z}/{row}/{col}.jpeg",
+      "params": {
+        "layer": "Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual",
+        "time": "2000-12-01",
+        "TileMatrixSet": "GoogleMapsCompatible_Level12",
+        "z": 11
+      },
+      "auth": "none",
+      "cors": true,
+      "status": "verified",
+      "statusNote": "Layer confirmed in https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/1.0.0/WMTSCapabilities.xml (cloud-free annual Landsat composite, ~38 m/px). Chosen instead of daily MODIS True Color because daily MODIS tiles are often cloudy.",
+      "citation": "NASA Global Imagery Browse Services (GIBS), https://www.earthdata.nasa.gov/engage/open-data-services-software/earthdata-developer-portal/gibs-api",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "Site card → left image (replaces the placeholder)"
+      ]
+    },
+    "eonet": {
+      "name": "EONET v3 — Earth Observatory Natural Event Tracker",
+      "agency": "NASA",
+      "baseUrl": "https://eonet.gsfc.nasa.gov/api/v3/events",
+      "params": {
+        "bbox": "lon-2,lat+2,lon+2,lat-2",
+        "status": "all",
+        "days": 365,
+        "limit": 5
+      },
+      "auth": "none",
+      "cors": true,
+      "status": "verified",
+      "citation": "NASA EONET, https://eonet.gsfc.nasa.gov/docs/v3",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": [
+        "Site card → NASA data panel, 'Natural events nearby (last year)' (context only)"
+      ]
+    },
+    "appeears": {
+      "name": "AppEEARS (point sample SRTMGL1 / NASADEM)",
+      "agency": "NASA (LP DAAC)",
+      "baseUrl": "https://appeears.earthdatacloud.nasa.gov/api/",
+      "params": {},
+      "auth": "Earthdata Login",
+      "cors": null,
+      "status": "failed",
+      "statusNote": "Not called: no Earthdata Login credentials on the build machine (no ~/.netrc, no EARTHDATA_* env). Not coded, to avoid shipping an untested flow. Elevation comes from NASA POWER (grid-cell mean) meanwhile.",
+      "citation": "AppEEARS Team. Application for Extracting and Exploring Analysis Ready Samples. NASA EOSDIS LP DAAC.",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": []
+    },
+    "harmony": {
+      "name": "Harmony (subsetting)",
+      "agency": "NASA (EOSDIS)",
+      "baseUrl": "https://harmony.earthdata.nasa.gov/",
+      "params": {},
+      "auth": "Earthdata Login",
+      "cors": null,
+      "status": "failed",
+      "statusNote": "Not called: no Earthdata Login credentials on the build machine.",
+      "citation": "NASA Harmony, https://harmony.earthdata.nasa.gov/",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": []
+    },
+    "opentopography": {
+      "name": "OpenTopography Global DEM API (plan C, not NASA)",
+      "agency": "OpenTopography (NSF)",
+      "baseUrl": "https://portal.opentopography.org/API/globaldem",
+      "params": {},
+      "auth": "API key",
+      "cors": null,
+      "status": "candidate",
+      "statusNote": "Not tried: needs a free key that the team has not created yet.",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": false,
+      "usedIn": []
+    },
+    "esa_copernicus_dem": {
+      "name": "ESA Copernicus DEM / Sentinel-2",
+      "agency": "ESA",
+      "status": "candidate",
+      "statusNote": "Partner agency. Not integrated (over the 30-minute budget; needs an access route chosen by the team).",
+      "officialChallengeResource": false,
+      "usedIn": []
+    },
+    "inpe_bdc": {
+      "name": "INPE Brazil Data Cube",
+      "agency": "INPE (Brazil)",
+      "status": "candidate",
+      "statusNote": "Partner agency. Not integrated (over the 30-minute budget).",
+      "officialChallengeResource": false,
+      "usedIn": []
+    },
+    "conae": {
+      "name": "CONAE catalogue",
+      "agency": "CONAE (Argentina)",
+      "status": "candidate",
+      "statusNote": "Partner agency. Not integrated (over the 30-minute budget).",
+      "officialChallengeResource": false,
+      "usedIn": []
+    }
+  },
+  "indicatorDimensions": {
+    "temp_range": "temperature",
+    "aridity": "water",
+    "vegetation": "biology",
+    "elevation": "atmosphere",
+    "solar": "operational",
+    "wind": "atmosphere",
+    "land_cover": "terrain",
+    "data_coverage": "operational",
+    "radiation_gap": "atmosphere",
+    "space_weather": "operational"
+  },
+  "missionFitRules": {
+    "note": "Data-inferred attribute values are checked against the REQUIRED rules of src/data/criteria.json. Only fields the data can infer are checked: vegetation (from NDVI) and climate (from POWER). Water/land-cover class 17 fails every mission ('On land').",
+    "inferredFields": [
+      "vegetation",
+      "climate"
+    ]
+  },
+  "cacheTtlHours": {
+    "power": 720,
+    "cmr": 168,
+    "donki": 6,
+    "eonet": 24,
+    "tesvis": 720
+  },
+  "officialResourcesNote": "Checked 2026-11-14: the challenge page's Resources tab lists Earthdata Search, Worldview, PDS, LRO/Diviner, CSA RCM/RADARSAT-1, the CSA SAR tutorial, Copernicus, ESA Open Science Catalog and JAXA G-Portal. It does NOT list api.nasa.gov, DONKI, OSDR, RadLab or Trek (those came from the team brief), so officialChallengeResource is false for them. See data/official-resources.json."
+}

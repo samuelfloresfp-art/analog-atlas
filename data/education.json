@@ -1,0 +1,17 @@
+{
+  "status": "in-progress",
+  "badge": "In progress",
+  "intro": "Structured placeholder. The team has NOT chosen the audience, objectives or pedagogical framework yet. Nothing below is decided; every field marked [TEAM TO FILL] must be written by the team.",
+  "fields": [
+    { "id": "audience", "label": "Target audience", "value": "[TEAM TO FILL]", "hint": "e.g. age range / school level / informal learners — to be decided by the team." },
+    { "id": "objectives", "label": "Learning objectives", "value": "[TEAM TO FILL]", "hint": "What should a learner be able to explain or do after using the site?" },
+    { "id": "framework", "label": "Pedagogical framework", "value": "[TEAM TO FILL]", "hint": "Not chosen by the team yet. Do not assume one." },
+    { "id": "curriculum", "label": "Curriculum alignment", "value": "[TEAM TO FILL]", "hint": "e.g. BNCC (Brazil) skills — to be checked by the team against the official BNCC text." },
+    { "id": "flow", "label": "How the flow supports the objectives", "value": "[TEAM TO FILL]", "hint": "Mission → map → (simulation, archived in this version) → validation: describe how each step serves an objective." },
+    { "id": "assessment", "label": "How to assess learning", "value": "[TEAM TO FILL]", "hint": "e.g. what evidence of learning the team will collect." }
+  ],
+  "existingMaterial": {
+    "text": "The project is meant to complement existing space-education material, such as the Canadian Space Agency's STEM resources listed among the challenge resources.",
+    "resourceGroup": "csa"
+  }
+}

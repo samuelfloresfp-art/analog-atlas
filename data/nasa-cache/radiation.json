@@ -1,0 +1,26 @@
+{
+  "instrument": "DosTel2 (DOSTEL, ISS Columbus — DORELI project)",
+  "quantity": "absorbed dose rate",
+  "meanUGyPerH": 33.41,
+  "medianUGyPerH": 5.35,
+  "n": 2739,
+  "period": "2020-01-01 to 2020-01-04 (UTC)",
+  "unit": "µGy/h",
+  "query": "instrument_id==DosTel2, columns+=absorbed_dose_rate",
+  "earthBackground": {
+    "value": 2.4,
+    "unit": "mSv/yr (≈ 0.27 µSv/h)",
+    "what": "Worldwide average annual effective dose from natural sources",
+    "citation": "UNSCEAR 2008 Report, Vol. I, Annex B",
+    "url": "https://www.unscear.org/unscear/en/publications/2008_1.html",
+    "status": "manual",
+    "caveat": "Effective dose (Sv) and absorbed dose (Gy) are different quantities; shown side by side only to give the order of magnitude."
+  },
+  "source": {
+    "name": "RadLab — OSDR Radiation Dosimetry Database (Data API)",
+    "agency": "NASA (OSDR) with ASI / Bulgarian Academy of Sciences detectors",
+    "url": "https://visualization.osdr.nasa.gov/radlab/api/"
+  },
+  "status": "live",
+  "generatedAt": "2026-11-14T19:01:39+00:00"
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "landing",
+    "name": "Landing",
+    "accent": "#ff8a3d",
+    "description": "Tests of how a lander descends, detects hazards and touches down: navigation, guidance and how the surface reacts under the vehicle.",
+    "confidence": "assumption"
+  },
+  {
+    "id": "rover",
+    "name": "Rover",
+    "accent": "#e0533d",
+    "description": "Driving robotic or crewed rovers on terrain that behaves like the Moon or Mars: mobility, navigation, sampling and remote operations.",
+    "confidence": "assumption"
+  },
+  {
+    "id": "base",
+    "name": "Base",
+    "accent": "#3dd6e0",
+    "description": "Living and working in a habitat as a crew would at a permanent base: isolation, life support, logistics and use of local resources.",
+    "confidence": "assumption"
+  }
+]

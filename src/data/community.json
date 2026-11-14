@@ -1,0 +1,44 @@
+[
+  {
+    "id": "example-riachao",
+    "example": true,
+    "createdAt": "2026-11-14T12:00:00Z",
+    "nickname": "Analog Atlas team",
+    "form": {
+      "planet": "moon",
+      "mission": "rover",
+      "name": "Riachão crater (example)",
+      "lat": -7.72,
+      "lon": -46.64,
+      "country": "Brazil",
+      "attrs": { "topography": "impact-crater", "slopeClass": "5-15", "surface": "gravel-regolith", "vegetation": "sparse", "climate": "semi-arid", "waterIce": "none", "subsurface": "none", "access": "track", "isolation": "remote" },
+      "tempMin": "",
+      "tempMax": "",
+      "usedBefore": "dont-know",
+      "why": "Example only: a small confirmed impact structure in Maranhão listed by the team as worth evaluating. Crater rim and ejecta could host rover navigation tests.",
+      "lacks": "Example only: attributes are team guesses, vegetation and climate are not lunar, no data verified.",
+      "evidenceUrl": ""
+    }
+  },
+  {
+    "id": "example-vale-da-lua",
+    "example": true,
+    "createdAt": "2026-11-14T12:00:00Z",
+    "nickname": "Analog Atlas team",
+    "form": {
+      "planet": "mars",
+      "mission": "rover",
+      "name": "Vale da Lua, Chapada dos Veadeiros (example)",
+      "lat": -14.21,
+      "lon": -47.78,
+      "country": "Brazil",
+      "attrs": { "topography": "canyon-valley", "slopeClass": "5-15", "surface": "gravel-regolith", "vegetation": "sparse", "climate": "semi-arid", "waterIce": "seasonal", "subsurface": "none", "access": "road", "isolation": "rural" },
+      "tempMin": "",
+      "tempMax": "",
+      "usedBefore": "dont-know",
+      "why": "Example only: eroded rock surfaces listed by the team as a place to evaluate for rover mobility on sculpted bedrock.",
+      "lacks": "Example only: river water, vegetation around the valley, tourism; attributes are team guesses.",
+      "evidenceUrl": ""
+    }
+  }
+]

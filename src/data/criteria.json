@@ -1,0 +1,166 @@
+{
+  "version": "v2-prototype",
+  "confidence": "assumption",
+  "note": "Rules and weights are team assumptions for the prototype. Each rule compares ONE declared attribute against pass/partial lists. pass = 1, partial = 0.5, fail = 0. Score = weighted average × 100.",
+  "enums": {
+    "topography": [
+      { "id": "flat-plain", "label": "Flat plain" },
+      { "id": "impact-crater", "label": "Impact crater" },
+      { "id": "lava-field", "label": "Lava field" },
+      { "id": "dunes", "label": "Dunes" },
+      { "id": "canyon-valley", "label": "Canyon / valley" },
+      { "id": "mountain-plateau", "label": "Mountain / plateau" },
+      { "id": "rocky-plain", "label": "Rocky plain" },
+      { "id": "cave-lava-tube", "label": "Cave / lava tube" }
+    ],
+    "slopeClass": [
+      { "id": "0-2", "label": "0–2°" },
+      { "id": "2-5", "label": "2–5°" },
+      { "id": "5-15", "label": "5–15°" },
+      { "id": "15-30", "label": "15–30°" },
+      { "id": ">30", "label": "> 30°" }
+    ],
+    "surface": [
+      { "id": "basalt-rock", "label": "Basalt rock" },
+      { "id": "loose-sand", "label": "Loose sand" },
+      { "id": "fine-dust", "label": "Fine dust" },
+      { "id": "gravel-regolith", "label": "Gravel / regolith-like" },
+      { "id": "salt-crust", "label": "Salt crust" },
+      { "id": "clay", "label": "Clay" },
+      { "id": "ice-permafrost", "label": "Ice / permafrost" },
+      { "id": "vegetated-soil", "label": "Vegetated soil" }
+    ],
+    "vegetation": [
+      { "id": "none", "label": "None" },
+      { "id": "sparse", "label": "Sparse" },
+      { "id": "moderate", "label": "Moderate" },
+      { "id": "dense", "label": "Dense" }
+    ],
+    "climate": [
+      { "id": "hyper-arid", "label": "Hyper-arid" },
+      { "id": "arid", "label": "Arid" },
+      { "id": "semi-arid", "label": "Semi-arid" },
+      { "id": "humid", "label": "Humid" },
+      { "id": "polar-cold", "label": "Polar / cold" },
+      { "id": "high-altitude", "label": "High altitude" }
+    ],
+    "waterIce": [
+      { "id": "none", "label": "None" },
+      { "id": "seasonal", "label": "Seasonal water" },
+      { "id": "permafrost", "label": "Permafrost / ground ice" },
+      { "id": "hydrated-minerals", "label": "Hydrated minerals" },
+      { "id": "unknown", "label": "Unknown" }
+    ],
+    "subsurface": [
+      { "id": "none", "label": "None" },
+      { "id": "caves", "label": "Caves" },
+      { "id": "lava-tubes", "label": "Lava tubes" },
+      { "id": "unknown", "label": "Unknown" }
+    ],
+    "access": [
+      { "id": "road", "label": "Road" },
+      { "id": "track", "label": "Track" },
+      { "id": "none", "label": "None" }
+    ],
+    "isolation": [
+      { "id": "populated", "label": "Populated" },
+      { "id": "rural", "label": "Rural" },
+      { "id": "remote", "label": "Remote" },
+      { "id": "extreme", "label": "Extreme" }
+    ],
+    "latitudeBand": [
+      { "id": "polar", "label": "High latitude (> 60°)" },
+      { "id": "mid", "label": "Mid latitude (30–60°)" },
+      { "id": "low", "label": "Low latitude (< 30°)" }
+    ]
+  },
+  "fieldLabels": {
+    "topography": "Topography",
+    "slopeClass": "Slope",
+    "surface": "Surface",
+    "vegetation": "Vegetation",
+    "climate": "Climate",
+    "waterIce": "Water / ice",
+    "subsurface": "Subsurface",
+    "access": "Access",
+    "isolation": "Isolation",
+    "latitudeBand": "Latitude (computed from coordinates)"
+  },
+  "notReproducible": {
+    "moon": [
+      "Gravity is about 1/6 of Earth's — not reproducible on Earth.",
+      "The Moon has no atmosphere (vacuum); Earth's air changes dust, heat and sound.",
+      "No protection from cosmic and solar radiation on the lunar surface."
+    ],
+    "mars": [
+      "Gravity is about 3/8 of Earth's — not reproducible on Earth.",
+      "Mars' atmosphere is thin (under 1% of Earth's pressure) and mostly CO2.",
+      "Much higher surface radiation than anywhere on Earth."
+    ]
+  },
+  "combos": {
+    "moon.landing": {
+      "needs": ["Low slopes (≤ 5°)", "Firm, load-bearing surface", "No vegetation", "Low sun angles help test lunar south-pole lighting"],
+      "rules": [
+        { "id": "slope", "label": "Slope ≤ 5°", "explanation": "A lander tips over on steep ground; landing zones need gentle slopes.", "field": "slopeClass", "pass": ["0-2", "2-5"], "partial": [], "required": true, "weight": 3 },
+        { "id": "firm", "label": "Firm surface", "explanation": "The surface must carry the lander's weight without sinking or spraying loose material.", "field": "surface", "pass": ["basalt-rock", "gravel-regolith", "salt-crust"], "partial": ["fine-dust", "clay"], "required": true, "weight": 3 },
+        { "id": "vegetation", "label": "No or sparse vegetation", "explanation": "Plants hide hazards from sensors and do not exist on the Moon.", "field": "vegetation", "pass": ["none"], "partial": ["sparse"], "required": true, "weight": 2 },
+        { "id": "access", "label": "Reachable by road or track", "explanation": "Test campaigns need to bring vehicles and repeat flights.", "field": "access", "pass": ["road", "track"], "partial": [], "required": false, "weight": 1 },
+        { "id": "lunar-material", "label": "Basalt or regolith-like ground", "explanation": "Lunar maria are basalt and the surface is covered in regolith.", "field": "surface", "pass": ["basalt-rock", "gravel-regolith"], "partial": ["salt-crust", "fine-dust"], "required": false, "weight": 2 },
+        { "id": "low-sun", "label": "Low sun angle (high latitude)", "explanation": "The lunar south pole has very low sun angles and long shadows that confuse cameras.", "field": "latitudeBand", "pass": ["polar"], "partial": ["mid"], "required": false, "weight": 1 }
+      ]
+    },
+    "mars.landing": {
+      "needs": ["Low slopes (≤ 5°)", "Firm surface", "No vegetation", "Dusty, arid conditions like Martian plains"],
+      "rules": [
+        { "id": "slope", "label": "Slope ≤ 5°", "explanation": "A lander tips over on steep ground; landing zones need gentle slopes.", "field": "slopeClass", "pass": ["0-2", "2-5"], "partial": [], "required": true, "weight": 3 },
+        { "id": "firm", "label": "Firm surface", "explanation": "The surface must carry the lander's weight without sinking.", "field": "surface", "pass": ["basalt-rock", "gravel-regolith", "salt-crust"], "partial": ["fine-dust", "clay"], "required": true, "weight": 3 },
+        { "id": "vegetation", "label": "No or sparse vegetation", "explanation": "Plants hide hazards from sensors and do not exist on Mars.", "field": "vegetation", "pass": ["none"], "partial": ["sparse"], "required": true, "weight": 2 },
+        { "id": "access", "label": "Reachable by road or track", "explanation": "Test campaigns need to bring vehicles and repeat flights.", "field": "access", "pass": ["road", "track"], "partial": [], "required": false, "weight": 1 },
+        { "id": "dust", "label": "Dust or fine material", "explanation": "Martian landings kick up dust that blinds sensors; dusty sites test this.", "field": "surface", "pass": ["fine-dust", "gravel-regolith"], "partial": ["loose-sand", "clay"], "required": false, "weight": 1 },
+        { "id": "arid", "label": "Arid climate", "explanation": "Mars is extremely dry; humid sites change dust and surface behaviour.", "field": "climate", "pass": ["hyper-arid", "arid"], "partial": ["semi-arid", "high-altitude", "polar-cold"], "required": false, "weight": 2 }
+      ]
+    },
+    "moon.rover": {
+      "needs": ["Slopes between 2° and 30°", "No or sparse vegetation", "Obstacles: craters, rocks, lava", "Regolith-like or basaltic ground"],
+      "rules": [
+        { "id": "slope-variety", "label": "Slopes 2–30°", "explanation": "Rovers must be tested on climbs and descents, not only flat ground.", "field": "slopeClass", "pass": ["2-5", "5-15", "15-30"], "partial": [">30"], "required": true, "weight": 3 },
+        { "id": "vegetation", "label": "No or sparse vegetation", "explanation": "Vegetation changes traction and hides rocks; there is none on the Moon.", "field": "vegetation", "pass": ["none"], "partial": ["sparse"], "required": true, "weight": 3 },
+        { "id": "obstacles", "label": "Terrain with obstacles", "explanation": "Navigation software must learn to avoid craters, rocks and ridges.", "field": "topography", "pass": ["impact-crater", "lava-field", "rocky-plain", "dunes", "canyon-valley"], "partial": ["mountain-plateau", "cave-lava-tube"], "required": false, "weight": 2 },
+        { "id": "lunar-material", "label": "Regolith-like or basaltic ground", "explanation": "Wheels behave very differently on regolith than on soil or sand.", "field": "surface", "pass": ["gravel-regolith", "basalt-rock"], "partial": ["fine-dust"], "required": false, "weight": 2 },
+        { "id": "craters", "label": "Craters", "explanation": "The lunar surface is dominated by craters of all sizes.", "field": "topography", "pass": ["impact-crater"], "partial": ["lava-field"], "required": false, "weight": 1 }
+      ]
+    },
+    "mars.rover": {
+      "needs": ["Slopes between 2° and 30°", "No or sparse vegetation", "Obstacles: rocks, dunes, canyons", "Sand, dust, clays or layered rocks"],
+      "rules": [
+        { "id": "slope-variety", "label": "Slopes 2–30°", "explanation": "Rovers must be tested on climbs and descents, not only flat ground.", "field": "slopeClass", "pass": ["2-5", "5-15", "15-30"], "partial": [">30"], "required": true, "weight": 3 },
+        { "id": "vegetation", "label": "No or sparse vegetation", "explanation": "Vegetation changes traction and hides rocks; there is none on Mars.", "field": "vegetation", "pass": ["none"], "partial": ["sparse"], "required": true, "weight": 3 },
+        { "id": "obstacles", "label": "Terrain with obstacles", "explanation": "Navigation software must learn to avoid rocks, dunes and ridges.", "field": "topography", "pass": ["impact-crater", "lava-field", "rocky-plain", "dunes", "canyon-valley"], "partial": ["mountain-plateau", "cave-lava-tube"], "required": false, "weight": 2 },
+        { "id": "mars-material", "label": "Sand, dust or clays", "explanation": "Martian rovers deal with dunes, dust and clay/sulfate-bearing rocks.", "field": "surface", "pass": ["fine-dust", "loose-sand", "clay"], "partial": ["gravel-regolith", "basalt-rock"], "required": false, "weight": 2 },
+        { "id": "mars-landforms", "label": "Dunes or layered canyons", "explanation": "Dune fields and layered sediments are typical rover targets on Mars.", "field": "topography", "pass": ["dunes", "canyon-valley"], "partial": ["impact-crater", "rocky-plain"], "required": false, "weight": 1 }
+      ]
+    },
+    "moon.base": {
+      "needs": ["Remote or extreme isolation", "Extreme climate (arid, cold or high altitude)", "Local resources (water/ice) for ISRU", "Caves or lava tubes as natural shelter"],
+      "rules": [
+        { "id": "isolation", "label": "Remote or extreme isolation", "explanation": "Crews on a lunar base are isolated; nearby towns break the simulation.", "field": "isolation", "pass": ["remote", "extreme"], "partial": [], "required": true, "weight": 3 },
+        { "id": "extreme-climate", "label": "Extreme climate", "explanation": "Habitats must be tested under thermal and environmental stress.", "field": "climate", "pass": ["hyper-arid", "arid", "polar-cold", "high-altitude"], "partial": ["semi-arid"], "required": true, "weight": 3 },
+        { "id": "isru", "label": "Water or ice for ISRU", "explanation": "A permanent base will need local water ice (e.g. at the lunar poles).", "field": "waterIce", "pass": ["permafrost", "hydrated-minerals"], "partial": ["seasonal"], "required": false, "weight": 3 },
+        { "id": "cold", "label": "Extreme cold", "explanation": "Lunar polar regions are among the coldest places in the Solar System.", "field": "climate", "pass": ["polar-cold"], "partial": ["high-altitude"], "required": false, "weight": 2 },
+        { "id": "lava-tubes", "label": "Lava tubes or caves", "explanation": "Lunar lava tubes could shelter a base from radiation and temperature swings.", "field": "subsurface", "pass": ["lava-tubes"], "partial": ["caves"], "required": false, "weight": 2 }
+      ]
+    },
+    "mars.base": {
+      "needs": ["Remote or extreme isolation", "Extreme climate (arid, cold or high altitude)", "Ground ice or hydrated minerals for ISRU", "Caves or lava tubes as natural shelter"],
+      "rules": [
+        { "id": "isolation", "label": "Remote or extreme isolation", "explanation": "Mars crews are months away from help; nearby towns break the simulation.", "field": "isolation", "pass": ["remote", "extreme"], "partial": [], "required": true, "weight": 3 },
+        { "id": "extreme-climate", "label": "Extreme climate", "explanation": "Habitats must be tested under thermal and environmental stress.", "field": "climate", "pass": ["hyper-arid", "arid", "polar-cold", "high-altitude"], "partial": ["semi-arid"], "required": true, "weight": 3 },
+        { "id": "isru", "label": "Water or ice for ISRU", "explanation": "A Mars base will need local water from ground ice or hydrated minerals.", "field": "waterIce", "pass": ["permafrost", "hydrated-minerals"], "partial": ["seasonal"], "required": false, "weight": 3 },
+        { "id": "ground-ice", "label": "Permafrost / ground ice", "explanation": "Shallow ground ice is a key target for Mars base sites.", "field": "waterIce", "pass": ["permafrost"], "partial": ["hydrated-minerals"], "required": false, "weight": 2 },
+        { "id": "cold-arid", "label": "Cold and arid", "explanation": "Mars is both very cold and very dry.", "field": "climate", "pass": ["polar-cold", "hyper-arid"], "partial": ["arid", "high-altitude"], "required": false, "weight": 1 },
+        { "id": "shelter", "label": "Caves or lava tubes", "explanation": "Natural shelters could protect a base from radiation.", "field": "subsurface", "pass": ["lava-tubes", "caves"], "partial": [], "required": false, "weight": 1 }
+      ]
+    }
+  }
+}

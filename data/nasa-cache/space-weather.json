@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-11-14T19:01:05+00:00",
+  "window30d": [
+    "2026-10-15",
+    "2026-11-14"
+  ],
+  "window365d": [
+    "2025-11-14",
+    "2026-11-14"
+  ],
+  "counts30d": {
+    "FLR": 13,
+    "CME": 89,
+    "SEP": 0,
+    "GST": 1
+  },
+  "counts365d": {
+    "FLR": 406,
+    "CME": 1654,
+    "SEP": 42,
+    "GST": 20
+  },
+  "recent": [
+    {
+      "type": "FLR",
+      "id": "2026-11-08T15:29:00-FLR-001",
+      "time": "2026-11-08T15:37Z",
+      "class": "M1.1",
+      "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/FLR/49456/-1"
+    },
+    {
+      "type": "FLR",
+      "id": "2026-11-08T18:15:00-FLR-001",
+      "time": "2026-11-08T18:27Z",
+      "class": "M1.1",
+      "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/FLR/49461/-1"
+    },
+    {
+      "type": "FLR",
+      "id": "2026-11-11T21:06:00-FLR-001",
+      "time": "2026-11-11T21:21Z",
+      "class": "M1.7",
+      "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/FLR/49504/-1"
+    },
+    {
+      "type": "CME",
+      "id": "2026-11-14T01:48:00-CME-001",
+      "time": "2026-11-14T01:48Z",
+      "class": null,
+      "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CME/49549/-1"
+    },
+    {
+      "type": "CME",
+      "id": "2026-11-14T04:00:00-CME-001",
+      "time": "2026-11-14T04:00Z",
+      "class": null,
+      "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CME/49551/-1"
+    },
+    {
+      "type": "CME",
+      "id": "2026-11-14T14:00:00-CME-001",
+      "time": "2026-11-14T14:00Z",
+      "class": null,
+      "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/CME/49554/-1"
+    },
+    {
+      "type": "GST",
+      "id": "2026-10-31T18:00:00-GST-001",
+      "time": "2026-10-31T18:00Z",
+      "class": null,
+      "link": "https://ccmc.gsfc.nasa.gov/DONKI/view/GST/49348/-1"
+    }
+  ],
+  "host": "ccmc.gsfc.nasa.gov/DONKI-API",
+  "errors": [
+    "api.nasa.gov FLR: HTTP Error 429: Too Many Requests → using the CCMC host"
+  ],
+  "total30d": 103,
+  "source": {
+    "name": "DONKI — Space Weather Database Of Notifications, Knowledge, Information (CCMC)",
+    "agency": "NASA (CCMC / GSFC)",
+    "url": "https://ccmc.gsfc.nasa.gov/DONKI-API/get/{FLR|CME|SEP|GST}"
+  }
+}

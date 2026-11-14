@@ -1,0 +1,3093 @@
+[
+  {
+    "id": "atacama",
+    "name": "Atacama Desert",
+    "country": "Chile",
+    "continent": "South America",
+    "lat": -24.1,
+    "lon": -69.9,
+    "environment": [
+      "desert",
+      "high altitude"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – hyper-arid plains and soils",
+      "moon": "Moon – dry, rocky plains (geometry only)"
+    },
+    "summary": "One of the driest places on Earth, with very little life in the soil and wide rocky plains. Often compared to Martian surface conditions.",
+    "attributes": {
+      "topography": "rocky-plain",
+      "slopeClass": "2-5",
+      "surface": "gravel-regolith",
+      "vegetation": "none",
+      "climate": "hyper-arid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "rover",
+        "what": "Rover and life-detection field tests by several research teams (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Extreme dryness similar to the Martian surface",
+      "Soils with very low organic content",
+      "Rocky, dusty plains with little vegetation"
+    ],
+    "whatItLacks": [
+      "Earth atmosphere and pressure",
+      "No Martian radiation environment",
+      "Occasional fog and rare rain events"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "strong",
+      "atmosphere": "partial",
+      "temperature": "partial",
+      "water": "strong",
+      "biology": "strong",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:21:04+00:00"
+    }
+  },
+  {
+    "id": "haughton",
+    "name": "Haughton Crater, Devon Island",
+    "country": "Canada",
+    "continent": "North America",
+    "lat": 75.38,
+    "lon": -89.68,
+    "environment": [
+      "impact crater",
+      "polar"
+    ],
+    "target": "both",
+    "mirrors": {
+      "mars": "Mars – polar impact crater with ground ice",
+      "moon": "Moon – impact crater terrain"
+    },
+    "summary": "An impact crater in the Canadian High Arctic, cold, dry and unvegetated. A long-running site for Mars field research.",
+    "attributes": {
+      "topography": "impact-crater",
+      "slopeClass": "5-15",
+      "surface": "gravel-regolith",
+      "vegetation": "sparse",
+      "climate": "polar-cold",
+      "waterIce": "permafrost",
+      "subsurface": "none",
+      "access": "none",
+      "isolation": "extreme",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "rover",
+        "what": "Rover and vehicle traverse field research (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      },
+      {
+        "planet": "mars",
+        "mission": "base",
+        "what": "Field station and simulated habitat operations (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Impact crater geology in a cold, dry setting",
+      "Little vegetation and permafrost ground",
+      "Isolation comparable to an early outpost"
+    ],
+    "whatItLacks": [
+      "Summer temperatures much warmer than Mars",
+      "Earth atmosphere and gravity",
+      "Seasonal snow and meltwater"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "partial",
+      "operational": "weak"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:21:04+00:00"
+    }
+  },
+  {
+    "id": "mdrs",
+    "name": "Mars Desert Research Station, Utah",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 38.41,
+    "lon": -110.79,
+    "environment": [
+      "desert"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – layered sedimentary terrain"
+    },
+    "summary": "A habitat in the Utah desert where crews run simulated Mars missions, surrounded by red, layered sedimentary rock.",
+    "attributes": {
+      "topography": "canyon-valley",
+      "slopeClass": "5-15",
+      "surface": "clay",
+      "vegetation": "sparse",
+      "climate": "arid",
+      "waterIce": "hydrated-minerals",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "base",
+        "what": "Simulated Mars habitat crews (MDRS).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      },
+      {
+        "planet": "mars",
+        "mission": "rover",
+        "what": "Student rover competitions held near the station (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Red layered sediments that look like Martian outcrops",
+      "Dry climate and sparse vegetation",
+      "Existing habitat infrastructure"
+    ],
+    "whatItLacks": [
+      "Much higher pressure and oxygen",
+      "Not as cold as Mars",
+      "Close to towns, so isolation is partly simulated"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:21:04+00:00"
+    }
+  },
+  {
+    "id": "hiseas",
+    "name": "HI-SEAS, Mauna Loa, Hawaii",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 19.6,
+    "lon": -155.49,
+    "environment": [
+      "volcanic",
+      "high altitude"
+    ],
+    "target": "both",
+    "mirrors": {
+      "mars": "Mars – basaltic volcanic plains",
+      "moon": "Moon – mare basalt"
+    },
+    "summary": "A habitat on the slopes of a large volcano, surrounded by bare basaltic lava flows. Used for long-duration isolation studies.",
+    "attributes": {
+      "topography": "lava-field",
+      "slopeClass": "5-15",
+      "surface": "basalt-rock",
+      "vegetation": "none",
+      "climate": "high-altitude",
+      "waterIce": "none",
+      "subsurface": "lava-tubes",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "base",
+        "what": "Long-duration isolation habitat missions (HI-SEAS).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Basaltic lava similar to lunar maria and Martian plains",
+      "High altitude and almost no vegetation",
+      "Isolation for crew studies"
+    ],
+    "whatItLacks": [
+      "Earth atmosphere and gravity",
+      "Mild temperatures compared with Moon or Mars",
+      "No impact-crater geology"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "strong",
+      "subsurface": "partial",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "base",
+          "state": "candidate",
+          "failingRequirements": [
+            "Extreme climate"
+          ],
+          "message": "Shown as possible (grey) for Moon · Base, but NASA data fails: Extreme climate — data suggests 'humid' (1814.0 mm/yr, mean 18.2 °C, grid elevation 1145.0 m)."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "base",
+          "state": "validated",
+          "failingRequirements": [
+            "Extreme climate"
+          ],
+          "message": "Shown as validated (green) for Mars · Base, but NASA data fails: Extreme climate — data suggests 'humid' (1814.0 mm/yr, mean 18.2 °C, grid elevation 1145.0 m)."
+        },
+        {
+          "type": "attribute-vs-data",
+          "field": "climate",
+          "declared": "high-altitude",
+          "inferred": "humid",
+          "affects": [
+            "mars.base",
+            "moon.base"
+          ],
+          "message": "Declared climate 'high-altitude', but NASA data suggests 'humid' (1814.0 mm/yr, mean 18.2 °C, grid elevation 1145.0 m). This would change the map in: mars.base, moon.base."
+        }
+      ],
+      "checkedAt": "2026-11-14T18:21:04+00:00"
+    }
+  },
+  {
+    "id": "black-point",
+    "name": "Black Point Lava Flow, Arizona",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 35.67,
+    "lon": -111.45,
+    "environment": [
+      "volcanic",
+      "desert"
+    ],
+    "target": "moon",
+    "mirrors": {
+      "moon": "Moon – mare basalt",
+      "mars": "Mars – basaltic lava plains"
+    },
+    "summary": "A basaltic lava flow in the Arizona desert used for testing exploration vehicles and procedures (Desert RATS).",
+    "attributes": {
+      "topography": "lava-field",
+      "slopeClass": "2-5",
+      "surface": "basalt-rock",
+      "vegetation": "sparse",
+      "climate": "arid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "rural",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "moon",
+        "mission": "rover",
+        "what": "Desert RATS field tests of rovers and exploration procedures.",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Basaltic surface similar to lunar mare",
+      "Dry, sparse vegetation",
+      "Easy logistics for repeated tests"
+    ],
+    "whatItLacks": [
+      "No fine lunar regolith layer",
+      "Earth gravity and atmosphere",
+      "Vegetation patches"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:22:34+00:00"
+    }
+  },
+  {
+    "id": "lanzarote",
+    "name": "Lanzarote",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 29.0,
+    "lon": -13.75,
+    "environment": [
+      "volcanic",
+      "cave"
+    ],
+    "target": "both",
+    "mirrors": {
+      "mars": "Mars – volcanic plains and lava tubes",
+      "moon": "Moon – lava tubes and basalt"
+    },
+    "summary": "A volcanic island with young lava fields, cinder cones and lava tubes, used for astronaut geology training and rover tests.",
+    "attributes": {
+      "topography": "lava-field",
+      "slopeClass": "5-15",
+      "surface": "basalt-rock",
+      "vegetation": "sparse",
+      "climate": "arid",
+      "waterIce": "none",
+      "subsurface": "lava-tubes",
+      "access": "road",
+      "isolation": "populated",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "rover",
+        "what": "Rover tests and astronaut geology training (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Young basaltic lava fields",
+      "Lava tubes similar to those seen on the Moon and Mars",
+      "Little vegetation in the lava fields"
+    ],
+    "whatItLacks": [
+      "Oceanic humidity and wind",
+      "Tourism and protected areas",
+      "No impact craters"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "partial",
+      "subsurface": "strong",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:23:49+00:00"
+    }
+  },
+  {
+    "id": "rio-tinto",
+    "name": "Río Tinto",
+    "country": "Spain",
+    "continent": "Europe",
+    "lat": 37.7,
+    "lon": -6.6,
+    "environment": [
+      "acidic river"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – acidic, iron-rich ancient waters"
+    },
+    "summary": "A red, highly acidic, iron-rich river system. Studied as an analog for ancient Martian water chemistry and tested for drilling.",
+    "attributes": {
+      "topography": "canyon-valley",
+      "slopeClass": "5-15",
+      "surface": "clay",
+      "vegetation": "moderate",
+      "climate": "semi-arid",
+      "waterIce": "hydrated-minerals",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "rural",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "rover",
+        "what": "Drilling and sampling technology tests (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Acidic, iron-rich water chemistry",
+      "Minerals that may relate to Martian deposits",
+      "Subsurface life studies"
+    ],
+    "whatItLacks": [
+      "Liquid water at the surface (unlike present Mars)",
+      "Mining activity and vegetation",
+      "Earth atmosphere"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "weak",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "strong",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "rover",
+          "state": "validated",
+          "failingRequirements": [
+            "No or sparse vegetation"
+          ],
+          "message": "Shown as validated (green) for Mars · Rover, but NASA data fails: No or sparse vegetation — data suggests 'moderate' (NDVI 0.446)."
+        }
+      ],
+      "checkedAt": "2026-11-14T18:24:47+00:00"
+    }
+  },
+  {
+    "id": "habitat-marte",
+    "name": "Habitat Marte, Rio Grande do Norte",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -5.76,
+    "lon": -35.99,
+    "environment": [
+      "semi-arid"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – habitat operations (not geology)"
+    },
+    "summary": "An analog habitat run by a Brazilian university in the semi-arid northeast (Caiçara do Rio do Vento, RN), used for simulated Mars missions and education.",
+    "attributes": {
+      "topography": "rocky-plain",
+      "slopeClass": "2-5",
+      "surface": "loose-sand",
+      "vegetation": "moderate",
+      "climate": "semi-arid",
+      "waterIce": "seasonal",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "rural",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "base",
+        "what": "Simulated Mars habitat missions.",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Existing habitat and simulation programme",
+      "Hot, dry climate",
+      "Accessible for Brazilian teams"
+    ],
+    "whatItLacks": [
+      "Vegetation around the habitat",
+      "Geology not very Mars-like",
+      "Hot, not cold, extremes"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "weak",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [
+      {
+        "label": "Olhar Digital (2021) — news article on Habitat Marte (team-provided, secondary source)",
+        "url": "https://olhardigital.com.br/2021/08/23/ciencia-e-espaco/habitat-marte-brasil-tem-estacao-espacial-analoga-ao-planeta-vermelho/"
+      }
+    ],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "base",
+          "state": "validated",
+          "failingRequirements": [
+            "Extreme climate"
+          ],
+          "message": "Shown as validated (green) for Mars · Base, but NASA data fails: Extreme climate — data suggests 'humid' (799.0 mm/yr, mean 25.8 °C, grid elevation 292.0 m)."
+        },
+        {
+          "type": "attribute-vs-data",
+          "field": "climate",
+          "declared": "semi-arid",
+          "inferred": "humid",
+          "affects": [
+            "mars.base",
+            "moon.base"
+          ],
+          "message": "Declared climate 'semi-arid', but NASA data suggests 'humid' (799.0 mm/yr, mean 25.8 °C, grid elevation 292.0 m). This would change the map in: mars.base, moon.base."
+        }
+      ],
+      "checkedAt": "2026-11-14T19:01:47+00:00"
+    }
+  },
+  {
+    "id": "iceland",
+    "name": "Iceland lava fields",
+    "country": "Iceland",
+    "continent": "Europe",
+    "lat": 65.03,
+    "lon": -16.75,
+    "environment": [
+      "volcanic",
+      "cave",
+      "polar"
+    ],
+    "target": "both",
+    "mirrors": {
+      "mars": "Mars – volcanic plains and glacio-volcanic features",
+      "moon": "Moon – basalt and lava tubes"
+    },
+    "summary": "Young basaltic lava fields and black sand plains, used for rover tests and astronaut geology training.",
+    "attributes": {
+      "topography": "lava-field",
+      "slopeClass": "2-5",
+      "surface": "basalt-rock",
+      "vegetation": "none",
+      "climate": "polar-cold",
+      "waterIce": "seasonal",
+      "subsurface": "lava-tubes",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "rover",
+        "what": "Rover field tests and astronaut geology training (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Fresh basaltic volcanism",
+      "Unvegetated black sand plains",
+      "Lava tubes"
+    ],
+    "whatItLacks": [
+      "Wet climate",
+      "Glacial processes that differ from Mars today",
+      "Earth atmosphere"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "weak",
+      "biology": "partial",
+      "subsurface": "strong",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "landing",
+          "state": "candidate",
+          "failingRequirements": [
+            "On land"
+          ],
+          "message": "Shown as possible (grey) for Moon · Landing, but NASA data fails: land cover says water."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "rover",
+          "state": "candidate",
+          "failingRequirements": [
+            "On land"
+          ],
+          "message": "Shown as possible (grey) for Moon · Rover, but NASA data fails: land cover says water."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "base",
+          "state": "candidate",
+          "failingRequirements": [
+            "On land"
+          ],
+          "message": "Shown as possible (grey) for Moon · Base, but NASA data fails: land cover says water."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "landing",
+          "state": "candidate",
+          "failingRequirements": [
+            "On land"
+          ],
+          "message": "Shown as possible (grey) for Mars · Landing, but NASA data fails: land cover says water."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "rover",
+          "state": "validated",
+          "failingRequirements": [
+            "On land"
+          ],
+          "message": "Shown as validated (green) for Mars · Rover, but NASA data fails: land cover says water."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "base",
+          "state": "candidate",
+          "failingRequirements": [
+            "On land"
+          ],
+          "message": "Shown as possible (grey) for Mars · Base, but NASA data fails: land cover says water."
+        }
+      ],
+      "checkedAt": "2026-11-14T18:27:05+00:00"
+    }
+  },
+  {
+    "id": "concordia",
+    "name": "Concordia Station",
+    "country": "Antarctica",
+    "continent": "Antarctica",
+    "lat": -75.1,
+    "lon": 123.33,
+    "environment": [
+      "polar"
+    ],
+    "target": "both",
+    "mirrors": {
+      "moon": "Moon – isolation and extreme cold",
+      "mars": "Mars – isolation and cold"
+    },
+    "summary": "A research station on the Antarctic plateau, isolated for months during winter. Used to study crews in extreme isolation.",
+    "attributes": {
+      "topography": "flat-plain",
+      "slopeClass": "0-2",
+      "surface": "ice-permafrost",
+      "vegetation": "none",
+      "climate": "polar-cold",
+      "waterIce": "permafrost",
+      "subsurface": "none",
+      "access": "none",
+      "isolation": "extreme",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "mars",
+        "mission": "base",
+        "what": "Winter-over isolation and crew health studies.",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Total isolation for months",
+      "Extreme cold and long darkness",
+      "Thin air at high altitude"
+    ],
+    "whatItLacks": [
+      "No rock or regolith surface",
+      "Earth gravity",
+      "Very different geology"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "weak",
+      "atmosphere": "partial",
+      "temperature": "strong",
+      "water": "strong",
+      "biology": "strong",
+      "subsurface": "weak",
+      "operational": "weak"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T19:01:47+00:00"
+    }
+  },
+  {
+    "id": "cinder-lake",
+    "name": "Cinder Lake Crater Field, Arizona",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 35.3,
+    "lon": -111.5,
+    "environment": [
+      "volcanic",
+      "impact crater",
+      "engineered test site"
+    ],
+    "target": "moon",
+    "mirrors": {
+      "moon": "Moon – cratered landing site"
+    },
+    "summary": "A field of artificial craters blasted into volcanic cinders to rehearse lunar landing-site work and test rovers.",
+    "attributes": {
+      "topography": "impact-crater",
+      "slopeClass": "2-5",
+      "surface": "gravel-regolith",
+      "vegetation": "sparse",
+      "climate": "arid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "rural",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "moon",
+        "mission": "landing",
+        "what": "Landing-site familiarisation for astronauts (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      },
+      {
+        "planet": "moon",
+        "mission": "rover",
+        "what": "Rover driving tests (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Crater pattern copied from a lunar site",
+      "Dark volcanic cinders",
+      "Easy access"
+    ],
+    "whatItLacks": [
+      "Artificial, small area",
+      "Earth atmosphere and gravity",
+      "Vegetation around the field"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "partial",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "landing",
+          "state": "validated",
+          "failingRequirements": [
+            "No or sparse vegetation"
+          ],
+          "message": "Shown as validated (green) for Moon · Landing, but NASA data fails: No or sparse vegetation — data suggests 'moderate' (NDVI 0.437)."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "rover",
+          "state": "validated",
+          "failingRequirements": [
+            "No or sparse vegetation"
+          ],
+          "message": "Shown as validated (green) for Moon · Rover, but NASA data fails: No or sparse vegetation — data suggests 'moderate' (NDVI 0.437)."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "landing",
+          "state": "candidate",
+          "failingRequirements": [
+            "No or sparse vegetation"
+          ],
+          "message": "Shown as possible (grey) for Mars · Landing, but NASA data fails: No or sparse vegetation — data suggests 'moderate' (NDVI 0.437)."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "rover",
+          "state": "candidate",
+          "failingRequirements": [
+            "No or sparse vegetation"
+          ],
+          "message": "Shown as possible (grey) for Mars · Rover, but NASA data fails: No or sparse vegetation — data suggests 'moderate' (NDVI 0.437)."
+        },
+        {
+          "type": "attribute-vs-data",
+          "field": "vegetation",
+          "declared": "sparse",
+          "inferred": "moderate",
+          "affects": [
+            "mars.landing",
+            "mars.rover",
+            "moon.landing",
+            "moon.rover"
+          ],
+          "message": "Declared vegetation 'sparse', but NASA data suggests 'moderate' (NDVI 0.437). This would change the map in: mars.landing, mars.rover, moon.landing, moon.rover."
+        }
+      ],
+      "checkedAt": "2026-11-14T18:27:32+00:00"
+    }
+  },
+  {
+    "id": "florida-hazard-field",
+    "name": "Florida lander hazard field",
+    "country": "USA",
+    "continent": "North America",
+    "lat": 28.62,
+    "lon": -80.69,
+    "environment": [
+      "engineered test site",
+      "coastal"
+    ],
+    "target": "moon",
+    "mirrors": {
+      "moon": "Moon – rocks and craters in a landing zone"
+    },
+    "summary": "An engineered hazard field with built rocks and craters used to test autonomous lander hazard detection.",
+    "attributes": {
+      "topography": "flat-plain",
+      "slopeClass": "0-2",
+      "surface": "gravel-regolith",
+      "vegetation": "sparse",
+      "climate": "humid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "populated",
+      "confidence": "assumption"
+    },
+    "history": [
+      {
+        "planet": "moon",
+        "mission": "landing",
+        "what": "Autonomous landing and hazard-avoidance flight tests (to verify).",
+        "org": null,
+        "year": null,
+        "source": null,
+        "confidence": "assumption"
+      }
+    ],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Rocks and craters sized for lunar landing tests",
+      "Controlled, repeatable layout",
+      "Infrastructure for flight tests"
+    ],
+    "whatItLacks": [
+      "Not a natural analog",
+      "Humid, vegetated coastal setting",
+      "No real regolith"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "landing",
+          "state": "validated",
+          "failingRequirements": [
+            "No or sparse vegetation"
+          ],
+          "message": "Shown as validated (green) for Moon · Landing, but NASA data fails: No or sparse vegetation — data suggests 'dense' (NDVI 0.751)."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "landing",
+          "state": "candidate",
+          "failingRequirements": [
+            "No or sparse vegetation"
+          ],
+          "message": "Shown as possible (grey) for Mars · Landing, but NASA data fails: No or sparse vegetation — data suggests 'dense' (NDVI 0.751)."
+        },
+        {
+          "type": "attribute-vs-data",
+          "field": "vegetation",
+          "declared": "sparse",
+          "inferred": "dense",
+          "affects": [
+            "mars.landing",
+            "mars.rover",
+            "moon.landing",
+            "moon.rover"
+          ],
+          "message": "Declared vegetation 'sparse', but NASA data suggests 'dense' (NDVI 0.751). This would change the map in: mars.landing, mars.rover, moon.landing, moon.rover."
+        }
+      ],
+      "checkedAt": "2026-11-14T18:28:52+00:00"
+    }
+  },
+  {
+    "id": "vargeao",
+    "name": "Vargeão crater",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -26.82,
+    "lon": -52.17,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – impact crater in basalt",
+      "moon": "Moon – impact into basaltic plains"
+    },
+    "summary": "An impact structure about 12 km wide formed in basaltic lava flows, in Santa Catarina. Rare example of an impact into basalt, as on many Martian plains. Literature cited by the team points to it as an analog for impact-driven hydrothermal activity on Mars.",
+    "attributes": {
+      "topography": "impact-crater",
+      "slopeClass": "5-15",
+      "surface": "basalt-rock",
+      "vegetation": "moderate",
+      "climate": "humid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "populated",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Impact into basalt, like many Martian craters",
+      "Shocked rocks and breccias for sampling practice",
+      "Clear crater shape for navigation"
+    ],
+    "whatItLacks": [
+      "Dense vegetation and farmland",
+      "Humid subtropical climate",
+      "Eroded, old structure"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "strong"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [
+      {
+        "label": "Yokoyama, E., Nédélec, A., Baratoux, D., Trindade, R. I. F., Fabre, S., & Berger, G. (2015). Hydrothermal alteration in basalts from Vargeão impact structure, south Brazil, and implications for recognition of impact-induced hydrothermalism on Mars. Icarus, 252, 347–365 (DOI verified in Crossref, 2026-11-14)",
+        "url": "https://doi.org/10.1016/j.icarus.2015.02.001"
+      }
+    ],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:29:17+00:00"
+    }
+  },
+  {
+    "id": "vista-alegre",
+    "name": "Vista Alegre crater",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -25.95,
+    "lon": -52.69,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – impact crater in basalt",
+      "moon": "Moon – impact into basaltic plains"
+    },
+    "summary": "An impact structure about 9.5 km wide in basalt, in Paraná, similar in setting to Vargeão.",
+    "attributes": {
+      "topography": "impact-crater",
+      "slopeClass": "2-5",
+      "surface": "basalt-rock",
+      "vegetation": "moderate",
+      "climate": "humid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "rural",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Impact crater formed in basalt",
+      "Breccias for geology training",
+      "Close to Vargeão for comparison"
+    ],
+    "whatItLacks": [
+      "Heavy farming and vegetation",
+      "Humid climate",
+      "Few exposed outcrops"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:29:32+00:00"
+    }
+  },
+  {
+    "id": "cerro-do-jarau",
+    "name": "Cerro do Jarau",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -30.2,
+    "lon": -56.54,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – crater in layered sedimentary and volcanic rock"
+    },
+    "summary": "A circular structure in Rio Grande do Sul, in basalt and sandstone, studied as an impact crater in the Pampa.",
+    "attributes": {
+      "topography": "impact-crater",
+      "slopeClass": "5-15",
+      "surface": "basalt-rock",
+      "vegetation": "moderate",
+      "climate": "humid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "rural",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Impact into layered sandstone and basalt",
+      "Open terrain with few trees",
+      "Ring-shaped hills useful for navigation tests"
+    ],
+    "whatItLacks": [
+      "Grass cover",
+      "Humid climate",
+      "Limited studies available"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T19:01:47+00:00"
+    }
+  },
+  {
+    "id": "araguainha",
+    "name": "Araguainha crater",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -16.78,
+    "lon": -52.99,
+    "environment": [
+      "impact crater"
+    ],
+    "target": "both",
+    "mirrors": {
+      "moon": "Moon – complex crater with central uplift",
+      "mars": "Mars – complex crater with central uplift"
+    },
+    "summary": "The largest known impact structure in South America (about 40 km), on the Goiás–Mato Grosso border, with a central uplift.",
+    "attributes": {
+      "topography": "impact-crater",
+      "slopeClass": "5-15",
+      "surface": "gravel-regolith",
+      "vegetation": "moderate",
+      "climate": "humid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "road",
+      "isolation": "rural",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Complex crater with central uplift, like many lunar and Martian craters",
+      "Large area for long traverses",
+      "Varied rock types"
+    ],
+    "whatItLacks": [
+      "Cerrado vegetation",
+      "Strong erosion over time",
+      "Wet season rains"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "partial",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:31:07+00:00"
+    }
+  },
+  {
+    "id": "serra-da-cangalha",
+    "name": "Serra da Cangalha",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -8.08,
+    "lon": -46.86,
+    "environment": [
+      "impact crater",
+      "semi-arid"
+    ],
+    "target": "both",
+    "mirrors": {
+      "moon": "Moon – well-preserved complex crater",
+      "mars": "Mars – well-preserved complex crater"
+    },
+    "summary": "A well-defined impact crater about 13 km wide in Tocantins, with a clear ring of hills.",
+    "attributes": {
+      "topography": "impact-crater",
+      "slopeClass": "5-15",
+      "surface": "gravel-regolith",
+      "vegetation": "sparse",
+      "climate": "semi-arid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Very clear crater shape",
+      "Remote location",
+      "Dry season with exposed rocks"
+    ],
+    "whatItLacks": [
+      "Cerrado vegetation",
+      "Hot, not cold",
+      "Few infrastructure"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "weak"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "base",
+          "state": "candidate",
+          "failingRequirements": [
+            "Extreme climate"
+          ],
+          "message": "Shown as possible (grey) for Moon · Base, but NASA data fails: Extreme climate — data suggests 'humid' (1325.0 mm/yr, mean 27.3 °C, grid elevation 326.0 m)."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "base",
+          "state": "candidate",
+          "failingRequirements": [
+            "Extreme climate"
+          ],
+          "message": "Shown as possible (grey) for Mars · Base, but NASA data fails: Extreme climate — data suggests 'humid' (1325.0 mm/yr, mean 27.3 °C, grid elevation 326.0 m)."
+        },
+        {
+          "type": "attribute-vs-data",
+          "field": "climate",
+          "declared": "semi-arid",
+          "inferred": "humid",
+          "affects": [
+            "mars.base",
+            "moon.base"
+          ],
+          "message": "Declared climate 'semi-arid', but NASA data suggests 'humid' (1325.0 mm/yr, mean 27.3 °C, grid elevation 326.0 m). This would change the map in: mars.base, moon.base."
+        }
+      ],
+      "checkedAt": "2026-11-14T19:01:47+00:00"
+    }
+  },
+  {
+    "id": "lencois",
+    "name": "Lençóis Maranhenses",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -2.53,
+    "lon": -43.12,
+    "environment": [
+      "dunes",
+      "coastal"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – dune fields"
+    },
+    "summary": "A large field of white sand dunes with seasonal freshwater lagoons between them, in Maranhão.",
+    "attributes": {
+      "topography": "dunes",
+      "slopeClass": "5-15",
+      "surface": "loose-sand",
+      "vegetation": "none",
+      "climate": "humid",
+      "waterIce": "seasonal",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Large active dune field",
+      "Wind-shaped forms similar to Martian dunes",
+      "Loose sand for mobility tests"
+    ],
+    "whatItLacks": [
+      "Seasonal lagoons of liquid water",
+      "Quartz sand, not basaltic",
+      "Protected area: permits needed"
+    ],
+    "dimensions": {
+      "geology": "weak",
+      "terrain": "strong",
+      "atmosphere": "partial",
+      "temperature": "weak",
+      "water": "weak",
+      "biology": "partial",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:32:44+00:00"
+    }
+  },
+  {
+    "id": "raso-da-catarina",
+    "name": "Raso da Catarina",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -9.65,
+    "lon": -38.5,
+    "environment": [
+      "semi-arid",
+      "desert"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – dry sandy plateaus"
+    },
+    "summary": "A dry sandstone plateau in Bahia with sandy soils and canyons, one of the driest parts of the Brazilian caatinga.",
+    "attributes": {
+      "topography": "mountain-plateau",
+      "slopeClass": "2-5",
+      "surface": "loose-sand",
+      "vegetation": "sparse",
+      "climate": "semi-arid",
+      "waterIce": "none",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Dry sandy plateau",
+      "Canyons and erosion features",
+      "Low population"
+    ],
+    "whatItLacks": [
+      "Caatinga vegetation",
+      "Hot climate",
+      "Sedimentary, not volcanic, rocks"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "partial",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T19:03:19+00:00"
+    }
+  },
+  {
+    "id": "uyuni",
+    "name": "Salar de Uyuni",
+    "country": "Bolivia",
+    "continent": "South America",
+    "lat": -20.13,
+    "lon": -67.49,
+    "environment": [
+      "salt flat",
+      "high altitude"
+    ],
+    "target": "both",
+    "mirrors": {
+      "mars": "Mars – evaporite basins",
+      "moon": "Moon – flat landing plains"
+    },
+    "summary": "The largest salt flat on Earth, extremely flat and high (about 3,600 m), with cold nights and strong sunlight.",
+    "attributes": {
+      "topography": "flat-plain",
+      "slopeClass": "0-2",
+      "surface": "salt-crust",
+      "vegetation": "none",
+      "climate": "high-altitude",
+      "waterIce": "seasonal",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Very flat, firm surface",
+      "Evaporite salts like some Martian basins",
+      "High altitude, strong UV and cold nights"
+    ],
+    "whatItLacks": [
+      "Seasonal flooding",
+      "Salt instead of regolith",
+      "Tourist traffic"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "partial",
+      "atmosphere": "partial",
+      "temperature": "partial",
+      "water": "partial",
+      "biology": "strong",
+      "subsurface": "nodata",
+      "operational": "partial"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "LRO Diviner (surface temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "moon",
+          "dataset": "Moon Mineralogy Mapper (M3)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:33:56+00:00"
+    }
+  },
+  {
+    "id": "puna",
+    "name": "Puna de Atacama",
+    "country": "Argentina",
+    "continent": "South America",
+    "lat": -26.0,
+    "lon": -67.4,
+    "environment": [
+      "desert",
+      "volcanic",
+      "high altitude"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – high, cold volcanic desert",
+      "moon": "Moon – volcanic plains (geometry only)"
+    },
+    "summary": "A very high, dry volcanic plateau with salt flats, lava and strong winds. Thin air and big temperature swings.",
+    "attributes": {
+      "topography": "mountain-plateau",
+      "slopeClass": "2-5",
+      "surface": "gravel-regolith",
+      "vegetation": "none",
+      "climate": "high-altitude",
+      "waterIce": "hydrated-minerals",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "extreme",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Very high altitude and thin air",
+      "Volcanic landscape with little life",
+      "Large day–night temperature swings"
+    ],
+    "whatItLacks": [
+      "Earth gravity",
+      "Atmosphere still much thicker than Mars",
+      "Difficult access"
+    ],
+    "dimensions": {
+      "geology": "strong",
+      "terrain": "strong",
+      "atmosphere": "partial",
+      "temperature": "strong",
+      "water": "strong",
+      "biology": "strong",
+      "subsurface": "nodata",
+      "operational": "weak"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [],
+      "checkedAt": "2026-11-14T18:34:29+00:00"
+    }
+  },
+  {
+    "id": "jalapao",
+    "name": "Jalapão",
+    "country": "Brazil",
+    "continent": "South America",
+    "lat": -10.5,
+    "lon": -46.5,
+    "environment": [
+      "dunes",
+      "semi-arid"
+    ],
+    "target": "mars",
+    "mirrors": {
+      "mars": "Mars – eroded mesas and dunes"
+    },
+    "summary": "A remote region in Tocantins with orange dunes, sandstone mesas and sparse vegetation.",
+    "attributes": {
+      "topography": "dunes",
+      "slopeClass": "5-15",
+      "surface": "loose-sand",
+      "vegetation": "sparse",
+      "climate": "semi-arid",
+      "waterIce": "seasonal",
+      "subsurface": "none",
+      "access": "track",
+      "isolation": "remote",
+      "confidence": "assumption"
+    },
+    "history": [],
+    "searchedOn": "2026-11-14",
+    "whyAnalog": [
+      "Orange dunes and mesas",
+      "Remote and sparsely populated",
+      "Long dry season"
+    ],
+    "whatItLacks": [
+      "Rivers and springs",
+      "Cerrado vegetation",
+      "Hot climate"
+    ],
+    "dimensions": {
+      "geology": "partial",
+      "terrain": "strong",
+      "atmosphere": "weak",
+      "temperature": "partial",
+      "water": "weak",
+      "biology": "weak",
+      "subsurface": "nodata",
+      "operational": "weak"
+    },
+    "evidence": [
+      {
+        "dimension": "terrain",
+        "earth": {
+          "dataset": "SRTM GL1 / Copernicus DEM (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MOLA (slope)",
+          "value": null,
+          "unit": "deg"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "temperature",
+        "earth": {
+          "dataset": "NASA POWER climatology (T2M min/max)",
+          "value": null,
+          "unit": "°C"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "THEMIS (thermal inertia / temperature)",
+          "value": null,
+          "unit": "K"
+        },
+        "status": "pending"
+      },
+      {
+        "dimension": "geology",
+        "earth": {
+          "dataset": "EMIT L2B mineral ID",
+          "value": null,
+          "unit": "-"
+        },
+        "planet": {
+          "body": "mars",
+          "dataset": "MRO CRISM (mineral maps)",
+          "value": null,
+          "unit": "-"
+        },
+        "status": "pending"
+      }
+    ],
+    "confidence": "assumption",
+    "sources": [],
+    "dataCheck": {
+      "conflicts": [
+        {
+          "type": "state-vs-data",
+          "planet": "moon",
+          "mission": "base",
+          "state": "candidate",
+          "failingRequirements": [
+            "Extreme climate"
+          ],
+          "message": "Shown as possible (grey) for Moon · Base, but NASA data fails: Extreme climate — data suggests 'humid' (1135.0 mm/yr, mean 25.4 °C, grid elevation 640.0 m)."
+        },
+        {
+          "type": "state-vs-data",
+          "planet": "mars",
+          "mission": "base",
+          "state": "candidate",
+          "failingRequirements": [
+            "Extreme climate"
+          ],
+          "message": "Shown as possible (grey) for Mars · Base, but NASA data fails: Extreme climate — data suggests 'humid' (1135.0 mm/yr, mean 25.4 °C, grid elevation 640.0 m)."
+        },
+        {
+          "type": "attribute-vs-data",
+          "field": "climate",
+          "declared": "semi-arid",
+          "inferred": "humid",
+          "affects": [
+            "mars.base",
+            "moon.base"
+          ],
+          "message": "Declared climate 'semi-arid', but NASA data suggests 'humid' (1135.0 mm/yr, mean 25.4 °C, grid elevation 640.0 m). This would change the map in: mars.base, moon.base."
+        }
+      ],
+      "checkedAt": "2026-11-14T19:03:25+00:00"
+    }
+  }
+]

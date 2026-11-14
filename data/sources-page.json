@@ -1,0 +1,101 @@
+{
+  "title": "Sources & Method",
+  "intro": "Everything this site is built on: official resources, live NASA integrations, datasets, the reasoning behind the criteria, the scoring rules and their limits. Only items the team opened and checked are listed as verified.",
+  "sections": [
+    { "id": "how-to-read", "title": "How to read this site" },
+    { "id": "official", "title": "Official challenge resources" },
+    { "id": "live", "title": "Live integrations" },
+    { "id": "data", "title": "Data sources" },
+    { "id": "theory", "title": "Theoretical basis" },
+    { "id": "method", "title": "Method" },
+    { "id": "education", "title": "Educational model" },
+    { "id": "references", "title": "References" },
+    { "id": "ai", "title": "Use of AI" },
+    { "id": "licenses", "title": "Licenses & credits" }
+  ],
+  "howToRead": {
+    "confidence": [
+      { "tag": "data", "text": "Backed by a cited dataset or source." },
+      { "tag": "deduction", "text": "Inferred by the team from other facts." },
+      { "tag": "assumption", "text": "Not verified — placeholder that the team still has to check." }
+    ],
+    "verification": [
+      { "tag": "verified", "text": "The team opened the link and the content matches (or the DOI resolved in Crossref/DataCite)." },
+      { "tag": "unverified", "text": "Listed but could not be opened or confirmed — shown with this badge." },
+      { "tag": "removed", "text": "Did not exist or did not match. Never shown on this page; listed in SOURCES-AUDIT.md." }
+    ],
+    "status": [
+      { "tag": "live", "text": "Value fetched from the NASA source just now." },
+      { "tag": "cached", "text": "Value fetched by the team's pre-computation script (date shown) — used offline and for slow APIs." },
+      { "tag": "failed", "text": "The source did not answer; no value is invented." }
+    ]
+  },
+  "theory": [
+    {
+      "id": "what-is-analog",
+      "title": "What is a planetary analog?",
+      "text": "A terrestrial (planetary) analog is a place on Earth whose conditions resemble, in some specific respect, those of another planetary body — geology, landforms, climate, isolation or operations. No site matches every aspect; analogs are useful for a defined purpose (science, technology testing or crew operations).",
+      "citeTopic": "analog-definition"
+    },
+    {
+      "id": "eight-dimensions",
+      "title": "Why 8 dimensions",
+      "text": "The site rates every place on eight dimensions — geology, terrain, atmosphere/aeolian, temperature/extremes, water/ice, biology/habitability, subsurface and operational — so that a site can be a strong analog in one respect and weak in another. [TEAM TO FILL: paste the official challenge text that motivates these dimensions, with the link to the 2026 challenge page.]",
+      "citeTopic": null,
+      "teamToFill": true
+    },
+    {
+      "id": "mission-first",
+      "title": "Why missions (landing, rover, base) and not just similarity",
+      "text": "Analog sites are chosen for what they will be used for. A landing test needs low slopes and a firm surface; a rover test needs varied slopes and obstacles; a base simulation needs isolation and an extreme climate. The same place can be excellent for one mission and useless for another, so the map is organized by planet × mission and each rule is explained on the card.",
+      "citeTopic": "site-selection"
+    },
+    {
+      "id": "novelty",
+      "title": "Novelty as a criterion",
+      "text": "Most analog work concentrates on a few classic regions (Atacama, Devon Island, Iceland, Hawai'i, Antarctica). The validation score rewards well-documented proposals more than 25 km from any known site, outside those regions, to help surface new candidates — for example the Brazilian impact craters.",
+      "citeTopic": "brazil-craters"
+    },
+    {
+      "id": "limits",
+      "title": "Where Earth falls short",
+      "text": "No place on Earth reproduces the Moon's ~1/6 g or Mars' ~3/8 g, the lunar vacuum or Mars' thin CO2 atmosphere, or the surface radiation environment beyond Earth's magnetic field and atmosphere. Earth also has a biosphere almost everywhere, which complicates life-detection tests. The radiation gap is shown with real numbers from NASA RadLab (ISS dose rate) next to the natural background on Earth.",
+      "citeTopic": "radiation",
+      "showRadiation": true
+    }
+  ],
+  "method": {
+    "mapStates": [
+      { "state": "Validated simulation site (green)", "rule": "sites.json has a history entry for the same planet and mission (a known test of that type)." },
+      { "state": "Possible, no known test (grey, dashed)", "rule": "No such history entry, but the site passes every REQUIRED rule of criteria.json for that planet × mission (partial is allowed)." },
+      { "state": "Hidden", "rule": "A required rule fails. The site still exists in the data and may appear on other maps." },
+      { "state": "Data conflict (warning on the card)", "rule": "NASA data contradicts a hand-entered attribute or a required rule (DATA-CHECK.md). Never changed automatically — the team decides." }
+    ],
+    "indicatorsIntro": "Measured NASA values become suggested levels with the thresholds below. They are PROJECT RULES chosen by the team for the prototype, not scientific consensus.",
+    "scoreIntro": "The validation score is generated from the same configuration object the code uses (SCORE_CONFIG in src/services/validation-score.js).",
+    "scoreWarning": "Community check against NASA open data — not peer review.",
+    "simulation": "The v1 mission simulation (team + vehicle + conditions score) is archived in /archive and is not part of this version; its scoring rules are documented in DECISIONS.md (v1, item 17)."
+  },
+  "ai": {
+    "rulesResourceId": "ai-rules",
+    "items": [
+      "Code: the site's HTML/CSS/JavaScript, the Python pre-computation scripts and the data-check logic were generated with an AI coding assistant (Claude Code, by Anthropic) and reviewed and tested by the team.",
+      "Texts: interface texts, documentation (README, DECISIONS, METHODOLOGY, this page) and first drafts of site descriptions were written with AI assistance. Site attributes and descriptions are marked 'assumption' until the team verifies them.",
+      "Sample data: the leaderboard sample contributions (nicknames 'Sample_…', labelled 'Sample data (prototype)') and the two example community submissions are AI-generated and fictional.",
+      "Fictional profiles: the archived v1 simulation contained fictional researcher profiles; they are not used in this version.",
+      "Research support: AI agents searched for and checked sources (Crossref, CMR, official pages). Only items whose links or DOIs were actually opened are marked verified.",
+      "No NASA logos, images of people or AI-generated imagery are used. All imagery comes from NASA GIBS and Solar System Treks."
+    ]
+  },
+  "licenses": {
+    "code": "Code: Apache License 2.0 (see LICENSE).",
+    "credits": [
+      "Earth imagery: NASA Global Imagery Browse Services (GIBS) — Blue Marble Shaded Relief + Bathymetry basemap and Landsat WELD annual true-colour tiles.",
+      "Moon and Mars tiles: NASA Solar System Treks (Moon Trek: LRO LROC WAC mosaic; Mars Trek: MGS MOLA colour hillshade).",
+      "Fallback basemap: © OpenStreetMap contributors © CARTO. Offline land polygons: Natural Earth (public domain).",
+      "Libraries: Leaflet and Leaflet.markercluster (BSD-2-Clause).",
+      "MODIS subsets: ORNL DAAC. 2018. MODIS and VIIRS Land Products Global Subsetting and Visualization Tool. doi:10.3334/ORNLDAAC/1600."
+    ],
+    "disclaimer": "Analog Atlas is a NASA Space Apps Challenge 2026 project. It is not endorsed by NASA or any other space agency. NASA data are used under NASA's open data policy; no NASA logos or insignia are used."
+  }
+}
