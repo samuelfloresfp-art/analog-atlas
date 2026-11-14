@@ -12,6 +12,15 @@ const TEX = {
 const ORDER = ["moon", "mars"];
 const MOBILE_MAX = 720;
 
+// Desktop orbit (x–z ellipse seen slightly from above): front = left & near, back = right & far.
+const ORBIT = { cx: 0.2, cz: -1.0, ax: 1.6, az: 1.7, front: (130 * Math.PI) / 180 };
+function orbitPos(a) {
+  const x = ORBIT.cx + ORBIT.ax * Math.cos(a);
+  const z = ORBIT.cz + ORBIT.az * Math.sin(a);
+  const d = (Math.sin(a) + 1) / 2; // 1 = nearest, 0 = farthest
+  return { x, y: 0.45 - 0.5 * d, z, s: 1.05 + 0.3 * d, o: 1 };
+}
+
 const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 function glow(color, radius) {
@@ -114,12 +123,29 @@ export function createPlanetStage(el, { planet = "mars", onChange } = {}) {
   function snap() {
     const L = layout();
     for (const id of ORDER) {
-      bodies[id].cur = { ...L[id] };
-      apply(id, L[id]);
+      bodies[id].ang = id === selected ? ORBIT.front : ORBIT.front - Math.PI;
+      const p = mobile ? L[id] : orbitPos(bodies[id].ang);
+      bodies[id].cur = { ...p };
+      apply(id, p);
     }
     dirty = true;
   }
   function animateTo() {
+    if (!mobile) {
+      // both planets travel half an orbit: the front one swings right and behind,
+      // the back one comes round on the left and ends in front
+      for (const id of ORDER) {
+        const b = bodies[id];
+        b.a0 = b.ang ?? (id === selected ? ORBIT.front + Math.PI : ORBIT.front);
+        // end exactly on the front/back slot, always moving the same way round
+        let a1 = id === selected ? ORBIT.front : ORBIT.front - Math.PI;
+        while (a1 > b.a0 - 1e-6) a1 -= 2 * Math.PI;
+        while (a1 < b.a0 - 2 * Math.PI) a1 += 2 * Math.PI;
+        b.a1 = a1;
+      }
+      anim = { t0: performance.now(), dur: reduce ? 1 : 1400, orbit: true };
+      return;
+    }
     const L = layout();
     for (const id of ORDER) {
       bodies[id].from = { ...(bodies[id].cur || L[id]) };
@@ -196,13 +222,24 @@ export function createPlanetStage(el, { planet = "mars", onChange } = {}) {
     if (anim) {
       const t = Math.min(1, (now - anim.t0) / anim.dur);
       const k = ease(t);
-      for (const id of ORDER) {
+      if (anim.orbit) {
+        for (const id of ORDER) {
+          const b = bodies[id];
+          b.ang = b.a0 + (b.a1 - b.a0) * k;
+          b.cur = orbitPos(b.ang);
+          apply(id, b.cur);
+        }
+        if (t >= 1) {
+          for (const id of ORDER) bodies[id].ang = ((bodies[id].ang % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+          anim = null;
+        }
+      } else for (const id of ORDER) {
         const a = bodies[id].from, b = bodies[id].to;
         const p = { x: a.x + (b.x - a.x) * k, y: a.y + (b.y - a.y) * k, z: a.z + (b.z - a.z) * k, s: a.s + (b.s - a.s) * k, o: t < 1 ? Math.max(a.o, b.o) : b.o };
         bodies[id].cur = p;
         apply(id, p);
       }
-      if (t >= 1) anim = null;
+      if (anim && !anim.orbit && t >= 1) anim = null;
     }
     renderer.render(scene, camera);
     dirty = false;
