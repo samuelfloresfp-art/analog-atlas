@@ -15,7 +15,9 @@ All sources were called for real on 2026-11-14. "Pre-computed" = fetched by `scr
 | **NASA CMR** (EMITL2BMIN, SRTMGL1, ASTGTM, HLSL30) | yes, as the catalogue behind Earthdata Search | Indicator `data_coverage` | `src/services/nasa/cmr.js` | verified, live + pre-computed |
 | **NASA GIBS WMTS** (Landsat WELD annual true colour; Blue Marble basemap) | yes, as the imagery service behind Worldview | Site card left image + Earth tile in the NASA data panel; learning-map basemap | `src/services/nasa/imagery.js`, `src/config.js` | verified, live tiles |
 | **EONET** v3 | — | Site card → "Natural events nearby (EONET, last year)" | `src/services/nasa/eonet.js` | verified, pre-computed (live client available) |
-| AppEEARS | — | — | — | failed: no Earthdata Login on the build machine |
+| **AppEEARS** (LP DAAC): SRTMGL1_NC.003, ASTGTM_NC.003 | via Earthdata (same catalogue) | Card → "Terrain at this site": elevation, slope and relief at ~60 m and ~1 km (3×3 stencil, Horn) | `scripts/fetch_official_extras.py --appeears`, `data/nasa-cache/official-extras.json`, `NasaPanel.js` | coded + tested on synthetic CSV; **needs Earthdata Login to run** |
+| **LRO Diviner PRP** (PDS Geosciences Node) | **yes** (LRO Diviner, PDS) | Moon cards → "Lunar south pole, measured": annual mean/max surface temperature and share of area below 110 K at Shackleton and 85–90°S, next to the site's POWER temperature range | `scripts/fetch_official_extras.py --diviner`, `data/lunar-targets.json`, `NasaPanel.js` | coded + tested on synthetic label/table; **run on a machine with internet** |
+| **Earthdata Search / Worldview deep links** | **yes** | Card → "Open this point in NASA tools" | `src/services/nasa/imagery.js` | live (URLs to be clicked once to confirm) |
 | Harmony | — | — | — | failed: no Earthdata Login on the build machine |
 | OpenTopography (plan C, not NASA) | — | — | — | candidate (needs a key) |
 | ESA Copernicus DEM / Sentinel-2, INPE Brazil Data Cube, CONAE | partner agencies | — | — | candidate (not integrated) |

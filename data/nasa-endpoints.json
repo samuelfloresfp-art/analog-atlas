@@ -337,18 +337,20 @@
       ]
     },
     "appeears": {
-      "name": "AppEEARS (point sample SRTMGL1 / NASADEM)",
+      "name": "AppEEARS (point sample SRTMGL1_NC.003 / ASTGTM_NC.003)",
       "agency": "NASA (LP DAAC)",
       "baseUrl": "https://appeears.earthdatacloud.nasa.gov/api/",
       "params": {},
       "auth": "Earthdata Login",
       "cors": null,
-      "status": "failed",
-      "statusNote": "Not called: no Earthdata Login credentials on the build machine (no ~/.netrc, no EARTHDATA_* env). Not coded, to avoid shipping an untested flow. Elevation comes from NASA POWER (grid-cell mean) meanwhile.",
+      "status": "pending",
+      "statusNote": "Coded in scripts/fetch_official_extras.py (--appeears) and tested with a synthetic results CSV on 2026-11-14. Needs Earthdata Login to run; results go to data/nasa-cache/official-extras.json and the site card shows them only when present.",
       "citation": "AppEEARS Team. Application for Extracting and Exploring Analysis Ready Samples. NASA EOSDIS LP DAAC.",
       "testedAt": "2026-11-14",
       "officialChallengeResource": false,
-      "usedIn": []
+      "usedIn": [
+        "Site card → 'Terrain at this site' (elevation, slope and relief at ~60 m and ~1 km)"
+      ]
     },
     "harmony": {
       "name": "Harmony (subsetting)",
@@ -400,6 +402,22 @@
       "statusNote": "Partner agency. Not integrated (over the 30-minute budget).",
       "officialChallengeResource": false,
       "usedIn": []
+    },
+    "diviner_prp": {
+      "name": "LRO Diviner Polar Resource Product, south pole (DLRE_PRP_SOUTH)",
+      "agency": "NASA (PDS Geosciences Node)",
+      "baseUrl": "https://pds-geosciences.wustl.edu/lro/lro-l-dlre-4-rdr-v1/lrodlr_1001/data/prp/dlre_prp_south.tab",
+      "params": {},
+      "auth": "none",
+      "cors": null,
+      "status": "pending",
+      "statusNote": "Coded in scripts/fetch_official_extras.py (--diviner); columns are read from the official PDS label. Tested with a synthetic label+table on 2026-11-14. The build machine could not reach PDS; run the script on a machine with internet.",
+      "citation": "Paige, D. A., et al. (2010). Diviner Lunar Radiometer observations of cold traps in the Moon's south polar region. Science, 330, 479-482.",
+      "testedAt": "2026-11-14",
+      "officialChallengeResource": true,
+      "usedIn": [
+        "Site card (Moon) → 'Lunar south pole, measured' vs the site's NASA POWER temperature range"
+      ]
     }
   },
   "indicatorDimensions": {

@@ -7,20 +7,23 @@ import { loadStatic } from "./http.js";
 export const ENDPOINTS_PATH = "data/nasa-endpoints.json";
 export const TREK_PATH = "data/trek-features.json";
 export const CACHE_INDEX_PATH = "data/nasa-cache/index.json";
+/** LRO Diviner (PDS) + AppEEARS (Earthdata) values from scripts/fetch_official_extras.py. Optional. */
+export const EXTRAS_PATH = "data/nasa-cache/official-extras.json";
 
 let state = null;
 
 export async function loadNasaStatic() {
   if (state) return state;
-  const [endpoints, trek, cache] = await Promise.all([
+  const [endpoints, trek, cache, extras] = await Promise.all([
     loadStatic(ENDPOINTS_PATH),
     loadStatic(TREK_PATH),
     loadStatic(CACHE_INDEX_PATH).catch((e) => {
       console.warn("[nasa] cache index not available:", e.message);
       return { sites: {}, shared: {} };
     }),
+    loadStatic(EXTRAS_PATH).catch(() => ({})),
   ]);
-  state = { endpoints, trek, cache };
+  state = { endpoints, trek, cache, extras };
   return state;
 }
 

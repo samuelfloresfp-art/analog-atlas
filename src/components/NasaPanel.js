@@ -5,7 +5,7 @@
 import { S } from "../strings.js";
 import { esc, hueFrom } from "../util.js";
 import { nasaStatic } from "../services/nasa/sources.js";
-import { gibsThumbUrl, trekTileFor } from "../services/nasa/imagery.js";
+import { gibsThumbUrl, trekTileFor, earthdataSearchUrl, worldviewUrl } from "../services/nasa/imagery.js";
 import { getStudies } from "../services/nasa/osdr.js";
 import { getIssDose } from "../services/nasa/radlab.js";
 import { validateCoordinates } from "../services/nasa/validate.js";
@@ -85,6 +85,52 @@ function eonetHtml(site) {
   }</details>`;
 }
 
+/** Buttons that open this point in the two official NASA apps of the challenge Resources tab. */
+function officialAppsHtml(site) {
+  return `<p class="small nasa-open">${esc(S.openInTitle)}
+    ${link(worldviewUrl(site.lat, site.lon), S.openWorldview)} ·
+    ${link(earthdataSearchUrl(site.lat, site.lon, "SRTMGL1"), S.openEarthdataSrtm)} ·
+    ${link(earthdataSearchUrl(site.lat, site.lon, "EMITL2BMIN"), S.openEarthdataEmit)}</p>`;
+}
+
+const extras = () => nasaStatic()?.extras || {};
+
+/** Terrain from SRTM / ASTER GDEM sampled through AppEEARS (scripts/fetch_official_extras.py --appeears). */
+function terrainHtml(site) {
+  const a = extras().appeears;
+  const t = a?.sites?.[site.id];
+  if (!t) return "";
+  const row = (key) => {
+    const d = t[key];
+    if (!d || d.elevationM == null) return "";
+    const f = (x) => (x ? `${x.slopeDeg}° · ${x.reliefM} m` : "—");
+    const lab = a.source.layers.find((L) => L.key === key)?.label || key;
+    return `<tr><td>${esc(lab)}</td><td>${esc(d.elevationM)} m</td><td>${esc(f(d.local))}</td><td>${esc(f(d.site))}</td></tr>`;
+  };
+  return `<h4 class="small">${esc(S.terrainTitle)}</h4>
+    <table class="ev-table nasa-table"><thead><tr><th>${esc(S.terrainColDem)}</th><th>${esc(S.terrainColElev)}</th><th>${esc(S.terrainColLocal)}</th><th>${esc(S.terrainColSite)}</th></tr></thead>
+    <tbody>${row("srtm")}${row("aster")}</tbody></table>
+    <p class="small muted">${esc(S.terrainNote)} ${link(a.source.url, a.source.name)} · ${esc(S.nasaStatus.cached)} · ${esc(S.nasaCheckedOn(fmtDate(a.generatedAt)))}</p>`;
+}
+
+/** Moon side, measured: LRO Diviner south-pole temperatures vs this site's temperature range (NASA POWER). */
+function divinerHtml(site, planet) {
+  const dv = extras().diviner;
+  if (planet !== "moon" || !dv?.targets?.length) return "";
+  const k2c = (k) => (k == null ? "—" : `${Math.round(k)} K (${Math.round(k - 273.15)} °C)`);
+  const tr = cacheEntry(site.id)?.report?.indicators?.find((i) => i.key === "temp_range")?.details;
+  const earth = tr ? S.divinerEarth(site.name, tr.tMinMonthC, tr.tMaxMonthC) : "";
+  const rows = dv.targets
+    .map((t) => `<tr><td>${esc(t.name)}</td><td>${esc(k2c(t.tavgK?.median))}</td><td>${esc(k2c(t.tmaxK?.median))}</td>
+      <td>${t.shareTmaxBelow110K == null ? "—" : `${Math.round(t.shareTmaxBelow110K * 100)}%`}</td></tr>`)
+    .join("");
+  return `<h4 class="small">${esc(S.divinerTitle)}</h4>
+    <table class="ev-table nasa-table"><thead><tr><th>${esc(S.divinerColTarget)}</th><th>${esc(S.divinerColAvg)}</th><th>${esc(S.divinerColMax)}</th><th>${esc(S.divinerColCold(dv.coldTrapThresholdK))}</th></tr></thead>
+    <tbody>${rows}</tbody></table>
+    ${earth ? `<p class="small">${esc(earth)}</p>` : ""}
+    <p class="small muted">${link(dv.source.url, dv.source.name)} · ${esc(dv.source.reference)} · ${esc(S.nasaStatus.cached)} · ${esc(S.nasaCheckedOn(fmtDate(dv.generatedAt)))}</p>`;
+}
+
 /** Main "NASA data" block. Call bindNasaPanel(root, …) after the modal is in the DOM. */
 export function NasaPanel(site, planet, missionId) {
   const entry = cacheEntry(site.id);
@@ -95,7 +141,10 @@ export function NasaPanel(site, planet, missionId) {
     <h3>${esc(S.nasaTitle)}</h3>
     <p class="small muted">${esc(S.nasaIntro)}</p>
     ${trekHtml(site, planet)}
+    ${officialAppsHtml(site)}
     <div id="nasa-panel-body">${body}</div>
+    ${terrainHtml(site)}
+    ${divinerHtml(site, planet)}
     <div class="m-actions"><button type="button" class="btn btn-small" id="nasa-recheck">${esc(S.nasaRecheck)}</button>
       <span id="nasa-recheck-msg" class="small muted" aria-live="polite"></span></div>
     ${eonetHtml(site)}

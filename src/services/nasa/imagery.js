@@ -28,3 +28,17 @@ export function trekTileFor(trek, siteId, planet) {
     confidence: trek.confidence,
   };
 }
+
+/** Opens the same point in the NASA Earthdata Search app (CMR is its API). sp[0] = "lon,lat" spatial point. */
+export function earthdataSearchUrl(lat, lon, shortName) {
+  const q = new URLSearchParams({ q: shortName });
+  return `https://search.earthdata.nasa.gov/search?${q}&sp[0]=${encodeURIComponent(`${lon},${lat}`)}`;
+}
+
+/** Opens the same point in NASA Worldview (GIBS is its imagery service), with the card's Landsat layer on top. */
+export function worldviewUrl(lat, lon, halfDeg = 0.2) {
+  const r = (x) => Math.round(x * 1e4) / 1e4;
+  const v = [r(lon - halfDeg), r(lat - halfDeg * 0.75), r(lon + halfDeg), r(lat + halfDeg * 0.75)].join(",");
+  const l = ["Landsat_WELD_CorrectedReflectance_TrueColor_Global_Annual", "MODIS_Terra_CorrectedReflectance_TrueColor"].join(",");
+  return `https://worldview.earthdata.nasa.gov/?v=${v}&l=${l}&t=2000-12-01`;
+}
