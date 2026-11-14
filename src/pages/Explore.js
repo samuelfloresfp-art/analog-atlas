@@ -2,11 +2,12 @@
 
 import { S } from "../strings.js";
 import { esc, navigate } from "../util.js";
-import { NavBar, FormStepper } from "../components/small.js";
+import { NavBar, FormStepper, ExternalViewLinks } from "../components/small.js";
 import { renderStep, STEP_IDS } from "../components/ExplorerForm.js";
 import { createWorldMap } from "../components/WorldMap.js";
 import { emptyForm, formChecks, validateSubmission, MAX_TEXT } from "../services/validate.js";
 import { runDataChecks } from "../services/dataChecks.js";
+import { scanTerrain, scanToCsv, downloadText, SLOPE_COLORS } from "../services/terrainScan.js";
 import { list as listCommunity, saveResult, newId } from "../services/communityStore.js";
 
 const DRAFT_KEY = "analogAtlas.draft.v1";
@@ -54,6 +55,7 @@ export function Explore(root, { params }, data) {
 
   let miniMap = null;
   let marker = null;
+  let scanLayer = null;
   let busy = false;
 
   function errorsHtml(checks) {
@@ -68,6 +70,7 @@ export function Explore(root, { params }, data) {
       miniMap.remove();
       miniMap = null;
       marker = null;
+      scanLayer = null;
     }
     const stepId = STEP_IDS[draft.step];
     const last = draft.step === STEP_IDS.length - 1;
@@ -161,6 +164,76 @@ export function Explore(root, { params }, data) {
     if (draft.form.lat === "" || draft.form.lon === "" || !Number.isFinite(lat) || !Number.isFinite(lon)) return;
     if (Math.abs(lat) > 90 || Math.abs(lon) > 180) return;
     marker.setLatLng([lat, lon]).addTo(miniMap);
+    updateLinks();
+  }
+
+  function updateLinks() {
+    const el = root.querySelector("#ext-links");
+    if (el) el.innerHTML = draft.form.lat !== "" && draft.form.lon !== "" ? ExternalViewLinks(draft.form.lat, draft.form.lon) : "";
+  }
+
+  // Terrain scan around the marker (grid of DEM slope cells). Click a cell to move the marker there.
+  async function runScan(setFromLatLng) {
+    const out = root.querySelector("#scan-out");
+    const btn = root.querySelector("#scan-btn");
+    const lat = Number(draft.form.lat), lon = Number(draft.form.lon);
+    if (draft.form.lat === "" || draft.form.lon === "" || !Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 85 || Math.abs(lon) > 180) {
+      out.innerHTML = `<p class="small warn">${esc(S.scanNeedPoint)}</p>`;
+      return;
+    }
+    const L = window.L;
+    btn.disabled = true;
+    out.innerHTML = `<p class="busy">${esc(S.scanRunning)}</p>`;
+    let scan;
+    try {
+      scan = await scanTerrain(lat, lon);
+    } catch (e) {
+      btn.disabled = false;
+      out.innerHTML = `<p class="small warn">${esc(S.scanFailed(e.name === "AbortError" ? "timeout" : e.message))}</p>`;
+      return;
+    }
+    btn.disabled = false;
+    if (!miniMap) return; // user left the step meanwhile
+
+    if (scanLayer) scanLayer.remove();
+    scanLayer = L.layerGroup().addTo(miniMap);
+    const moveTo = (c) => {
+      const ll = L.latLng(c.lat, c.lon);
+      marker.setLatLng(ll).addTo(miniMap);
+      setFromLatLng(ll);
+    };
+    scan.cells.forEach((c) => {
+      L.rectangle(c.bounds, { color: "#0a0d18", weight: 1, fillColor: SLOPE_COLORS[c.slopeClass], fillOpacity: 0.35 })
+        .bindTooltip(S.scanCell(c.i, c.meanSlope.toFixed(1), c.maxSlope.toFixed(1), Math.round(c.reliefM)))
+        .on("click", () => moveTo(c))
+        .addTo(scanLayer);
+    });
+    L.rectangle(scan.bounds, { color: "#ffffff", weight: 1.5, dashArray: "5, 5", fill: false, interactive: false }).addTo(scanLayer);
+    miniMap.fitBounds(scan.bounds, { padding: [20, 20] });
+
+    const flat = scan.cells.filter((c) => c.meanSlope < 5).length;
+    const best = [...scan.cells].sort((a, b) => a.meanSlope - b.meanSlope).slice(0, 3);
+    out.innerHTML = `
+      <p class="small"><strong>${esc(S.scanDone(flat, scan.cells.length))}</strong></p>
+      <p class="scan-legend small">${esc(S.scanLegend)}: ${Object.entries(SLOPE_COLORS)
+        .map(([k, col]) => `<span><i style="background:${col}"></i>${esc(k)}°</span>`)
+        .join("")}</p>
+      <p class="small"><strong>${esc(S.scanFlattest)}:</strong></p>
+      <ul class="scan-best small">${best
+        .map(
+          (c) => `<li>${esc(S.scanCell(c.i, c.meanSlope.toFixed(1), c.maxSlope.toFixed(1), Math.round(c.reliefM)))}
+            <button type="button" class="link-btn" data-cell="${c.i}">${esc(S.scanUseCell)}</button></li>`
+        )
+        .join("")}</ul>
+      <button type="button" class="btn btn-outline btn-small" id="scan-csv">${esc(S.scanCsv)}</button>
+      <p class="small muted">${esc(S.scanClimateNote)}</p>
+      <p class="small muted">${esc(S.scanSource)}</p>`;
+    out.querySelectorAll("[data-cell]").forEach((b) =>
+      b.addEventListener("click", () => moveTo(scan.cells.find((c) => c.i === Number(b.dataset.cell))))
+    );
+    out.querySelector("#scan-csv").addEventListener("click", () =>
+      downloadText(`terrain-scan_${lat.toFixed(4)}_${lon.toFixed(4)}.csv`, scanToCsv(scan, { lat, lon }))
+    );
   }
 
   function initMiniMap() {
@@ -177,12 +250,14 @@ export function Explore(root, { params }, data) {
       root.querySelector('[data-field="lat"]').value = draft.form.lat;
       root.querySelector('[data-field="lon"]').value = draft.form.lon;
       saveDraft(draft);
+      updateLinks();
     };
     miniMap.on("click", (e) => {
       marker.setLatLng(e.latlng).addTo(miniMap);
       setFromLatLng(e.latlng);
     });
     marker.on("dragend", () => setFromLatLng(marker.getLatLng()));
+    root.querySelector("#scan-btn").addEventListener("click", () => runScan(setFromLatLng));
     if (draft.form.lat !== "" && draft.form.lon !== "") {
       syncMarkerFromInputs();
       if (miniMap.hasLayer(marker)) miniMap.setView(marker.getLatLng(), 5);

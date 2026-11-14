@@ -2,7 +2,7 @@
 
 import { S } from "../strings.js";
 import { esc, navigate } from "../util.js";
-import { NavBar, StatusBadge } from "../components/small.js";
+import { NavBar, StatusBadge, ExternalViewLinks } from "../components/small.js";
 import { CheckTable } from "../components/CheckTable.js";
 import { hydrateCriteria } from "../services/validate.js";
 import { getResult, saveResult, add } from "../services/communityStore.js";
@@ -24,6 +24,7 @@ export async function ExploreResult(root, { params }, data) {
     <main class="page narrow" style="--accent:${mission.accent}">
       <h1>${esc(S.resultHeading)}: ${esc(form.name)}</h1>
       <p class="muted">${esc(S.planetNames[form.planet])} · ${esc(mission.name)} · ${Number(form.lat).toFixed(3)}, ${Number(form.lon).toFixed(3)}</p>
+      ${ExternalViewLinks(form.lat, form.lon)}
       <div class="result-head">
         ${StatusBadge(result.status)}
         <div class="score-big"><span>${result.score}</span>/ 100 <span class="small muted">${esc(S.score)}</span></div>

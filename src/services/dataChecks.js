@@ -3,6 +3,7 @@
 // On any network/CORS/timeout error the result is "not-checked" so the site works offline.
 
 import { ENDPOINTS, DATA_CHECK_TIMEOUT_MS, forceOffline } from "../config.js";
+import { loadDemPatch } from "./dem.js";
 
 async function withTimeout(fn) {
   const ctrl = new AbortController();
@@ -92,7 +93,7 @@ export async function checkClimate(lat, lon, declared) {
 
 // ---------- Slope: AWS Terrain Tiles (Terrarium, aggregates SRTM and others) ----------
 
-const SLOPE_CLASSES = [
+export const SLOPE_CLASSES = [
   { id: "0-2", max: 2 },
   { id: "2-5", max: 5 },
   { id: "5-15", max: 15 },
@@ -101,62 +102,19 @@ const SLOPE_CLASSES = [
 ];
 const slopeIdx = (id) => SLOPE_CLASSES.findIndex((c) => c.id === id);
 
-function loadTileImage(url, signal) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.crossOrigin = "anonymous";
-    img.onload = () => resolve(img);
-    img.onerror = () => reject(new Error("tile load / CORS error"));
-    signal.addEventListener("abort", () => reject(Object.assign(new Error("timeout"), { name: "AbortError" })));
-    img.src = url;
-  });
-}
-
 export async function checkSlope(lat, lon, declaredClass, radiusKm = 1) {
   const base = { id: "slope", label: "Slope vs elevation tiles (SRTM-based)", origin: "open data", source: "AWS Terrain Tiles (Terrarium)" };
   if (forceOffline()) return notChecked(base, "Offline mode");
   try {
-    const z = 12;
-    const n = 2 ** z;
-    const latR = (lat * Math.PI) / 180;
-    // global pixel coords
-    const px = ((lon + 180) / 360) * n * 256;
-    const py = ((1 - Math.log(Math.tan(latR) + 1 / Math.cos(latR)) / Math.PI) / 2) * n * 256;
-    const mPerPx = (156543.03392 * Math.cos(latR)) / n;
-    const rPx = Math.ceil((radiusKm * 1000) / mPerPx);
-
-    const x0 = Math.floor((px - rPx - 1) / 256), x1 = Math.floor((px + rPx + 1) / 256);
-    const y0 = Math.floor((py - rPx - 1) / 256), y1 = Math.floor((py + rPx + 1) / 256);
-    const w = (x1 - x0 + 1) * 256, h = (y1 - y0 + 1) * 256;
-    const canvas = document.createElement("canvas");
-    canvas.width = w;
-    canvas.height = h;
-    const ctx = canvas.getContext("2d", { willReadFrequently: true });
-
-    await withTimeout(async (signal) => {
-      const jobs = [];
-      for (let tx = x0; tx <= x1; tx++)
-        for (let ty = y0; ty <= y1; ty++) {
-          const url = ENDPOINTS.terrarium.replace("{z}", z).replace("{x}", ((tx % n) + n) % n).replace("{y}", ty);
-          jobs.push(loadTileImage(url, signal).then((img) => ctx.drawImage(img, (tx - x0) * 256, (ty - y0) * 256)));
-        }
-      await Promise.all(jobs);
-    });
-
-    const data = ctx.getImageData(0, 0, w, h).data;
-    const elev = (x, y) => {
-      const i = (y * w + x) * 4;
-      return data[i] * 256 + data[i + 1] + data[i + 2] / 256 - 32768;
-    };
-    const cx = Math.round(px - x0 * 256), cy = Math.round(py - y0 * 256);
+    const dem = await withTimeout((signal) => loadDemPatch(lat, lon, radiusKm, { signal }));
+    const { x: fx, y: fy } = dem.toPx(lat, lon);
+    const cx = Math.round(fx), cy = Math.round(fy), rPx = dem.rPx, mPerPx = dem.mPerPx;
     let sum = 0, count = 0, max = 0;
     for (let y = cy - rPx; y <= cy + rPx; y++)
       for (let x = cx - rPx; x <= cx + rPx; x++) {
         if ((x - cx) ** 2 + (y - cy) ** 2 > rPx * rPx) continue;
-        if (x < 1 || y < 1 || x >= w - 1 || y >= h - 1) continue;
-        const dzdx = (elev(x + 1, y) - elev(x - 1, y)) / (2 * mPerPx);
-        const dzdy = (elev(x, y + 1) - elev(x, y - 1)) / (2 * mPerPx);
-        const deg = (Math.atan(Math.hypot(dzdx, dzdy)) * 180) / Math.PI;
+        if (!dem.inside(x, y)) continue;
+        const deg = dem.slopeDeg(x, y);
         sum += deg;
         count++;
         max = Math.max(max, deg);

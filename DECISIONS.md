@@ -235,3 +235,19 @@ Decisions taken while building the prototype without asking. Review them as a te
 - **P3-8. License:** Apache 2.0 (`LICENSE`, official text from apache.org), because none was defined. No NASA logos.
 - **P3-9. sites.json changes:** only the Vargeão source label (DOI verified, "(verify)" removed). Everything else is listed in `SOURCES-AUDIT.md` for the team: crater sizes now have verified sources available; Cerro do Jarau is a "possible" impact structure; Léveillé is 2009.
 - **P3-10. Submission texts** (`docs/SUBMISSION-FIELDS.md`): the reference list is generated from the Crossref-based APA strings in `data/references.json`, not typed by hand.
+
+---
+
+# Map + terrain scan from the team's Python scanner (`app_marte.py`, 2026-11-14)
+
+- **M-1. Basemap.** GIBS Blue Marble only exists up to zoom 8 (~500 m/px), so it pixelated when zooming into a site. Default base is now "Auto": Blue Marble up to zoom 8, Esri World Imagery from zoom 9 (`AUTO_HIRES_FROM_ZOOM` in `config.js`). The layer switcher (top right) adds NASA GIBS Landsat WELD 30 m, Esri satellite and OpenTopoMap (contours). Map `maxZoom` 12 → 18. The CARTO → Natural Earth fallback is unchanged.
+  - Esri and OpenTopoMap are **visual context only, never used as data**, and are attributed on the map. NASA layers stay the official imagery.
+- **M-2. Terrain scan** (Explorer → Location step): 5×5 cells of 600 m around the marker, mean/max slope and relief per cell from the same DEM used by the slope check (`src/services/dem.js`, shared). Click a cell or "Move marker here" to relocate; CSV download. Adapted from the Python scanner's "micro-scan around a point".
+- **M-3. Climate is NOT scanned per cell.** NASA POWER is a ~0.5° × 0.625° grid; a 3 km grid would repeat the same value in every cell (the Python scanner's 0.7° micro-scan had this problem). Climate stays a single check at the end.
+- **M-4. Links on site cards, explorer step and result page:** "Open in NASA Worldview" (official) and "Open in Google Maps" (3D / Street View).
+- **M-5. Left out of `app_marte.py` on purpose:**
+  - the "Fidelidade" 0–1 score and its 12 sub-scores (≈6 variables reused; "Radar" was a constant by latitude);
+  - the ASTER "geology" (it counted CMR granules, which measures how often the satellite passed, not mineralogy);
+  - Moon/Mars weights computed only from Earth data;
+  - per-point Nominatim reverse geocoding (1 req/s usage policy);
+  - the unused "NASA API Key" field, the dead Stamen layer, the arbitrary 0.68/0.72 colour cut-offs.

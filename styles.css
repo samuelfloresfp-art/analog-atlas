@@ -416,3 +416,24 @@ h1, h2, h3 { line-height: 1.2; }
 .st-verified { color: #3ddc84; } .st-failed { color: #ff7a7a; } .st-candidate, .st-manual { color: #f5c542; }
 .footer a { color: inherit; }
 @media (max-width: 820px) { .src-layout { grid-template-columns: 1fr; } .src-toc { position: static; } .grid3 { grid-template-columns: 1fr; } .ds-table { font-size: 0.8rem; } }
+
+/* Basemap switcher (dark theme) */
+.leaflet-control-layers { background: #11182e; color: var(--text); border: 1px solid var(--line) !important; border-radius: 10px; }
+.leaflet-control-layers-expanded { padding: 8px 12px; font-size: 0.85rem; }
+.leaflet-control-layers label { margin: 3px 0; }
+
+/* Links to Worldview / Google Maps */
+.ext-links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 6px 0 0; }
+.ext-links a { color: #9cc0ff; }
+
+/* Terrain scan (Explorer, location step) */
+.scan { margin: 16px 0 6px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+.scan h3 { margin: 0 0 4px; font-size: 1rem; }
+.scan .btn { margin-top: 6px; }
+.scan .warn { color: #ffb86b; }
+.scan-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+.scan-legend span { display: inline-flex; align-items: center; gap: 4px; }
+.scan-legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid #0006; }
+.scan-best { margin: 2px 0 8px; padding-left: 18px; }
+.scan-best li { margin: 2px 0; }
+.link-btn { background: none; border: 0; padding: 0 0 0 6px; color: #9cc0ff; text-decoration: underline; cursor: pointer; font: inherit; }
