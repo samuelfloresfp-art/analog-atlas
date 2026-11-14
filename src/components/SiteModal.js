@@ -2,7 +2,7 @@
 
 import { S } from "../strings.js";
 import { esc } from "../util.js";
-import { ConfidenceTag, DimensionTable } from "./small.js";
+import { ConfidenceTag, DimensionTable, ExternalViewLinks } from "./small.js";
 import { CriteriaChecklist } from "./CriteriaChecklist.js";
 import { EvidenceBlock } from "./EvidenceBlock.js";
 import { openModal, imageHtml } from "./Modal.js";
@@ -59,6 +59,7 @@ export function openSiteModal(site, planet, mission, data) {
     <p class="eyebrow"><span class="state-pill pill-${state}">${esc(stateLabel)}</span> ${esc(planetName)} · ${esc(mission.name)}</p>
     <h2 id="modal-title">${esc(site.name)}</h2>
     <p class="muted small">${esc(site.country)} · ${esc(site.environment.join(", "))}</p>
+    ${ExternalViewLinks(site.lat, site.lon)}
     ${state === "candidate" ? `<p class="notice">${esc(S.noKnownTest(mission.name.toLowerCase(), planetName, site.searchedOn))}</p>` : ""}
     ${conflictsHtml(site, planet, mission.id)}
     ${block(

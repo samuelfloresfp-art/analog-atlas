@@ -3,6 +3,7 @@
 import { S } from "../strings.js";
 import { esc } from "../util.js";
 import { MAX_TEXT, MAX_NICK } from "../services/validate.js";
+import { TERRAIN_SCAN } from "../config.js";
 
 export const STEP_IDS = ["target", "location", "terrain", "environment", "operations", "reasoning"];
 
@@ -51,7 +52,14 @@ export function renderStep(stepId, form, data) {
           ${input("lon", S.fLon, form.lon, { type: "number", step: "any", placeholder: "-52.17" })}
         </div>
         <p class="small muted">${esc(S.fMapHint)}</p>
-        <div id="mini-map" class="mini-map"></div>`;
+        <div id="mini-map" class="mini-map"></div>
+        <div id="ext-links"></div>
+        <section class="scan" aria-labelledby="scan-title">
+          <h3 id="scan-title">${esc(S.scanTitle)}</h3>
+          <p class="small muted">${esc(S.scanIntro)}</p>
+          <button type="button" class="btn btn-outline" id="scan-btn">${esc(S.scanButton(TERRAIN_SCAN.grid, +(TERRAIN_SCAN.grid * TERRAIN_SCAN.cellKm).toFixed(1)))}</button>
+          <div id="scan-out" aria-live="polite"></div>
+        </section>`;
     case "terrain":
       return ["topography", "slopeClass", "surface", "vegetation"].map((f) => enumRadios(data, f, form)).join("");
     case "environment":

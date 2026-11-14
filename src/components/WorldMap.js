@@ -1,8 +1,11 @@
-// Shared Leaflet world map: no wrapping, bounded to the world, NASA GIBS base
-// with fallbacks (CARTO → local Natural Earth land polygons when offline).
+// Shared Leaflet world map: no wrapping, bounded to the world.
+// Default base "Auto" = NASA GIBS Blue Marble at world scale, high-resolution satellite from
+// AUTO_HIRES_FROM_ZOOM on (GIBS Blue Marble only exists up to zoom 8, so it pixelates when zoomed in).
+// A layer switcher offers NASA Landsat 30 m, satellite and topographic maps.
+// Fallbacks if NASA tiles fail: CARTO → local Natural Earth land polygons when offline.
 
 import { S } from "../strings.js";
-import { TILES, forceOffline } from "../config.js";
+import { TILES, AUTO_HIRES_FROM_ZOOM, forceOffline } from "../config.js";
 import { loadLandMask } from "../services/data.js";
 
 const WORLD = [
@@ -17,7 +20,7 @@ export function createWorldMap(el, { minZoom = 2 } = {}) {
   const map = L.map(el, {
     worldCopyJump: false,
     minZoom,
-    maxZoom: 12,
+    maxZoom: 18,
     maxBounds: WORLD,
     maxBoundsViscosity: 1,
   }).setView([10, -20], minZoom);
@@ -35,27 +38,61 @@ export function createWorldMap(el, { minZoom = 2 } = {}) {
     }
   };
 
-  const addTiles = (url, opts, onFail) => {
+  const tile = (url, opts) => L.tileLayer(url, { noWrap: true, bounds: WORLD, ...opts });
+
+  // Watches a layer; if no tile ever loads and several fail, calls onFail once.
+  const watchFail = (layer, onFail) => {
     let loaded = 0, errors = 0, failed = false;
-    const layer = L.tileLayer(url, { noWrap: true, bounds: WORLD, ...opts }).addTo(map);
     layer.on("tileload", () => loaded++);
     layer.on("tileerror", () => {
       errors++;
       if (!failed && loaded === 0 && errors >= 4) {
         failed = true;
-        map.removeLayer(layer);
         onFail();
       }
+    });
+  };
+
+  const addTiles = (url, opts, onFail) => {
+    const layer = tile(url, opts).addTo(map);
+    watchFail(layer, () => {
+      map.removeLayer(layer);
+      onFail();
     });
   };
 
   if (forceOffline()) {
     addLocal();
   } else {
-    addTiles(TILES.gibs, { maxNativeZoom: 8, maxZoom: 12, attribution: S.imageryNasa }, () => {
+    const blueMarble = () => tile(TILES.gibs, { maxNativeZoom: 8, maxZoom: 18, attribution: S.imageryNasa });
+    const satellite = (minZoom = 0) => tile(TILES.esriImagery, { minZoom, maxNativeZoom: 18, maxZoom: 18, attribution: S.imageryEsri });
+
+    const autoNasa = tile(TILES.gibs, { maxNativeZoom: 8, maxZoom: AUTO_HIRES_FROM_ZOOM - 1, attribution: S.imageryNasa });
+    const auto = L.layerGroup([autoNasa, satellite(AUTO_HIRES_FROM_ZOOM)]);
+    const bases = {
+      [S.baseAuto]: auto,
+      [S.baseBlueMarble]: blueMarble(),
+      [S.baseLandsat]: tile(TILES.gibsLandsat, { maxNativeZoom: 12, maxZoom: 18, attribution: `${S.imageryNasa} (Landsat WELD)` }),
+      [S.baseSatellite]: satellite(),
+      [S.baseTopo]: tile(TILES.openTopo, { subdomains: "abc", maxNativeZoom: 17, maxZoom: 18, attribution: S.imageryOpenTopo }),
+    };
+    auto.addTo(map);
+    const control = L.control.layers(bases, {}, { position: "topright", collapsed: true }).addTo(map);
+
+    // If NASA GIBS is unreachable, fall back exactly as before (CARTO → local land mask).
+    watchFail(autoNasa, () => {
+      if (!map.hasLayer(auto)) return;
+      map.removeLayer(auto);
+      control.remove();
       stage = 1;
       addTiles(TILES.carto, { subdomains: "abcd", maxZoom: 19, attribution: S.imageryCarto }, addLocal);
     });
+    map.setBaseLayer = (name) => {
+      const layer = bases[name];
+      if (!layer || map.hasLayer(layer)) return;
+      Object.values(bases).forEach((b) => map.hasLayer(b) && map.removeLayer(b));
+      layer.addTo(map);
+    };
   }
   map.getBasemapStage = () => ["gibs", "carto", "local"][stage];
   window.__analogMap = map; // debug handle for manual testing

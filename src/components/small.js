@@ -50,3 +50,16 @@ export function NavBar(active, learnHref = "#/") {
     </div>
   </nav>`;
 }
+
+/** Links to inspect a coordinate elsewhere: NASA Worldview (official) and Google Maps (3D / Street View). */
+export function ExternalViewLinks(lat, lon, spanDeg = 0.25) {
+  const la = Number(lat), lo = Number(lon);
+  if (!Number.isFinite(la) || !Number.isFinite(lo)) return "";
+  const v = [lo - spanDeg, la - spanDeg, lo + spanDeg, la + spanDeg].map((n) => n.toFixed(4)).join(",");
+  const wv = `https://worldview.earthdata.nasa.gov/?v=${v}`;
+  const gm = `https://www.google.com/maps/search/?api=1&query=${la.toFixed(5)},${lo.toFixed(5)}`;
+  return `<p class="ext-links small">
+    <a href="${esc(wv)}" target="_blank" rel="noopener">${esc(S.openWorldview)} ↗</a>
+    <a href="${esc(gm)}" target="_blank" rel="noopener">${esc(S.openGoogleMaps)} ↗</a>
+  </p>`;
+}
