@@ -10,7 +10,7 @@ export function getLang() {
   } catch {
     /* ignore */
   }
-  return (navigator.language || "").toLowerCase().startsWith("pt") ? "pt" : "en";
+  return "en";
 }
 
 export function hasChosenLang() {

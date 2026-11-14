@@ -54,7 +54,6 @@ export function NavBar(active, learnHref = "#/") {
       ${item("community", "#/community", S.navCommunity)}
       ${item("leaderboard", "#/leaderboard", S.navLeaderboard)}
       ${item("sources", "#/sources", S.navSources)}
-      ${LangToggle()}
     </div>
   </nav>`;
 }

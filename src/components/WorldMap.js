@@ -16,11 +16,13 @@ export function createWorldMap(el, { minZoom = 2, maxZoom = 17 } = {}) {
   minZoom = Math.max(minZoom, Math.ceil(Math.log2(Math.max(el.clientWidth, 256) / 256)));
   const map = L.map(el, {
     worldCopyJump: false,
+    zoomControl: false,
     minZoom,
     maxZoom,
     maxBounds: WORLD,
     maxBoundsViscosity: 1,
   }).setView([10, -20], minZoom);
+  L.control.zoom({ position: "topright" }).addTo(map);
 
   let stage = 0; // 0 gibs, 1 carto, 2 local
 

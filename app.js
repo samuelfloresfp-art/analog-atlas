@@ -5,7 +5,8 @@
 // Nothing in /archive is imported.
 
 import { S } from "./src/strings.js";
-import { hasChosenLang, setLang } from "./src/i18n.js";
+import { setLang } from "./src/i18n.js";
+import { LangToggle } from "./src/components/small.js";
 import { esc } from "./src/util.js";
 import { loadData } from "./src/services/data.js";
 import { loadNasaStatic } from "./src/services/nasa/sources.js";
@@ -60,36 +61,16 @@ async function route() {
 
 window.__setLang = (l) => setLang(l);
 
-/** First visit: choose PT or EN before anything else (the presentation is in Portuguese). */
-function langGate() {
-  if (hasChosenLang()) return Promise.resolve();
-  return new Promise((resolve) => {
-    const el = document.createElement("div");
-    el.className = "lang-gate";
-    el.innerHTML = `<div class="lang-card" role="dialog" aria-modal="true" aria-labelledby="lg-t">
-      <p class="eyebrow-mono">Analog Atlas</p>
-      <h1 id="lg-t">Escolha o idioma · Choose your language</h1>
-      <div class="lang-choices">
-        <button type="button" class="btn btn-cta btn-big" data-l="pt">Português</button>
-        <button type="button" class="btn btn-outline btn-big" data-l="en">English</button>
-      </div>
-      <p class="small muted">Você pode trocar depois no topo · You can change it later in the top bar</p>
-    </div>`;
-    document.body.appendChild(el);
-    el.querySelector("[data-l=pt]").focus();
-    el.querySelectorAll("[data-l]").forEach((b) =>
-      b.addEventListener("click", () => {
-        const l = b.dataset.l;
-        setLang(l, { reload: l !== (document.documentElement.lang.startsWith("pt") ? "pt" : "en") });
-        el.remove();
-        resolve();
-      })
-    );
-  });
+/** Floating PT/EN switch, bottom-right on every page. */
+function mountLangSwitch() {
+  const el = document.createElement("div");
+  el.className = "lang-float";
+  el.innerHTML = LangToggle();
+  document.body.appendChild(el);
 }
 
 async function start() {
-  await langGate();
+  mountLangSwitch();
   root.innerHTML = `<p class="page muted">${esc(S.loading)}</p>`;
   try {
     data = await loadData();
