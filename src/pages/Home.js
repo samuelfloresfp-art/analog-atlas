@@ -78,7 +78,7 @@ export function Home(root, { query }, data) {
         <a href="#/explore">${esc(S.explorerCta)} →</a> · <a href="#/community">${esc(S.navCommunity)}</a> · <a href="#/leaderboard">${esc(S.navLeaderboard)}</a>
       </p>
     </section>
-    <footer class="footer">${esc(S.footer)} · <a href="#/sources">${esc(S.navSources)}</a>
+    <footer class="footer">${esc(S.footer)} · <a href="#/sources">${esc(S.navSources)}</a> · <a href="#/about">${esc(S.navAbout)}</a>
       <div class="small">${esc(S.credit(S.texCredit))}</div></footer>
   </div>`;
 

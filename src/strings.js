@@ -5,7 +5,7 @@ import { LANG } from "./i18n.js";
 import { PT } from "./strings-pt.js";
 
 export const EN = {
-  appName: "Analog Atlas",
+  appName: "Hermes",
   tagline: "Learn where Moon and Mars missions are rehearsed on Earth — then propose a new place yourself.",
   footer: "Built for the NASA Space Apps Challenge 2026. Not affiliated with or endorsed by NASA.",
   imageryNasa: "Imagery: NASA GIBS",
@@ -229,6 +229,7 @@ export const EN = {
   navValidate: "Validate a site",
   navLeaderboard: "Leaderboard",
   navSources: "Sources & Method",
+  navAbout: "About",
   validateThisSite: "Validate this site",
   cHeading: "Validate a site",
   cIntro: "Rate a known analog site — or propose a new one — on the 8 analog dimensions, with evidence. We check it against NASA open data and give a transparent score.",
