@@ -7,6 +7,7 @@
 import { S } from "./src/strings.js";
 import { setLang } from "./src/i18n.js";
 import { LangToggle } from "./src/components/small.js";
+import { installStarfield } from "./src/starfield.js";
 import { esc } from "./src/util.js";
 import { loadData } from "./src/services/data.js";
 import { loadNasaStatic } from "./src/services/nasa/sources.js";
@@ -72,6 +73,7 @@ function mountLangSwitch() {
 }
 
 async function start() {
+  installStarfield();
   mountLangSwitch();
   root.innerHTML = `<p class="page muted">${esc(S.loading)}</p>`;
   try {

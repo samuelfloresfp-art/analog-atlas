@@ -735,3 +735,11 @@ body:has(.sim-nav) .lang-float { bottom: 96px; }
   .opt-rank .or-bar { grid-column: 1 / -1; grid-row: 2; }
   .opt-rank .status-badge, .opt-rank li > :last-child { grid-column: 1 / -1; justify-self: start; }
 }
+
+/* ---- Star field everywhere (same look as the home page) ---- */
+html, body { background-color: var(--bg); background-image: var(--stars, none); background-repeat: repeat; background-attachment: fixed; }
+.map, .leaflet-container { background-color: #05070b !important; background-image: var(--stars, none) !important; background-repeat: repeat !important; }
+.home { background: radial-gradient(ellipse 60% 50% at 75% 35%, #1a1412 0%, transparent 70%), var(--stars, none), var(--bg); }
+.home[data-planet="moon"] { background: radial-gradient(ellipse 60% 50% at 75% 35%, #14171f 0%, transparent 70%), var(--stars, none), var(--bg); }
+.map-page, .explore, .page, main { background-color: transparent; }
+.sat-map.leaflet-container { background-image: none !important; }
