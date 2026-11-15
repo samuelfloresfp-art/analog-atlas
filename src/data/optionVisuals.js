@@ -49,7 +49,7 @@ export const OPTION_VISUALS = {
     "lava-field": sat(43.42, -113.56, 13, "Craters of the Moon lava field, Idaho", "Campo de lava Craters of the Moon, Idaho"),
     dunes: sat(-24.75, 15.35, 12, "Namib Sand Sea, Namibia", "Mar de areia do Namibe, Namíbia"),
     "canyon-valley": sat(36.1, -112.1, 12, "Grand Canyon, Arizona", "Grand Canyon, Arizona"),
-    "mountain-plateau": sat(36.98, -110.1, 12, "Mesas of Monument Valley, USA", "Platôs de Monument Valley, EUA"),
+    "mountain-plateau": sat(36.98, -110.1, 11, "Mesas of Monument Valley, USA", "Platôs de Monument Valley, EUA"),
     "rocky-plain": sat(-24.1, -69.9, 13, "Gravel plain, Atacama Desert", "Planície de cascalho, Deserto do Atacama"),
     "cave-lava-tube": { ...svg(SUB["lava-tubes"], "Cross-section of a lava tube", "Corte de um tubo de lava") },
   },
@@ -72,16 +72,16 @@ export const OPTION_VISUALS = {
   },
   vegetation: {
     none: sat(20.0, 50.0, 11, "Rub' al Khali desert", "Deserto Rub' al Khali"),
-    sparse: sat(35.0, -115.9, 14, "Scattered shrubs, Mojave Desert", "Arbustos espaçados, Deserto de Mojave"),
+    sparse: sat(35.0, -115.9, 17, "Scattered shrubs, Mojave Desert", "Arbustos espaçados, Deserto de Mojave"),
     moderate: sat(-9.4, -40.6, 14, "Caatinga, Bahia/Pernambuco", "Caatinga, sertão nordestino"),
     dense: sat(-2.6, -60.2, 13, "Amazon rainforest", "Floresta Amazônica"),
   },
   climate: {
     "hyper-arid": sat(-24.1, -69.9, 11, "Atacama Desert, Chile", "Deserto do Atacama, Chile"),
     arid: sat(35.0, -115.9, 11, "Mojave Desert, USA", "Deserto de Mojave, EUA"),
-    "semi-arid": sat(-9.4, -40.6, 11, "Brazilian semi-arid (caatinga)", "Semiárido brasileiro (caatinga)"),
+    "semi-arid": sat(-9.7, -38.5, 12, "Raso da Catarina, Brazilian semi-arid", "Raso da Catarina, semiárido baiano"),
     humid: sat(-2.6, -60.2, 11, "Amazon, Brazil", "Amazônia, Brasil"),
-    "polar-cold": sat(-75.1, 123.3, 10, "Antarctic plateau", "Platô antártico"),
+    "polar-cold": sat(-77.5, 162.0, 10, "McMurdo Dry Valleys, Antarctica", "Vales Secos de McMurdo, Antártida"),
     "high-altitude": sat(-24.3, -67.2, 11, "Puna plateau, ~4,000 m", "Platô da Puna, ~4.000 m"),
   },
   waterIce: {
