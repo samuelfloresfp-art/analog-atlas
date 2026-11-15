@@ -83,8 +83,7 @@ export async function Sources(root, { query }, data) {
 
   // 1. how to read
   const H = page.howToRead;
-  const howToRead = `<div class="grid3">
-    <div><h3 class="h3">Confidence</h3><ul class="plain">${H.confidence.map((c) => `<li>${ConfidenceTag(c.tag)} ${esc(c.text)}</li>`).join("")}</ul></div>
+  const howToRead = `<div class="grid3 grid2">
     <div><h3 class="h3">Verification</h3><ul class="plain">${H.verification.filter((v) => v.tag !== "removed").map((v) => `<li>${vBadge(v.tag)} ${esc(v.text)}</li>`).join("")}<li class="small muted">${esc(H.verification.find((v) => v.tag === "removed").text)}</li></ul></div>
     <div><h3 class="h3">NASA data status</h3><ul class="plain">${H.status.map((s) => `<li><span class="nasa-st nasa-st-${s.tag}">${s.tag}</span> ${esc(s.text)}</li>`).join("")}</ul></div>
   </div>`;

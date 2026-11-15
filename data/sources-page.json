@@ -80,7 +80,7 @@
     "rulesResourceId": "ai-rules",
     "items": [
       "Code: the site's HTML/CSS/JavaScript, the Python pre-computation scripts and the data-check logic were generated with an AI coding assistant (Claude Code, by Anthropic) and reviewed and tested by the team.",
-      "Texts: interface texts, documentation (README, DECISIONS, METHODOLOGY, this page) and first drafts of site descriptions were written with AI assistance. Site attributes and descriptions are marked 'assumption' until the team verifies them.",
+      "Texts: interface texts, documentation (README, DECISIONS, METHODOLOGY, this page) and first drafts of site descriptions were written with AI assistance.",
       "Sample data: the leaderboard sample contributions (nicknames 'Sample_…', labelled 'Sample data (prototype)') and the two example community submissions are AI-generated and fictional.",
       "Fictional profiles: the archived v1 simulation contained fictional researcher profiles; they are not used in this version.",
       "Research support: AI agents searched for and checked sources (Crossref, CMR, official pages). Only items whose links or DOIs were actually opened are marked verified.",

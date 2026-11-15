@@ -5,9 +5,9 @@ import { S } from "../strings.js";
 import { esc } from "../util.js";
 import { LANG } from "../i18n.js";
 
-export function ConfidenceTag(level) {
-  const lv = S.confidence[level] ? level : "assumption";
-  return `<span class="conf conf-${lv}" title="${esc(S.confidenceHint[lv])}">${esc(S.confidence[lv])}</span>`;
+/** Confidence tags (data / deduction / assumption) are no longer shown in the interface. */
+export function ConfidenceTag() {
+  return "";
 }
 
 export function DimensionTable(dimensions) {
