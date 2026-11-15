@@ -1,6 +1,6 @@
 // Entry point + hash router.
 // Routes: #/  #/map/:planet/:mission  #/explore  #/explore/:planet/:mission
-//         #/explore/result/:id  #/community  #/contribute  #/leaderboard
+//         #/explore/result/:id  #/community  #/contribute  #/leaderboard  #/sources  #/about
 // Old v1 routes (#/mission, #/sim, #/results, #/site) redirect to #/.
 // Nothing in /archive is imported.
 
@@ -17,6 +17,7 @@ import { ExploreResult } from "./src/pages/ExploreResult.js";
 import { CommunityMap } from "./src/pages/CommunityMap.js";
 import { Leaderboard } from "./src/pages/Leaderboard.js";
 import { Sources } from "./src/pages/Sources.js";
+import { About } from "./src/pages/About.js";
 
 const Redirect = () => {
   location.replace("#/");
@@ -32,6 +33,7 @@ const routes = [
   [/^\/contribute$/, () => location.replace("#/explore")],
   [/^\/leaderboard$/, Leaderboard],
   [/^\/sources$/, Sources],
+  [/^\/about$/, About],
   [/^\/(mission|sim|results|site)(\/.*)?$/, Redirect],
 ];
 

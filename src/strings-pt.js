@@ -2,7 +2,7 @@
 // Se faltar uma chave aqui, o site usa o texto em inglês.
 
 export const PT = {
-  appName: "Analog Atlas",
+  appName: "Hermes",
   tagline: "Descubra onde as missões para a Lua e Marte são ensaiadas na Terra — e proponha um novo lugar.",
   footer: "Feito para o NASA Space Apps Challenge 2026. Sem vínculo nem endosso da NASA.",
   imageryNasa: "Imagens: NASA GIBS",
@@ -217,6 +217,7 @@ export const PT = {
   navValidate: "Validar um local",
   navLeaderboard: "Ranking",
   navSources: "Fontes e método",
+  navAbout: "Sobre",
   validateThisSite: "Validar este local",
   cHeading: "Propor um local",
   lbHeading: "Ranking",
