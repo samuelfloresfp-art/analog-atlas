@@ -1,0 +1,101 @@
+{
+  "title": "Fontes e método",
+  "intro": "Tudo em que este site se apoia: recursos oficiais, integrações ao vivo com a NASA, conjuntos de dados, o raciocínio por trás dos critérios, as regras de pontuação e seus limites. Só aparecem como verificados os itens que a equipe abriu e conferiu.",
+  "sections": [
+    { "id": "how-to-read", "title": "Como ler este site" },
+    { "id": "official", "title": "Recursos oficiais do desafio" },
+    { "id": "live", "title": "Integrações ao vivo" },
+    { "id": "data", "title": "Fontes de dados" },
+    { "id": "theory", "title": "Base teórica" },
+    { "id": "method", "title": "Método" },
+    { "id": "education", "title": "Modelo educacional" },
+    { "id": "references", "title": "Referências" },
+    { "id": "ai", "title": "Uso de IA" },
+    { "id": "licenses", "title": "Licenças e créditos" }
+  ],
+  "howToRead": {
+    "confidence": [
+      { "tag": "data", "text": "Apoiado em um conjunto de dados ou fonte citada." },
+      { "tag": "deduction", "text": "Deduzido pela equipe a partir de outros fatos." },
+      { "tag": "assumption", "text": "Não verificado — valor provisório que a equipe ainda precisa conferir." }
+    ],
+    "verification": [
+      { "tag": "verified", "text": "A equipe abriu o link e o conteúdo confere (ou o DOI foi resolvido no Crossref/DataCite)." },
+      { "tag": "unverified", "text": "Listado, mas não foi possível abrir ou confirmar — aparece com este selo." },
+      { "tag": "removed", "text": "Não existia ou não conferia. Nunca aparece nesta página; está listado em SOURCES-AUDIT.md." }
+    ],
+    "status": [
+      { "tag": "live", "text": "Valor buscado na fonte da NASA agora mesmo." },
+      { "tag": "cached", "text": "Valor buscado pelo script de pré-cálculo da equipe (data indicada) — usado sem internet e para APIs lentas." },
+      { "tag": "failed", "text": "A fonte não respondeu; nenhum valor é inventado." }
+    ]
+  },
+  "theory": [
+    {
+      "id": "what-is-analog",
+      "title": "O que é um análogo planetário?",
+      "text": "Um análogo terrestre (planetário) é um lugar da Terra cujas condições se parecem, em algum aspecto específico, com as de outro corpo planetário — geologia, formas de relevo, clima, isolamento ou operações. Nenhum local reproduz todos os aspectos; os análogos servem a um propósito definido (ciência, teste de tecnologia ou operações de tripulação).",
+      "citeTopic": "analog-definition"
+    },
+    {
+      "id": "eight-dimensions",
+      "title": "Por que 8 dimensões",
+      "text": "O site avalia cada lugar em oito dimensões — geologia, relevo, atmosfera/vento, temperatura/extremos, água/gelo, biologia/habitabilidade, subsolo e operacional — para que um local possa ser um análogo forte em um aspecto e fraco em outro. [EQUIPE PREENCHER: colar o texto oficial do desafio que motiva estas dimensões, com o link da página do desafio 2026.]",
+      "citeTopic": null,
+      "teamToFill": true
+    },
+    {
+      "id": "mission-first",
+      "title": "Por que missões (pouso, rover, base) e não só semelhança",
+      "text": "Locais análogos são escolhidos pelo uso que terão. Um teste de pouso precisa de pouca declividade e superfície firme; um teste de rover precisa de declives variados e obstáculos; uma simulação de base precisa de isolamento e clima extremo. O mesmo lugar pode ser excelente para uma missão e inútil para outra, por isso o mapa é organizado por planeta × missão e cada regra é explicada no cartão.",
+      "citeTopic": "site-selection"
+    },
+    {
+      "id": "novelty",
+      "title": "Novidade como critério",
+      "text": "A maior parte do trabalho com análogos se concentra em poucas regiões clássicas (Atacama, Ilha Devon, Islândia, Havaí, Antártida). A pontuação de validação premia propostas bem documentadas a mais de 25 km de qualquer local conhecido, fora dessas regiões, para ajudar a revelar novos candidatos — por exemplo, as crateras de impacto brasileiras.",
+      "citeTopic": "brazil-craters"
+    },
+    {
+      "id": "limits",
+      "title": "Onde a Terra não chega",
+      "text": "Nenhum lugar da Terra reproduz a gravidade de ~1/6 g da Lua ou de ~3/8 g de Marte, o vácuo lunar ou a atmosfera rarefeita de CO2 de Marte, nem o ambiente de radiação na superfície além do campo magnético e da atmosfera terrestres. A Terra também tem biosfera em quase todo lugar, o que complica testes de detecção de vida. A diferença de radiação é mostrada com números reais do NASA RadLab (taxa de dose na ISS) ao lado da radiação natural de fundo na Terra.",
+      "citeTopic": "radiation",
+      "showRadiation": true
+    }
+  ],
+  "method": {
+    "mapStates": [
+      { "state": "Local de simulação já usado (verde)", "rule": "sites.json tem um registro histórico para o mesmo planeta e missão (um teste conhecido desse tipo)." },
+      { "state": "Possível, sem teste conhecido (cinza, tracejado)", "rule": "Não há esse registro, mas o local passa em todas as regras OBRIGATÓRIAS de criteria.json para aquele planeta × missão (parcial é aceito)." },
+      { "state": "Oculto", "rule": "Uma regra obrigatória falha. O local continua nos dados e pode aparecer em outros mapas." },
+      { "state": "Conflito de dados (aviso no cartão)", "rule": "Os dados da NASA contradizem um atributo digitado à mão ou uma regra obrigatória (DATA-CHECK.md). Nunca é alterado automaticamente — a equipe decide." }
+    ],
+    "indicatorsIntro": "Os valores medidos pela NASA viram níveis sugeridos com os limites abaixo. São REGRAS DO PROJETO escolhidas pela equipe para o protótipo, não consenso científico.",
+    "scoreIntro": "A pontuação de validação é gerada a partir do mesmo objeto de configuração que o código usa (SCORE_CONFIG em src/services/validation-score.js).",
+    "scoreWarning": "Conferência comunitária com dados abertos da NASA — não é revisão por pares.",
+    "simulation": "A simulação de missão v1 (pontuação de equipe + veículo + condições) está arquivada em /archive e não faz parte desta versão; suas regras de pontuação estão documentadas em DECISIONS.md (v1, item 17)."
+  },
+  "ai": {
+    "rulesResourceId": "ai-rules",
+    "items": [
+      "Código: o HTML/CSS/JavaScript do site, os scripts Python de pré-cálculo e a lógica de conferência de dados foram gerados com um assistente de programação com IA (Claude Code, da Anthropic) e revisados e testados pela equipe.",
+      "Textos: textos da interface, documentação (README, DECISIONS, METHODOLOGY, esta página) e primeiras versões das descrições dos locais foram escritos com ajuda de IA.",
+      "Dados de exemplo: as contribuições de exemplo do ranking (apelidos 'Sample_…', marcados como 'Dados de exemplo (protótipo)') e as duas propostas de exemplo da comunidade foram geradas por IA e são fictícias.",
+      "Perfis fictícios: a simulação v1 arquivada continha perfis fictícios de pesquisadores; eles não são usados nesta versão.",
+      "Apoio à pesquisa: agentes de IA buscaram e conferiram fontes (Crossref, CMR, páginas oficiais). Só ficam marcados como verificados os itens cujos links ou DOIs foram de fato abertos.",
+      "Não são usados logotipos da NASA, imagens de pessoas nem imagens geradas por IA. Todas as imagens vêm do NASA GIBS e do Solar System Treks."
+    ]
+  },
+  "licenses": {
+    "code": "Código: Apache License 2.0 (veja LICENSE).",
+    "credits": [
+      "Imagens da Terra: NASA Global Imagery Browse Services (GIBS) — mapa base Blue Marble Shaded Relief + Bathymetry e mosaicos anuais em cor real Landsat WELD.",
+      "Mosaicos da Lua e de Marte: NASA Solar System Treks (Moon Trek: mosaico LRO LROC WAC; Mars Trek: relevo sombreado colorido MGS MOLA).",
+      "Mapa base reserva: © colaboradores do OpenStreetMap © CARTO. Polígonos de terra sem internet: Natural Earth (domínio público).",
+      "Bibliotecas: Leaflet e Leaflet.markercluster (BSD-2-Clause).",
+      "Recortes MODIS: ORNL DAAC. 2018. MODIS and VIIRS Land Products Global Subsetting and Visualization Tool. doi:10.3334/ORNLDAAC/1600."
+    ],
+    "disclaimer": "O Analog Atlas é um projeto do NASA Space Apps Challenge 2026. Não tem endosso da NASA nem de qualquer outra agência espacial. Os dados da NASA são usados conforme a política de dados abertos da NASA; não são usados logotipos nem insígnias da NASA."
+  }
+}

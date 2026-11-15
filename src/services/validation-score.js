@@ -3,6 +3,7 @@
 // This is a game score / community check, NOT peer review.
 
 import { haversineKm } from "./geo.js";
+import { LANG } from "../i18n.js";
 
 export const DIMENSIONS = ["geology", "terrain", "atmosphere", "temperature", "water", "biology", "subsurface", "operational"];
 export const LEVELS = ["strong", "partial", "weak", "nodata"];
@@ -187,6 +188,16 @@ export async function computeScore(c, report, combo, cfg = SCORE_CONFIG) {
 
 /** Rule table for the "How the score works" panel. */
 export function scoreRulesTable(cfg = SCORE_CONFIG) {
+  if (LANG === "pt")
+    return [
+      ["Coordenada válida em terra", `+${cfg.coordinateOnLand}`, "Fora do intervalo ou em mar aberto bloqueia o envio."],
+      ["Concordância com dados da NASA (por indicador)", `+${cfg.agreeSame} igual · +${cfg.agreeOneOff} um nível de diferença · ${cfg.agreeOpposite} oposto`, "Só indicadores com nível sugerido pelos dados. Dimensões sem nível não ganham nem perdem."],
+      ["Link de evidência por dimensão", `+${cfg.evidencePerDimension} (máx. +${cfg.evidenceMax})`, "URL que responde ou DOI em formato válido. O conteúdo NÃO é conferido."],
+      [`"O que falta" com ≥ ${cfg.lacksMinItems} itens`, `+${cfg.lacksBonus}`, "Menos itens bloqueia o envio."],
+      ["Requisito da missão marcado como atendido, mas os dados dizem que falha, sem justificativa", `${cfg.missionUnjustified} cada`, ""],
+      ["Novidade: local novo a > " + cfg.noveltyMinKm + " km de qualquer local conhecido", `+${cfg.noveltyBonus}`, "Regiões clássicas (Atacama, Haughton, Islândia, Havaí, Antártida) nunca ganham novidade."],
+      ["Status", `Conferido automaticamente ≥ ${cfg.autoCheckedMin}`, "Abaixo disso, ou com conflito forte → Em revisão. Confirmado pela equipe é definido pela equipe."],
+    ];
   return [
     ["Valid coordinate on land", `+${cfg.coordinateOnLand}`, "Out of range or open ocean blocks submission."],
     ["Agreement with NASA data (per indicator)", `+${cfg.agreeSame} same · +${cfg.agreeOneOff} one level off · ${cfg.agreeOpposite} opposite`, "Only indicators with a data-suggested level. Dimensions without one neither gain nor lose."],

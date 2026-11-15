@@ -1,0 +1,17 @@
+{
+  "status": "in-progress",
+  "badge": "Em andamento",
+  "intro": "Estrutura provisória. A equipe AINDA NÃO escolheu o público, os objetivos nem a abordagem pedagógica. Nada abaixo está decidido; todo campo marcado [EQUIPE PREENCHER] deve ser escrito pela equipe.",
+  "fields": [
+    { "id": "audience", "label": "Público-alvo", "value": "[EQUIPE PREENCHER]", "hint": "ex.: faixa etária / nível escolar / público informal — a definir pela equipe." },
+    { "id": "objectives", "label": "Objetivos de aprendizagem", "value": "[EQUIPE PREENCHER]", "hint": "O que o estudante deve conseguir explicar ou fazer depois de usar o site?" },
+    { "id": "framework", "label": "Abordagem pedagógica", "value": "[EQUIPE PREENCHER]", "hint": "Ainda não escolhida pela equipe. Não presumir nenhuma." },
+    { "id": "curriculum", "label": "Alinhamento curricular", "value": "[EQUIPE PREENCHER]", "hint": "ex.: habilidades da BNCC — a equipe deve conferir no texto oficial da BNCC." },
+    { "id": "flow", "label": "Como o fluxo apoia os objetivos", "value": "[EQUIPE PREENCHER]", "hint": "Missão → mapa → (simulação, arquivada nesta versão) → validação: descrever como cada etapa serve a um objetivo." },
+    { "id": "assessment", "label": "Como avaliar a aprendizagem", "value": "[EQUIPE PREENCHER]", "hint": "ex.: que evidências de aprendizagem a equipe vai coletar." }
+  ],
+  "existingMaterial": {
+    "text": "O projeto pretende complementar materiais de educação espacial já existentes, como os recursos STEM da Agência Espacial Canadense listados entre os recursos do desafio.",
+    "resourceGroup": "csa"
+  }
+}
