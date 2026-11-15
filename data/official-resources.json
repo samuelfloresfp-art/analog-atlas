@@ -14,7 +14,7 @@
           "what": "Search, discover, visualize, refine and access NASA Earth observation data in the browser.",
           "verification": "verified",
           "checkedNote": "HTTP 200, title 'Earthdata Search'; meta description matches. Listed on the challenge Resources tab under NASA Data & Resources > Earth.",
-          "usedIn": "Its catalogue (CMR) proves data coverage: indicator data_coverage"
+          "usedIn": "Its catalogue (CMR) proves data coverage (indicator data_coverage); the site card links each point to Earthdata Search (SRTM, EMIT); SRTM elevation/slope via AppEEARS (pending Earthdata Login)"
         },
         {
           "name": "NASA Worldview",
@@ -23,7 +23,7 @@
           "what": "An interactive interface for browsing full-resolution, global, daily satellite images, generally available within three hours of observation.",
           "verification": "verified",
           "checkedNote": "HTTP 200, title 'NASA Worldview'. The challenge page links to /index.html, which also returns HTTP 200 'NASA Worldview'. Listed on the Resources tab under Earth.",
-          "usedIn": "Same imagery service (GIBS) as the basemap and card images"
+          "usedIn": "Same imagery service (GIBS) as the basemap and card images; the site card opens each point in Worldview"
         },
         {
           "name": "NASA Planetary Data System (PDS)",
@@ -32,7 +32,7 @@
           "what": "NASA's long-term archive of planetary science data from orbital, lander and rover missions.",
           "verification": "verified",
           "checkedNote": "HTTP 200, title 'Welcome to the Planetary Data System', H1 'Welcome to the PDS'. Listed on the Resources tab under Moon and Mars.",
-          "usedIn": "Cited (planetary data); not called by the app"
+          "usedIn": "LRO Diviner Polar Resource Product read from the PDS Geosciences Node (scripts/fetch_official_extras.py) — coded; values appear after the first run of the script (pending)"
         },
         {
           "name": "NASA Lunar Reconnaissance Orbiter (LRO) - PDS Geosciences Node",
@@ -50,7 +50,7 @@
           "what": "Describes the LRO Diviner data sets at the PDS Geosciences Node, tools for accessing them, and the latest Diviner data release.",
           "verification": "verified",
           "checkedNote": "HTTP 200, title 'PDS Geosciences Node Data and Services: LRO DIVINER'. This is the URL the challenge page links for 'NASA LRO Diviner Lunar Data'. The Diviner team site https://www.diviner.ucla.edu/ also opens (HTTP 200, H1 'LRO DIVINER Lunar Radiometer Experiment') but is not the link on the challenge page.",
-          "usedIn": "Cited (lunar temperatures); not integrated"
+          "usedIn": "Lunar south-pole temperatures (Shackleton, 85-90 S) on Moon site cards, next to the site's Earth temperature range — coded; values appear after the first run of the script (pending)"
         },
         {
           "name": "RADARSAT Constellation Mission (RCM) Data",

@@ -13,8 +13,8 @@ Usage (Python 3.9+, standard library only):
   python scripts/fetch_nasa_cache.py --point -27.13 -52.13 --mission rover   # print a report, write nothing
 
 Keys (never commit them): env NASA_API_KEY (api.nasa.gov; falls back to DEMO_KEY).
-Earthdata Login sources (AppEEARS / Harmony) are NOT implemented: no credentials were available when this
-was written (see data/nasa-endpoints.json → status "failed").
+Earthdata Login sources: AppEEARS (SRTM / ASTER GDEM terrain) and LRO Diviner (PDS) live in
+scripts/fetch_official_extras.py, which writes data/nasa-cache/official-extras.json (not touched by this script).
 
 Thresholds come from data/nasa-endpoints.json (the browser uses the same file) — project rules, not consensus.
 Same indicator logic as src/services/nasa/validate.js; keep both in sync.

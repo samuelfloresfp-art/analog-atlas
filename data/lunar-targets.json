@@ -1,0 +1,24 @@
+{
+  "note": "Lunar south-pole targets used to summarise LRO Diviner (PRP) values. Team-editable. Diviner PRP covers 80-90 S only, so every target must be inside that cap.",
+  "targets": [
+    {
+      "id": "shackleton",
+      "kind": "radius",
+      "name": "Shackleton crater",
+      "lat": -89.67,
+      "lon": 129.78,
+      "radiusKm": 10,
+      "why": "Moon Base / Artemis south-pole region; permanently shadowed floor.",
+      "confidence": "deduction",
+      "coordinatesFrom": "data/trek-features.json (same point used for the Moon Trek tile); radius ~ crater radius, verify in Moon Trek"
+    },
+    {
+      "id": "cap85",
+      "kind": "cap",
+      "name": "South polar region (85-90 S)",
+      "maxLat": -85,
+      "why": "Region of the Artemis III candidate landing regions (most lie near or inside this cap; verify per region).",
+      "confidence": "deduction"
+    }
+  ]
+}
