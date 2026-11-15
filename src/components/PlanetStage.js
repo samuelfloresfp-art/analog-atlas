@@ -21,6 +21,19 @@ function orbitPos(a) {
   return { x, y: 0.45 - 0.5 * d, z, s: 1.05 + 0.3 * d, o: 1 };
 }
 
+// Camera distance that keeps every point of the orbit (planet + glow) inside the frame.
+function fitOrbit(aspect) {
+  const tv = Math.tan(((32 / 2) * Math.PI) / 180) * 0.94; // vertical half-FOV, 6% margin
+  const th = tv * aspect;
+  let z = 6;
+  for (let a = 0; a < Math.PI * 2; a += Math.PI / 36) {
+    const p = orbitPos(a);
+    const r = p.s * 1.04;
+    z = Math.max(z, p.z + (Math.abs(p.x) + r) / th, p.z + (Math.abs(p.y) + r) / tv);
+  }
+  return z;
+}
+
 const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 function glow(color, radius) {
@@ -162,8 +175,8 @@ export function createPlanetStage(el, { planet = "mars", onChange } = {}) {
     const w = el.clientWidth, h = el.clientHeight || 1;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
-    // keep the pair framed on wide and tall screens
-    camera.position.z = mobile ? 6.4 : Math.max(7.2, 7.2 * (1.6 / camera.aspect));
+    // move the camera back until the whole orbit (both planets, any angle) fits the frame
+    camera.position.z = mobile ? 6.4 : fitOrbit(camera.aspect);
     camera.updateProjectionMatrix();
     const wasMobile = mobile;
     mobile = w < MOBILE_MAX;
