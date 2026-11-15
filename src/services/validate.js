@@ -45,10 +45,6 @@ export async function formChecks(form, { step } = {}) {
   const add = (id, label, ok, message) => out.push({ id, label, origin: "rule", status: ok ? "pass" : "fail", message });
   const want = (s) => step == null || step === s;
 
-  if (want("target")) {
-    add("planet", T("Planet selected", "Destino escolhido"), !!form.planet, T("Choose Moon or Mars.", "Escolha Lua ou Marte."));
-    add("mission", T("Mission selected", "Missão escolhida"), !!form.mission, T("Choose Landing, Rover or Base.", "Escolha Pouso, Rover ou Base."));
-  }
   if (want("location")) {
     add("name", T("Site name", "Nome do local"), form.name.trim().length > 0, T("Give the site a name.", "Dê um nome ao local."));
     const lat = Number(form.lat), lon = Number(form.lon);
@@ -151,14 +147,34 @@ function improvements(criteria, dataChecks, form, data) {
  * Full validation. `dataChecksFn` is injected so the page controls network use.
  * @returns result object stored with the submission.
  */
+const STATUS_RANK = { plausible: 2, "needs-evidence": 1, "not-consistent": 0 };
+
+/**
+ * Evaluates the site for every destination × mission and returns them best first.
+ * The visitor no longer picks Moon/Mars or a mission: we tell them which fits best.
+ */
+export function rankOptions(form, data, dataChecks) {
+  const out = [];
+  for (const planet of data.planets)
+    for (const m of data.missions) {
+      const criteria = criteriaChecks({ ...form, planet, mission: m.id }, data);
+      out.push({ planet, mission: m.id, status: finalStatus(criteria, dataChecks), score: weightedScore(criteria) });
+    }
+  return out.sort((a, b) => STATUS_RANK[b.status] - STATUS_RANK[a.status] || b.score - a.score);
+}
+
 export async function validateSubmission(form, data, community, dataChecksFn) {
   const form_ = await formChecks(form);
   if (form_.some((c) => c.status === "fail")) return { blocked: true, formChecks: form_ };
-  const criteria = criteriaChecks(form, data);
   const dataChecks = dataChecksFn ? await dataChecksFn(form) : [];
+  const options = rankOptions(form, data, dataChecks);
+  form.planet = options[0].planet;
+  form.mission = options[0].mission;
+  const criteria = criteriaChecks(form, data);
   const novelty = noveltyCheck(form, data, community);
   return {
     blocked: false,
+    options,
     status: finalStatus(criteria, dataChecks),
     score: weightedScore(criteria),
     formChecks: form_,

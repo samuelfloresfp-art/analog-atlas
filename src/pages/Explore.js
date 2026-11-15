@@ -42,14 +42,10 @@ function setPath(obj, path, value) {
   o[keys.at(-1)] = value;
 }
 
-export function Explore(root, { params }, data) {
+export function Explore(root, _route, data) {
   const draft = loadDraft() || { step: 0, form: emptyForm() };
-  const [pPlanet, pMission] = params;
-  if (data.planets.includes(pPlanet) && data.missionById[pMission]) {
-    // coming from a card: preset target, keep other answers
-    draft.form.planet = pPlanet;
-    draft.form.mission = pMission;
-  }
+  // Destination and mission are no longer asked: the result says which fits best.
+  if (draft.step >= STEP_IDS.length) draft.step = 0;
   saveDraft(draft);
 
   let miniMap = null;
@@ -136,6 +132,8 @@ export function Explore(root, { params }, data) {
       root.querySelector("#busy").hidden = false;
       root.querySelector("#next").disabled = true;
       const community = await listCommunity();
+      draft.form.planet = "";
+      draft.form.mission = "";
       const result = await validateSubmission(draft.form, data, community, runDataChecks);
       busy = false;
       if (result.blocked) {

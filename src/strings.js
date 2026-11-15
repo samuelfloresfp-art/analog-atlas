@@ -93,9 +93,15 @@ export const EN = {
 
   // Explorer form
   exploreHeading: "Be an explorer",
-  exploreIntro: "Propose a place on Earth that could rehearse a Moon or Mars mission. Your answers are checked against mission criteria and open data.",
+  exploreIntro: "Describe a place on Earth. We compare it with the criteria for landing, rover and base missions on the Moon and on Mars, and tell you which one it suits best.",
+  bestEyebrow: "Your mission at this site",
+  bestMsg: (mission, planet) => `The most viable option here is ${{ landing: "a landing", rover: "a rover mission", base: "a base" }[mission]} on ${planet === "moon" ? "the Moon" : "Mars"}`,
+  bestWeak: "No combination meets every required rule — this is the closest one.",
+  otherOptions: "How the other options compare",
+  bestDetails: "Detailed check for the best option",
+  exploreIntroOld: "Propose a place on Earth that could rehearse a Moon or Mars mission. Your answers are checked against mission criteria and open data.",
   noPersonalData: "Do not include personal data (no e-mail, full name, phone or address).",
-  formSteps: ["Target", "Location", "Terrain", "Environment", "Operations", "Reasoning"],
+  formSteps: ["Location", "Terrain", "Environment", "Operations", "Reasoning"],
   next: "Next",
   back: "Back",
   checkProposal: "Check my proposal",

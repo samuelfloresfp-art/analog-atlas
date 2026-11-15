@@ -5,7 +5,7 @@ import { esc } from "../util.js";
 import { MAX_TEXT, MAX_NICK } from "../services/validate.js";
 import { optionVisual, hasVisuals, OPTION_VISUALS } from "../data/optionVisuals.js";
 
-export const STEP_IDS = ["target", "location", "terrain", "environment", "operations", "reasoning"];
+export const STEP_IDS = ["location", "terrain", "environment", "operations", "reasoning"];
 
 function radios(name, label, options, value) {
   return `<fieldset class="field opts">
