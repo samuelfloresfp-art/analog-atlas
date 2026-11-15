@@ -99,7 +99,7 @@ export function Explore(root, { params }, data) {
         setPath(draft.form, el.dataset.field, el.value);
         saveDraft(draft);
         if (el.type === "radio") {
-          el.closest(".opt-row").querySelectorAll(".opt").forEach((o) => o.classList.toggle("on", o.contains(el)));
+          el.closest(".opt-row, .opt-grid").querySelectorAll(".opt, .opt-card").forEach((o) => o.classList.toggle("on", o.contains(el)));
         }
         const counter = formEl.querySelector(`[data-counter="${el.dataset.field}"]`);
         if (counter) counter.textContent = S.chars(el.value.length, MAX_TEXT);

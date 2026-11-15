@@ -3,6 +3,7 @@
 import { S } from "../strings.js";
 import { esc } from "../util.js";
 import { MAX_TEXT, MAX_NICK } from "../services/validate.js";
+import { optionVisual, hasVisuals, OPTION_VISUALS } from "../data/optionVisuals.js";
 
 export const STEP_IDS = ["target", "location", "terrain", "environment", "operations", "reasoning"];
 
@@ -21,7 +22,23 @@ function radios(name, label, options, value) {
 }
 
 function enumRadios(data, field, form) {
-  return radios(`attrs.${field}`, data.criteria.fieldLabels[field], data.criteria.enums[field], form.attrs[field]);
+  if (!hasVisuals(field)) return radios(`attrs.${field}`, data.criteria.fieldLabels[field], data.criteria.enums[field], form.attrs[field]);
+  const name = `attrs.${field}`;
+  const value = form.attrs[field];
+  const usesSat = data.criteria.enums[field].some((o) => OPTION_VISUALS[field][o.id]?.kind === "sat");
+  return `<fieldset class="field opts opts-visual">
+    <legend>${esc(data.criteria.fieldLabels[field])}</legend>
+    <div class="opt-grid">${data.criteria.enums[field]
+      .map(
+        (o) => `<label class="opt-card ${value === o.id ? "on" : ""}">
+          <input type="radio" name="${esc(name)}" value="${esc(o.id)}" ${value === o.id ? "checked" : ""} data-field="${esc(name)}" />
+          ${optionVisual(field, o.id)}
+          <span class="opt-label">${esc(o.label)}</span>
+        </label>`
+      )
+      .join("")}</div>
+    ${usesSat ? `<p class="credit-line">${esc(S.satCredit)}</p>` : ""}
+  </fieldset>`;
 }
 
 function input(name, label, value, { type = "text", max, placeholder = "", step } = {}) {
