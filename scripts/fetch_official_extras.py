@@ -214,12 +214,42 @@ def summarize(vals_tavg, vals_tmax, vals_ice, n):
     }
 
 
+def load_structure(lbl_text, lbl_location):
+    """Columns may live in a separate format file (^STRUCTURE = "X.FMT"). PDS keeps it next to the label
+    or in the archive's label/ directory; try both, in the given and lower case."""
+    m = re.search(r'\^STRUCTURE\s*=\s*"?([^"\s]+)"?', lbl_text)
+    if not m:
+        return []
+    name = m.group(1)
+    if re.match(r"^https?://", lbl_location):
+        lbl_location = request(lbl_location).geturl()  # follow PDS redirects to the current archive layout
+        base = lbl_location.rsplit("/", 1)[0]
+        dirs = [base, base.rsplit("/", 1)[0] + "/label"]
+        join = lambda d, n: d + "/" + n
+    else:
+        base = os.path.dirname(os.path.abspath(lbl_location))
+        dirs = [base, os.path.join(os.path.dirname(base), "label")]
+        join = os.path.join
+    for d in dirs:
+        for n in (name, name.lower()):
+            try:
+                cols = parse_pds3_label(read_text(join(d, n)))["columns"]
+            except (OSError, urllib.error.URLError):
+                continue
+            if cols:
+                print("[diviner] column structure from", join(d, n))
+                return cols
+    return []
+
+
 def run_diviner(args):
     targets_doc = load("data/lunar-targets.json")
     targets = targets_doc["targets"]
     lbl_text = read_text(args.diviner_label or DIVINER_LBL)
     lbl = parse_pds3_label(lbl_text)
     cols = lbl["columns"]
+    if not cols:
+        cols = load_structure(lbl_text, args.diviner_label or DIVINER_LBL)
     role = map_columns(cols, args.diviner_columns)
     missing_roles = [r for r in ("lat", "lon", "tmax") if r not in role]
     if missing_roles or not cols:
